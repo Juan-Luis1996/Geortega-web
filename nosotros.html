@@ -1,1 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros | GEORTEGA</title>
+  <meta name="description" content="Conoce a GEORTEGA, empresa especializada en topografía, geomensura, drones y soluciones geoespaciales.">
 
+  <style>
+    :root{
+      --navy:#102746;
+      --navy-dark:#081a30;
+      --blue:#2e5bff;
+      --text:#24344d;
+      --muted:#6f7f95;
+      --light:#f5f7fb;
+      --border:#e5ebf2;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:#fff;
+      color:var(--text);
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    header{
+      height:82px;
+      padding:0 7%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      background:#fff;
+      border-bottom:1px solid #eef2f7;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .brand img{
+      height:54px;
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
+      gap:30px;
+    }
+
+    nav a{
+      font-size:14px;
+      font-weight:600;
+      color:#33445f;
+    }
+
+    nav a:hover,
+    nav a.active{
+      color:var(--blue);
+    }
+
+    .nav-btn{
+      background:var(--blue);
+      color:#fff !important;
+      padding:12px 22px;
+      border-radius:26px;
+    }
+
+    .banner{
+      min-height:250px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(91,140,216,.35), transparent 30%),
+        linear-gradient(115deg,#0b1d35,#284b73);
+    }
+
+    .banner::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      opacity:.20;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='400' viewBox='0 0 1200 400'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1.2'%3E%3Cpath d='M-50 110 C180 10 260 220 450 120 S800 20 1250 130'/%3E%3Cpath d='M-50 145 C170 40 270 250 460 155 S810 50 1260 165'/%3E%3Cpath d='M-50 180 C160 70 280 280 470 190 S820 80 1270 200'/%3E%3Cpath d='M-50 215 C150 100 290 310 480 225 S830 110 1280 235'/%3E%3Cpath d='M-50 250 C140 130 300 340 490 260 S840 140 1290 270'/%3E%3C/g%3E%3C/svg%3E");
+      background-size:cover;
+      background-position:center;
+    }
+
+    .banner-content{
+      position:relative;
+      z-index:2;
+    }
+
+    .banner small{
+      display:block;
+      letter-spacing:4px;
+      font-size:12px;
+      font-weight:700;
+      color:#d7e3f5;
+      margin-bottom:10px;
+    }
+
+    .banner h1{
+      font-size:52px;
+      line-height:1.1;
+    }
+
+    .section{
+      padding:90px 8%;
+    }
+
+    .container{
+      max-width:1180px;
+      margin:0 auto;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:360px 1fr;
+      gap:80px;
+      align-items:center;
+    }
+
+    .about-photo img{
+      width:100%;
+      border-radius:8px;
+      object-fit:cover;
+      box-shadow:0 18px 40px rgba(7,24,45,.10);
+    }
+
+    .about-text p{
+      color:var(--muted);
+      line-height:1.9;
+      font-size:17px;
+      margin-bottom:18px;
+    }
+
+    .drone-block{
+      display:grid;
+      grid-template-columns:260px 1fr;
+      gap:70px;
+      align-items:center;
+      margin-top:40px;
+    }
+
+    .dgac-logo{
+      display:flex;
+      justify-content:center;
+    }
+
+    .dgac-logo img{
+      max-width:200px;
+      width:100%;
+      height:auto;
+    }
+
+    .eyebrow{
+      color:var(--blue);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:4px;
+      margin-bottom:14px;
+    }
+
+    .drone-text h2{
+      font-size:50px;
+      line-height:1.08;
+      margin-bottom:20px;
+      color:#2a3a52;
+    }
+
+    .drone-text p{
+      color:var(--muted);
+      line-height:1.9;
+      font-size:17px;
+      max-width:760px;
+    }
+
+    .cta{
+      margin:0 7% 80px;
+      padding:55px 50px;
+      border-radius:20px;
+      background:linear-gradient(115deg,#0b203a,#2c5b89);
+      color:#fff;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:30px;
+    }
+
+    .cta h3{
+      font-size:34px;
+      margin-bottom:10px;
+    }
+
+    .cta p{
+      color:#d5e2f0;
+      line-height:1.7;
+    }
+
+    .cta a{
+      background:#fff;
+      color:var(--navy);
+      padding:15px 24px;
+      border-radius:30px;
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    footer{
+      background:var(--navy-dark);
+      color:#fff;
+      padding:60px 7% 25px;
+    }
+
+    .footer-grid{
+      max-width:1180px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr;
+      gap:60px;
+    }
+
+    .footer-brand img{
+      height:58px;
+      margin-bottom:16px;
+    }
+
+    .footer-brand p,
+    .footer-links a,
+    .footer-contact p{
+      color:#afbdd0;
+      line-height:1.9;
+      font-size:14px;
+    }
+
+    .footer-links h4,
+    .footer-contact h4{
+      margin-bottom:14px;
+      color:#fff;
+    }
+
+    .footer-bottom{
+      max-width:1180px;
+      margin:35px auto 0;
+      padding-top:20px;
+      border-top:1px solid #20344e;
+      color:#8091a6;
+      font-size:13px;
+    }
+
+    @media (max-width: 920px){
+
+      nav a:not(.nav-btn){
+        display:none;
+      }
+
+      .banner h1{
+        font-size:42px;
+      }
+
+      .about-grid,
+      .drone-block,
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .about-grid,
+      .drone-block{
+        gap:35px;
+      }
+
+      .drone-text h2{
+        font-size:38px;
+      }
+
+      .cta{
+        flex-direction:column;
+        align-items:flex-start;
+        padding:38px 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="brand" href="index.html">
+      <img src="logo-geortega.png" alt="Logo GEORTEGA">
+    </a>
+
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a class="active" href="nosotros.html">Nosotros</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="contacto.html">Contacto</a>
+      <a class="nav-btn" href="https://wa.me/56973401407" target="_blank">Cotizar</a>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <div class="banner-content">
+      <small>NUESTRA HISTORIA</small>
+      <h1>Nosotros</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about-grid">
+
+      <div class="about-photo">
+        <img src="juan-geortega.jpg" alt="Profesional de GEORTEGA">
+      </div>
+
+      <div class="about-text">
+        <p>
+          GEORTEGA nació con la convicción de que la topografía no consiste únicamente
+          en medir terrenos, sino en entregar información confiable que permita desarrollar
+          proyectos con seguridad, precisión y eficiencia.
+        </p>
+
+        <p>
+          Contamos con un profesional del área, un Ingeniero en Geomensura, orientado
+          en su trayectoria profesional hacia la prestación de servicios técnicos de alta
+          calidad, respaldado con tecnología de vanguardia y un firme compromiso con la mejora continua.
+        </p>
+
+        <p>
+          Desde el inicio de su carrera, ha enfocado su desarrollo en perfeccionar conocimientos
+          y aplicar metodologías modernas que garanticen precisión, confiabilidad y soluciones
+          eficientes para cada proyecto.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:20px;">
+    <div class="container drone-block">
+
+      <div class="dgac-logo">
+        <img src="logo-dgac.png" alt="Logo DGAC Chile">
+      </div>
+
+      <div class="drone-text">
+        <div class="eyebrow">DIRECCIÓN GENERAL AERONÁUTICA CIVIL</div>
+        <h2>Piloto Profesional De Drones</h2>
+        <p>
+          Contamos con la Licencia de Piloto Profesional de RPAS, otorgada por la
+          Dirección General de Aeronáutica Civil (DGAC) de Chile, certificación que
+          acredita mis competencias para operar drones de manera segura, profesional
+          y en cumplimiento de la normativa aeronáutica vigente.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta">
+    <div>
+      <h3>Trabajemos tu proyecto con precisión.</h3>
+      <p>
+        En GEORTEGA combinamos experiencia técnica, tecnología geoespacial
+        y compromiso profesional para entregar soluciones confiables.
+      </p>
+    </div>
+
+    <a href="https://wa.me/56973401407" target="_blank">Solicitar cotización</a>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <img src="logo-geortega.png" alt="GEORTEGA">
+        <p>
+          Soluciones profesionales en topografía, geomensura,
+          fotogrametría y tecnologías geoespaciales.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Secciones</h4>
+        <p><a href="index.html">Inicio</a></p>
+        <p><a href="nosotros.html">Nosotros</a></p>
+        <p><a href="servicios.html">Servicios</a></p>
+        <p><a href="contacto.html">Contacto</a></p>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <p>contacto@geortega.cl</p>
+        <p>+56 9 7340 1407</p>
+        <p>Chile</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 GEORTEGA · Todos los derechos reservados.
+    </div>
+  </footer>
+
+</body>
+</html>
