@@ -1,593 +1,515 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>GEORTEGA | Topografía, Geomensura y Soluciones Geoespaciales</title>
-
-<meta name="description"
-content="GEORTEGA entrega soluciones profesionales en topografía, geomensura, fotogrametría, drones, subdivisiones, cubicaciones y apoyo técnico para proyectos de ingeniería y construcción.">
-
-<style>
-
-:root{
-  --navy:#102746;
-  --navy-dark:#07182d;
-  --blue:#2458dc;
-  --blue-light:#4c79ee;
-  --text:#17263d;
-  --muted:#66758a;
-  --light:#f6f8fb;
-  --border:#e4e9f0;
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:Arial, Helvetica, sans-serif;
-  color:var(--text);
-  background:white;
-}
-
-a{
-  text-decoration:none;
-}
-
-/* HEADER */
-
-header{
-  height:78px;
-  padding:0 7%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  background:white;
-  position:sticky;
-  top:0;
-  z-index:1000;
-  border-bottom:1px solid #edf0f4;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.brand-mark{
-  width:38px;
-  height:38px;
-  border:2px solid var(--navy);
-  border-radius:9px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:900;
-  color:var(--navy);
-}
-
-.brand-name{
-  font-size:23px;
-  font-weight:900;
-  letter-spacing:2px;
-  color:var(--navy);
-}
-
-nav{
-  display:flex;
-  align-items:center;
-  gap:30px;
-}
-
-nav a{
-  color:#31415a;
-  font-size:14px;
-  font-weight:600;
-}
-
-nav a:hover{
-  color:var(--blue);
-}
-
-.nav-cta{
-  background:var(--blue);
-  color:white !important;
-  padding:12px 21px;
-  border-radius:24px;
-}
-
-/* HERO */
-
-.hero{
-  min-height:650px;
-  display:flex;
-  align-items:center;
-  padding:80px 7%;
-  color:white;
-  position:relative;
-  overflow:hidden;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(5,18,35,.92) 0%,
-      rgba(5,18,35,.72) 45%,
-      rgba(5,18,35,.25) 100%
-    ),
-    url("matrice4e-portada.jpg") center/cover no-repeat;
-}
-
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  opacity:.13;
-
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1'%3E%3Cpath d='M-40 180 C100 60 180 300 340 180 S600 30 850 160'/%3E%3Cpath d='M-50 210 C90 90 190 330 350 210 S610 60 850 190'/%3E%3Cpath d='M-50 240 C80 120 200 360 360 240 S620 90 860 220'/%3E%3Cpath d='M-40 270 C80 150 220 390 380 270 S640 120 860 250'/%3E%3Cpath d='M-30 300 C90 180 240 420 400 300 S660 150 870 280'/%3E%3C/g%3E%3C/svg%3E");
-  background-size:cover;
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:760px;
-}
-
-.hero-kicker{
-  font-size:13px;
-  font-weight:bold;
-  letter-spacing:4px;
-  margin-bottom:20px;
-  color:#c7d8ff;
-}
-
-.hero h1{
-  font-size:67px;
-  line-height:1;
-  letter-spacing:-2px;
-  margin-bottom:18px;
-}
-
-.hero h2{
-  font-size:30px;
-  font-weight:500;
-  margin-bottom:22px;
-}
-
-.hero p{
-  font-size:19px;
-  line-height:1.7;
-  color:#e0e8f3;
-  max-width:680px;
-}
-
-.hero-actions{
-  margin-top:35px;
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap;
-}
-
-.btn-primary,
-.btn-secondary{
-  padding:15px 26px;
-  border-radius:28px;
-  font-weight:bold;
-  display:inline-block;
-}
-
-.btn-primary{
-  background:white;
-  color:var(--navy);
-}
-
-.btn-secondary{
-  border:1px solid rgba(255,255,255,.65);
-  color:white;
-}
-
-.hero-badges{
-  display:flex;
-  gap:28px;
-  margin-top:48px;
-  flex-wrap:wrap;
-}
-
-.hero-badge{
-  border-left:2px solid #628cf3;
-  padding-left:15px;
-}
-
-.hero-badge strong{
-  display:block;
-  font-size:18px;
-}
-
-.hero-badge span{
-  color:#cdd7e7;
-  font-size:13px;
-}
-
-/* GENERALES */
-
-.section{
-  padding:95px 7%;
-}
-
-.section-light{
-  background:var(--light);
-}
-
-.section-heading{
-  max-width:750px;
-  margin-bottom:50px;
-}
-
-.section-heading.center{
-  margin-left:auto;
-  margin-right:auto;
-  text-align:center;
-}
-
-.label{
-  color:var(--blue);
-  font-size:12px;
-  letter-spacing:4px;
-  font-weight:bold;
-}
-
-.section-heading h2{
-  font-size:42px;
-  line-height:1.15;
-  margin-top:12px;
-}
-
-.section-heading p{
-  margin-top:18px;
-  line-height:1.7;
-  color:var(--muted);
-  font-size:17px;
-}
-
-/* SERVICES */
-
-.services{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:23px;
-}
-
-.service{
-  padding:34px;
-  border:1px solid var(--border);
-  border-radius:16px;
-  background:white;
-  transition:.25s;
-}
-
-.service:hover{
-  transform:translateY(-7px);
-  box-shadow:0 20px 45px rgba(15,37,69,.09);
-}
-
-.service-number{
-  width:43px;
-  height:43px;
-  background:#edf2ff;
-  color:var(--blue);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:10px;
-  font-weight:bold;
-  margin-bottom:25px;
-}
-
-.service h3{
-  font-size:21px;
-  margin-bottom:13px;
-}
-
-.service p{
-  color:var(--muted);
-  line-height:1.65;
-  font-size:15px;
-}
-
-.service-link{
-  display:inline-block;
-  margin-top:21px;
-  color:var(--blue);
-  font-weight:bold;
-  font-size:14px;
-}
-
-/* WHY */
-
-.why{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:80px;
-  align-items:center;
-}
-
-.visual-box{
-  min-height:460px;
-  border-radius:18px;
-
-  background:
-  linear-gradient(rgba(7,24,45,.15),rgba(7,24,45,.15)),
-  linear-gradient(145deg,#244e79,#102746);
-
-  position:relative;
-  overflow:hidden;
-}
-
-.visual-box::before{
-  content:"GEORTEGA";
-  position:absolute;
-  bottom:35px;
-  left:35px;
-  color:white;
-  font-size:36px;
-  font-weight:900;
-  letter-spacing:3px;
-}
-
-.visual-box::after{
-  content:"Tecnología · Precisión · Información";
-  position:absolute;
-  bottom:18px;
-  left:36px;
-  color:#c7d8eb;
-  font-size:13px;
-}
-
-.why-list{
-  margin-top:30px;
-  display:grid;
-  gap:20px;
-}
-
-.why-item{
-  display:flex;
-  gap:17px;
-}
-
-.check{
-  min-width:27px;
-  height:27px;
-  border-radius:50%;
-  background:#eaf0ff;
-  color:var(--blue);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:bold;
-}
-
-.why-item h4{
-  margin-bottom:5px;
-}
-
-.why-item p{
-  color:var(--muted);
-  line-height:1.55;
-  font-size:15px;
-}
-
-/* PROJECTS */
-
-.projects{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:23px;
-}
-
-.project{
-  height:330px;
-  border-radius:16px;
-  overflow:hidden;
-  position:relative;
-
-  background:
-  linear-gradient(to top,rgba(6,18,33,.92),transparent 65%),
-  linear-gradient(145deg,#315b81,#94a9bc);
-}
-
-.project-content{
-  position:absolute;
-  bottom:0;
-  padding:26px;
-  color:white;
-}
-
-.project-content span{
-  font-size:11px;
-  letter-spacing:2px;
-  color:#c6d7f4;
-}
-
-.project-content h3{
-  margin-top:7px;
-  font-size:22px;
-}
-
-.project-content p{
-  margin-top:8px;
-  color:#dde5ef;
-  font-size:14px;
-  line-height:1.5;
-}
-
-/* CTA */
-
-.cta{
-  margin:0 7% 90px;
-  border-radius:20px;
-  padding:65px;
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:40px;
-
-  background:
-  linear-gradient(115deg,#0b213d,#275790);
-}
-
-.cta h2{
-  font-size:37px;
-  max-width:650px;
-}
-
-.cta p{
-  color:#d8e3f2;
-  margin-top:12px;
-}
-
-.cta-button{
-  white-space:nowrap;
-  background:white;
-  color:var(--navy);
-  padding:16px 27px;
-  border-radius:28px;
-  font-weight:bold;
-}
-
-/* FOOTER */
-
-footer{
-  background:#07182d;
-  color:white;
-  padding:65px 7% 25px;
-}
-
-.footer-grid{
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr;
-  gap:70px;
-}
-
-.footer-brand{
-  font-size:25px;
-  font-weight:900;
-  letter-spacing:2px;
-  margin-bottom:15px;
-}
-
-footer p,
-footer a{
-  color:#aebdd0;
-  line-height:1.9;
-  font-size:14px;
-}
-
-footer h4{
-  margin-bottom:15px;
-}
-
-.footer-bottom{
-  border-top:1px solid #203650;
-  padding-top:22px;
-  margin-top:45px;
-  color:#8293a8;
-  font-size:13px;
-}
-
-/* WHATSAPP */
-
-.whatsapp{
-  position:fixed;
-  right:22px;
-  bottom:22px;
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  background:#25D366;
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:bold;
-  box-shadow:0 10px 30px rgba(0,0,0,.18);
-  z-index:1000;
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-  nav a:not(.nav-cta){
-    display:none;
-  }
-
-  .hero{
-    min-height:600px;
-  }
-
-  .hero h1{
-    font-size:49px;
-  }
-
-  .hero h2{
-    font-size:25px;
-  }
-
-  .services,
-  .projects{
-    grid-template-columns:1fr;
-  }
-
-  .why{
-    grid-template-columns:1fr;
-    gap:40px;
-  }
-
-  .cta{
-    flex-direction:column;
-    align-items:flex-start;
-    padding:45px 30px;
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr;
-    gap:35px;
-  }
-
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>GEORTEGA | Topografía, Geomensura y Soluciones Geoespaciales</title>
+
+  <meta name="description"
+        content="GEORTEGA entrega soluciones profesionales en topografía, geomensura, fotogrametría, drones, subdivisiones y apoyo técnico para proyectos de ingeniería y construcción.">
+
+  <style>
+
+    :root{
+      --navy:#102746;
+      --navy-dark:#07182d;
+      --blue:#2856d8;
+      --text:#17263d;
+      --muted:#66758a;
+      --light:#f7f9fc;
+      --border:#e4e9f0;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:#ffffff;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header{
+      height:82px;
+      padding:0 7%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      background:white;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      border-bottom:1px solid #edf0f4;
+    }
+
+    .brand img{
+      height:56px;
+      width:auto;
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
+      gap:30px;
+    }
+
+    nav a{
+      color:#31415a;
+      font-size:14px;
+      font-weight:600;
+      transition:.2s;
+    }
+
+    nav a:hover{
+      color:var(--blue);
+    }
+
+    nav .active{
+      color:var(--blue);
+    }
+
+    .nav-cta{
+      background:var(--blue);
+      color:white !important;
+      padding:12px 22px;
+      border-radius:25px;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero{
+      min-height:620px;
+      display:flex;
+      align-items:center;
+      padding:80px 7%;
+      color:white;
+      position:relative;
+      overflow:hidden;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(5,18,35,.93) 0%,
+          rgba(5,18,35,.75) 44%,
+          rgba(5,18,35,.20) 100%
+        ),
+        url("matrice4e-portada.jpg") center/cover no-repeat;
+    }
+
+    .hero-content{
+      max-width:720px;
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-kicker{
+      font-size:13px;
+      font-weight:bold;
+      letter-spacing:4px;
+      margin-bottom:18px;
+      color:#d1def5;
+    }
+
+    .hero h1{
+      font-size:66px;
+      line-height:1;
+      margin-bottom:18px;
+      letter-spacing:-2px;
+    }
+
+    .hero h2{
+      font-size:30px;
+      font-weight:500;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      font-size:18px;
+      line-height:1.7;
+      color:#e0e8f3;
+      max-width:650px;
+    }
+
+    .hero-actions{
+      margin-top:34px;
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .btn-primary,
+    .btn-secondary{
+      display:inline-block;
+      padding:15px 26px;
+      border-radius:28px;
+      font-weight:bold;
+    }
+
+    .btn-primary{
+      background:white;
+      color:var(--navy);
+    }
+
+    .btn-secondary{
+      border:1px solid rgba(255,255,255,.7);
+      color:white;
+    }
+
+    .hero-points{
+      margin-top:45px;
+      display:flex;
+      gap:28px;
+      flex-wrap:wrap;
+    }
+
+    .hero-point{
+      border-left:2px solid #668ff2;
+      padding-left:14px;
+    }
+
+    .hero-point strong{
+      display:block;
+      font-size:16px;
+    }
+
+    .hero-point span{
+      font-size:13px;
+      color:#cad6e8;
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro{
+      padding:80px 8%;
+      text-align:center;
+    }
+
+    .intro-content{
+      max-width:850px;
+      margin:auto;
+    }
+
+    .label{
+      color:var(--blue);
+      font-size:12px;
+      letter-spacing:4px;
+      font-weight:bold;
+    }
+
+    .intro h2{
+      font-size:40px;
+      margin:12px 0 20px;
+      line-height:1.2;
+    }
+
+    .intro p{
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.8;
+    }
+
+    /* =========================
+       SERVICIOS DESTACADOS
+    ========================= */
+
+    .services-section{
+      padding:80px 7%;
+      background:var(--light);
+    }
+
+    .section-title{
+      text-align:center;
+      max-width:800px;
+      margin:0 auto 45px;
+    }
+
+    .section-title h2{
+      font-size:38px;
+      margin-top:12px;
+    }
+
+    .section-title p{
+      color:var(--muted);
+      margin-top:16px;
+      line-height:1.7;
+    }
+
+    .services{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+      max-width:1180px;
+      margin:auto;
+    }
+
+    .service{
+      background:white;
+      border:1px solid var(--border);
+      border-radius:16px;
+      overflow:hidden;
+      transition:.25s;
+    }
+
+    .service:hover{
+      transform:translateY(-6px);
+      box-shadow:0 18px 45px rgba(15,37,69,.09);
+    }
+
+    .service img{
+      width:100%;
+      height:210px;
+      object-fit:cover;
+    }
+
+    .service-content{
+      padding:28px;
+    }
+
+    .service-number{
+      width:42px;
+      height:42px;
+      background:#edf2ff;
+      color:var(--blue);
+      border-radius:10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:bold;
+      margin-bottom:20px;
+    }
+
+    .service h3{
+      font-size:21px;
+      margin-bottom:12px;
+    }
+
+    .service p{
+      color:var(--muted);
+      line-height:1.65;
+      font-size:15px;
+    }
+
+    .service-link{
+      display:inline-block;
+      color:var(--blue);
+      margin-top:20px;
+      font-weight:bold;
+      font-size:14px;
+    }
+
+    .services-more{
+      text-align:center;
+      margin-top:38px;
+    }
+
+    .services-more a{
+      display:inline-block;
+      background:var(--blue);
+      color:white;
+      padding:14px 24px;
+      border-radius:28px;
+      font-weight:bold;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta{
+      margin:80px 7%;
+      border-radius:20px;
+      padding:55px;
+      color:white;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:35px;
+      background:linear-gradient(115deg,#0b213d,#285785);
+    }
+
+    .cta h2{
+      font-size:34px;
+      margin-bottom:10px;
+      max-width:650px;
+    }
+
+    .cta p{
+      color:#d7e3f0;
+      line-height:1.7;
+    }
+
+    .cta a{
+      background:white;
+      color:var(--navy);
+      padding:15px 25px;
+      border-radius:28px;
+      font-weight:bold;
+      white-space:nowrap;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer{
+      background:var(--navy-dark);
+      color:white;
+      padding:60px 7% 25px;
+    }
+
+    .footer-grid{
+      max-width:1180px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr;
+      gap:60px;
+    }
+
+    .footer-brand img{
+      height:58px;
+      margin-bottom:16px;
+    }
+
+    footer p,
+    footer a{
+      color:#aebdd0;
+      font-size:14px;
+      line-height:1.9;
+    }
+
+    footer h4{
+      margin-bottom:14px;
+      color:white;
+    }
+
+    .footer-bottom{
+      max-width:1180px;
+      margin:35px auto 0;
+      padding-top:20px;
+      border-top:1px solid #21364f;
+      color:#8494a8;
+      font-size:13px;
+    }
+
+    /* =========================
+       WHATSAPP
+    ========================= */
+
+    .whatsapp{
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      background:#25D366;
+      color:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:bold;
+      z-index:1000;
+      box-shadow:0 10px 30px rgba(0,0,0,.18);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media(max-width:900px){
+
+      nav a:not(.nav-cta){
+        display:none;
+      }
+
+      .hero{
+        min-height:580px;
+      }
+
+      .hero h1{
+        font-size:48px;
+      }
+
+      .hero h2{
+        font-size:24px;
+      }
+
+      .services{
+        grid-template-columns:1fr;
+      }
+
+      .cta{
+        flex-direction:column;
+        align-items:flex-start;
+        padding:40px 28px;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+  </style>
 </head>
 
 <body>
 
 <header>
 
-<a class="brand" href="#">
-  <img src="logo-geortega.png" alt="Logo GEORTEGA" style="height:52px;">
-</a>
+  <a class="brand" href="index.html">
+    <img src="logo-geortega.png" alt="Logo GEORTEGA">
+  </a>
 
   <nav>
-    <a href="#">Inicio</a>
-    <a href="#nosotros">Nosotros</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#proyectos">Proyectos</a>
-    <a href="#contacto">Contacto</a>
+
+    <a class="active" href="index.html">
+      Inicio
+    </a>
+
+    <a href="nosotros.html">
+      Nosotros
+    </a>
+
+    <a href="servicios.html">
+      Servicios
+    </a>
+
+    <a href="contacto.html">
+      Contacto
+    </a>
 
     <a class="nav-cta"
-    href="https://wa.me/56973401407">
-    Cotizar
+       href="https://wa.me/56973401407"
+       target="_blank">
+      Cotizar
     </a>
+
   </nav>
 
 </header>
@@ -603,41 +525,45 @@ footer h4{
 
     <h1>GEORTEGA</h1>
 
-    <h2>Precisión que da confianza.</h2>
+    <h2>
+      Precisión que da confianza.
+    </h2>
 
     <p>
-      Convertimos información del terreno en datos precisos
-      para apoyar decisiones en construcción, ingeniería,
-      desarrollo territorial y proyectos que requieren
-      respaldo técnico.
+      Soluciones topográficas y geoespaciales para construcción,
+      ingeniería y desarrollo territorial. Transformamos datos
+      del terreno en información útil para tomar decisiones
+      con mayor seguridad.
     </p>
 
     <div class="hero-actions">
 
-      <a class="btn-primary" href="#servicios">
-        Explorar servicios
+      <a class="btn-primary"
+         href="servicios.html">
+        Ver servicios
       </a>
 
       <a class="btn-secondary"
-      href="https://wa.me/56973401407">
+         href="https://wa.me/56973401407"
+         target="_blank">
         Solicitar cotización
       </a>
 
     </div>
 
-    <div class="hero-badges">
+    <div class="hero-points">
 
-      <div class="hero-badge">
+      <div class="hero-point">
         <strong>GNSS</strong>
         <span>Posicionamiento de precisión</span>
       </div>
 
-      <div class="hero-badge">
+      <div class="hero-point">
         <strong>DRONES</strong>
         <span>Fotogrametría y registro aéreo</span>
       </div>
 
-      <div class="hero-badge">
+      <div class="hero-point">
         <strong>CAD</strong>
         <span>Entregables técnicos digitales</span>
       </div>
@@ -649,21 +575,44 @@ footer h4{
 </section>
 
 
-<section class="section" id="servicios">
+<section class="intro">
 
-  <div class="section-heading center">
+  <div class="intro-content">
 
     <div class="label">
-      SERVICIOS
+      SOLUCIONES GEOESPACIALES
     </div>
 
     <h2>
-      Soluciones geoespaciales para cada etapa del proyecto
+      Información precisa para desarrollar mejores proyectos.
     </h2>
 
     <p>
-      Integramos medición, procesamiento y representación
-      técnica para entregar información útil, clara y confiable.
+      En GEORTEGA combinamos levantamientos topográficos,
+      tecnologías GNSS, drones, fotogrametría y procesamiento
+      digital para entregar información confiable y adaptada
+      a las necesidades de cada proyecto.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section class="services-section">
+
+  <div class="section-title">
+
+    <div class="label">
+      SERVICIOS DESTACADOS
+    </div>
+
+    <h2>
+      Soluciones para distintas etapas del proyecto
+    </h2>
+
+    <p>
+      Conoce algunas de nuestras principales áreas de trabajo.
     </p>
 
   </div>
@@ -671,247 +620,115 @@ footer h4{
 
   <div class="services">
 
-<article class="service">
-
-  <img
-    src="levantamiento-topografico.jpg"
-    alt="Levantamiento topográfico GEORTEGA"
-    style="
-      width:100%;
-      height:190px;
-      object-fit:cover;
-      border-radius:12px;
-      margin-bottom:22px;
-    "
-  >
-
-  <div class="service-number">01</div>
-
-  <h3>Levantamientos Topográficos</h3>
-
-  <p>
-    Levantamientos planimétricos y altimétricos para
-    diseño, construcción, ingeniería y planificación.
-  </p>
-
-  <a class="service-link" href="#">
-    Conocer servicio →
-  </a>
-
-</article>
-
-
-   <article class="service">
-
-  <img
-    src="fotogrametria.jpg"
-    alt="Fotogrametría y drones GEORTEGA"
-    style="
-      width:100%;
-      height:190px;
-      object-fit:cover;
-      border-radius:12px;
-      margin-bottom:22px;
-    "
-  >
-
-  <div class="service-number">02</div>
-
-  <h3>Fotogrametría y Drones</h3>
-
-  <p>
-    Ortofotos, superficies, modelos digitales, nubes
-    de puntos y documentación aérea de alta resolución.
-  </p>
-
-  <a class="service-link" href="#">
-    Conocer servicio →
-  </a>
-
-</article>
-
-
     <article class="service">
-      <div class="service-number">03</div>
-      <h3>Subdivisiones y Loteos</h3>
-      <p>
-        Levantamiento, superficies, deslindes y apoyo
-        técnico para proyectos de división territorial.
-      </p>
-      <a class="service-link" href="#">Conocer servicio →</a>
+
+      <img
+        src="levantamiento-topografico.jpg"
+        alt="Levantamiento Topográfico GEORTEGA">
+
+      <div class="service-content">
+
+        <div class="service-number">
+          01
+        </div>
+
+        <h3>
+          Levantamientos Topográficos
+        </h3>
+
+        <p>
+          Información planimétrica y altimétrica para
+          proyectos de construcción, ingeniería,
+          diseño y planificación.
+        </p>
+
+        <a class="service-link"
+           href="servicios.html">
+          Conocer servicio →
+        </a>
+
+      </div>
+
     </article>
 
 
     <article class="service">
-      <div class="service-number">04</div>
-      <h3>Replanteos y Emplazamientos</h3>
-      <p>
-        Materialización precisa de elementos de proyecto,
-        obras, caminos y estructuras.
-      </p>
-      <a class="service-link" href="#">Conocer servicio →</a>
+
+      <img
+        src="fotogrametria.jpg"
+        alt="Fotogrametría y Drones GEORTEGA">
+
+      <div class="service-content">
+
+        <div class="service-number">
+          02
+        </div>
+
+        <h3>
+          Fotogrametría y Drones
+        </h3>
+
+        <p>
+          Ortofotos, modelos digitales, nubes de puntos,
+          superficies y documentación aérea de alta resolución.
+        </p>
+
+        <a class="service-link"
+           href="servicios.html">
+          Conocer servicio →
+        </a>
+
+      </div>
+
     </article>
 
 
     <article class="service">
-      <div class="service-number">05</div>
-      <h3>Cubicaciones</h3>
-      <p>
-        Determinación y control de volúmenes para
-        movimientos de tierra y proyectos de construcción.
-      </p>
-      <a class="service-link" href="#">Conocer servicio →</a>
+
+      <img
+        src="matrice4e-portada.jpg"
+        alt="Tecnología geoespacial GEORTEGA">
+
+      <div class="service-content">
+
+        <div class="service-number">
+          03
+        </div>
+
+        <h3>
+          Subdivisiones y Loteos
+        </h3>
+
+        <p>
+          Levantamiento, análisis de superficies,
+          deslindes y documentación técnica para
+          proyectos de división territorial.
+        </p>
+
+        <a class="service-link"
+           href="servicios.html">
+          Conocer servicio →
+        </a>
+
+      </div>
+
     </article>
 
+  </div>
 
-    <article class="service">
-      <div class="service-number">06</div>
-      <h3>GNSS y Georreferenciación</h3>
-      <p>
-        Posicionamiento y control geoespacial mediante
-        tecnologías GNSS de precisión.
-      </p>
-      <a class="service-link" href="#">Conocer servicio →</a>
-    </article>
+
+  <div class="services-more">
+
+    <a href="servicios.html">
+      Ver todos los servicios
+    </a>
 
   </div>
 
 </section>
 
 
-<section class="section section-light" id="nosotros">
-
-  <div class="why">
-
-    <div class="visual-box"></div>
-
-    <div>
-
-      <div class="section-heading">
-
-        <div class="label">
-          POR QUÉ GEORTEGA
-        </div>
-
-        <h2>
-          Más que medir terrenos: entregamos información para decidir.
-        </h2>
-
-        <p>
-          Cada proyecto se aborda considerando su finalidad,
-          nivel de precisión requerido y los entregables
-          necesarios para las siguientes etapas.
-        </p>
-
-      </div>
-
-
-      <div class="why-list">
-
-        <div class="why-item">
-          <div class="check">✓</div>
-          <div>
-            <h4>Información técnicamente respaldada</h4>
-            <p>
-              Procesos de captura, revisión y entrega orientados
-              a generar resultados confiables.
-            </p>
-          </div>
-        </div>
-
-
-        <div class="why-item">
-          <div class="check">✓</div>
-          <div>
-            <h4>Tecnología integrada</h4>
-            <p>
-              Combinamos GNSS, drones, fotogrametría y
-              herramientas CAD según las necesidades del proyecto.
-            </p>
-          </div>
-        </div>
-
-
-        <div class="why-item">
-          <div class="check">✓</div>
-          <div>
-            <h4>Entregables útiles</h4>
-            <p>
-              Planos, ortofotos, superficies y archivos digitales
-              preparados para continuar con ingeniería o construcción.
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<section class="section" id="proyectos">
-
-  <div class="section-heading">
-
-    <div class="label">
-      PROYECTOS
-    </div>
-
-    <h2>
-      Experiencia aplicada en terreno
-    </h2>
-
-    <p>
-      Algunos tipos de proyectos desarrollados mediante
-      levantamientos, fotogrametría y procesamiento geoespacial.
-    </p>
-
-  </div>
-
-
-  <div class="projects">
-
-    <div class="project">
-      <div class="project-content">
-        <span>TOPOGRAFÍA</span>
-        <h3>Levantamientos para Ingeniería</h3>
-        <p>
-          Información planialtimétrica para diseño y análisis técnico.
-        </p>
-      </div>
-    </div>
-
-
-    <div class="project">
-      <div class="project-content">
-        <span>DRONES</span>
-        <h3>Fotogrametría y Ortofotografía</h3>
-        <p>
-          Captura aérea y procesamiento para representar el terreno.
-        </p>
-      </div>
-    </div>
-
-
-    <div class="project">
-      <div class="project-content">
-        <span>GEOMENSURA</span>
-        <h3>Subdivisiones y Terrenos</h3>
-        <p>
-          Información espacial para definir superficies y apoyar proyectos.
-        </p>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-
-<section class="cta" id="contacto">
+<section class="cta">
 
   <div>
 
@@ -920,15 +737,14 @@ footer h4{
     </h2>
 
     <p>
-      Envíanos los antecedentes y evaluaremos la solución
-      técnica adecuada para tu proyecto.
+      Envíanos tus antecedentes y evaluaremos la solución
+      técnica adecuada para tus necesidades.
     </p>
 
   </div>
 
-  <a class="cta-button"
-  href="https://wa.me/56973401407">
-    Solicitar cotización
+  <a href="contacto.html">
+    Contactar a GEORTEGA
   </a>
 
 </section>
@@ -938,19 +754,48 @@ footer h4{
 
   <div class="footer-grid">
 
-    <div>
+    <div class="footer-brand">
 
-      <div class="footer-brand">
-        GEORTEGA
-      </div>
+      <img
+        src="logo-geortega.png"
+        alt="GEORTEGA">
 
       <p>
         Soluciones profesionales en topografía,
-        geomensura y tecnologías geoespaciales.
+        geomensura, fotogrametría y tecnologías geoespaciales.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Secciones
+      </h4>
+
+      <p>
+        <a href="index.html">
+          Inicio
+        </a>
       </p>
 
       <p>
-        Precisión que da confianza.
+        <a href="nosotros.html">
+          Nosotros
+        </a>
+      </p>
+
+      <p>
+        <a href="servicios.html">
+          Servicios
+        </a>
+      </p>
+
+      <p>
+        <a href="contacto.html">
+          Contacto
+        </a>
       </p>
 
     </div>
@@ -958,19 +803,9 @@ footer h4{
 
     <div>
 
-      <h4>Empresa</h4>
-
-      <p><a href="#">Inicio</a></p>
-      <p><a href="#nosotros">Nosotros</a></p>
-      <p><a href="#servicios">Servicios</a></p>
-      <p><a href="#proyectos">Proyectos</a></p>
-
-    </div>
-
-
-    <div>
-
-      <h4>Contacto</h4>
+      <h4>
+        Contacto
+      </h4>
 
       <p>
         contacto@geortega.cl
@@ -988,6 +823,7 @@ footer h4{
 
   </div>
 
+
   <div class="footer-bottom">
     © 2026 GEORTEGA · Todos los derechos reservados.
   </div>
@@ -995,11 +831,13 @@ footer h4{
 </footer>
 
 
-<a
-class="whatsapp"
-href="https://wa.me/56973401407"
-aria-label="WhatsApp">
-WA
+<a class="whatsapp"
+   href="https://wa.me/56973401407"
+   target="_blank"
+   aria-label="WhatsApp">
+
+  WA
+
 </a>
 
 </body>
