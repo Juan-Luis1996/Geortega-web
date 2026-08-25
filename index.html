@@ -656,7 +656,8 @@
     <img src="logo-geortega.png" alt="Logo GEORTEGA">
   </a>
 
-  <nav>
+
+  <nav id="mainNav">
 
     <a class="active" href="index.html">
       Inicio
@@ -674,13 +675,39 @@
       Contacto
     </a>
 
-    <a class="nav-cta"
-       href="https://wa.me/56973401407"
-       target="_blank">
+    <a
+      class="nav-cta"
+      href="https://wa.me/56973401407"
+      target="_blank">
       Cotizar
     </a>
 
   </nav>
+
+
+  <div class="mobile-controls">
+
+    <a
+      class="mobile-cta"
+      href="https://wa.me/56973401407"
+      target="_blank">
+      Cotizar
+    </a>
+
+    <button
+      id="menuToggle"
+      class="menu-toggle"
+      type="button"
+      aria-label="Abrir menú"
+      aria-expanded="false">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+  </div>
 
 </header>
 
@@ -1009,6 +1036,89 @@
   WA
 
 </a>
+<script>
 
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
+
+
+menuToggle.addEventListener("click", function(){
+
+  const abierto = mainNav.classList.toggle("open");
+
+  menuToggle.classList.toggle("active", abierto);
+
+  menuToggle.setAttribute(
+    "aria-expanded",
+    abierto
+  );
+
+});
+
+
+/* CERRAR MENÚ AL PRESIONAR UNA OPCIÓN */
+
+mainNav.querySelectorAll("a").forEach(function(enlace){
+
+  enlace.addEventListener("click", function(){
+
+    mainNav.classList.remove("open");
+
+    menuToggle.classList.remove("active");
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+  });
+
+});
+
+
+/* CERRAR AL TOCAR FUERA DEL MENÚ */
+
+document.addEventListener("click", function(event){
+
+  if(
+    window.innerWidth <= 900 &&
+    !mainNav.contains(event.target) &&
+    !menuToggle.contains(event.target)
+  ){
+
+    mainNav.classList.remove("open");
+
+    menuToggle.classList.remove("active");
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+  }
+
+});
+
+
+/* RESTAURAR ESTADO AL VOLVER A PC */
+
+window.addEventListener("resize", function(){
+
+  if(window.innerWidth > 900){
+
+    mainNav.classList.remove("open");
+
+    menuToggle.classList.remove("active");
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+  }
+
+});
+
+</script>
 </body>
 </html>
