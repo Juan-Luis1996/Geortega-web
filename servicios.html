@@ -2,903 +2,1135 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Servicios | GEORTEGA</title>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>
+    Servicios | GEORTEGA
+  </title>
 
   <meta name="description"
-    content="Servicios profesionales de topografía, GNSS, fotogrametría, drones, cubicaciones, subdivisiones y soluciones geoespaciales de GEORTEGA.">
-
-  <style>
-
-    :root{
-      --navy:#102746;
-      --navy-dark:#07182d;
-      --blue:#2856d8;
-      --blue-light:#edf2ff;
-      --text:#17263d;
-      --muted:#66758a;
-      --light:#f7f9fc;
-      --border:#e2e7ee;
-    }
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family:Arial, Helvetica, sans-serif;
-      color:var(--text);
-      background:#fff;
-    }
-
-    body.modal-open{
-      overflow:hidden;
-    }
-
-    a{
-      text-decoration:none;
-    }
-
-    img{
-      display:block;
-      max-width:100%;
-    }
-
-
-    /* =====================================================
-       HEADER
-    ===================================================== */
-
-    header{
-      height:82px;
-      padding:0 7%;
-
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-
-      background:white;
-
-      position:sticky;
-      top:0;
-      z-index:1000;
-
-      border-bottom:1px solid #edf0f4;
-    }
-
-    .brand img{
-      height:56px;
-      width:auto;
-    }
-
-    nav{
-      display:flex;
-      align-items:center;
-      gap:30px;
-    }
-
-    nav a{
-      color:#31415a;
-      font-size:14px;
-      font-weight:600;
-      transition:.2s;
-    }
-
-    nav a:hover{
-      color:var(--blue);
-    }
-
-    nav a.active{
-      color:var(--blue);
-      position:relative;
-    }
-
-    nav a.active::after{
-      content:"";
-      position:absolute;
-
-      height:2px;
-      width:100%;
-
-      background:var(--blue);
-
-      left:0;
-      bottom:-12px;
-    }
+        content="Servicios profesionales de topografía, GNSS, fotogrametría, drones, cubicaciones, subdivisiones, replanteos, peritajes y soluciones geoespaciales de GEORTEGA.">
 
-    .nav-cta{
-      color:white !important;
-      background:var(--blue);
 
-      padding:12px 22px;
-      border-radius:25px;
-    }
+<style>
 
 
-    /* =====================================================
-       HERO SERVICIOS
-    ===================================================== */
+/* =====================================================
+   VARIABLES
+===================================================== */
 
-    .services-hero{
-      min-height:280px;
+:root{
 
-      display:flex;
-      justify-content:center;
-      align-items:center;
+  --navy:#102746;
+  --navy-dark:#07182d;
 
-      text-align:center;
-      color:white;
+  --blue:#2856d8;
+  --blue-light:#edf2ff;
 
-      position:relative;
-      overflow:hidden;
+  --text:#17263d;
+  --muted:#66758a;
 
-      background:
-      linear-gradient(
-        rgba(7,24,45,.82),
-        rgba(7,24,45,.82)
-      ),
-      url("fotogrametria.jpg")
-      center 45% / cover no-repeat;
-    }
+  --light:#f7f9fc;
+  --border:#e2e7ee;
 
-    .services-hero::after{
-      content:"";
-      position:absolute;
-      inset:0;
+}
 
-      background:
-      radial-gradient(
-        circle at 20% 50%,
-        rgba(62,123,173,.18),
-        transparent 30%
-      );
-    }
 
-    .services-hero-content{
-      position:relative;
-      z-index:2;
+/* =====================================================
+   GENERAL
+===================================================== */
 
-      padding:40px 20px;
-    }
+*{
 
-    .services-hero .small-title{
-      font-size:12px;
-      letter-spacing:4px;
-      font-weight:bold;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 
-      color:#b9cbe3;
-      margin-bottom:12px;
-    }
+}
 
-    .services-hero h1{
-      font-size:54px;
-      letter-spacing:-1px;
-      margin-bottom:12px;
-    }
 
-    .services-hero p{
-      max-width:720px;
+html{
 
-      margin:auto;
+  scroll-behavior:smooth;
 
-      color:#d5dfec;
+}
 
-      line-height:1.7;
-      font-size:17px;
-    }
 
+body{
 
-    /* =====================================================
-       INTRO
-    ===================================================== */
+  font-family:
+  Arial,
+  Helvetica,
+  sans-serif;
 
-    .services-intro{
-      padding:70px 7% 45px;
-      text-align:center;
-    }
+  color:var(--text);
 
-    .services-intro-inner{
-      max-width:830px;
-      margin:auto;
-    }
+  background:#ffffff;
 
-    .label{
-      color:var(--blue);
+}
 
-      font-size:12px;
-      letter-spacing:4px;
 
-      font-weight:bold;
-    }
+body.modal-open{
 
-    .services-intro h2{
-      font-size:37px;
+  overflow:hidden;
 
-      margin:12px 0 17px;
+}
 
-      color:var(--navy);
-    }
 
-    .services-intro p{
-      color:var(--muted);
+a{
 
-      font-size:16px;
-      line-height:1.8;
-    }
+  text-decoration:none;
 
+}
 
-    /* =====================================================
-       GRID SERVICIOS
-    ===================================================== */
 
-    .services-section{
-      padding:20px 7% 90px;
-    }
+img{
 
-    .services-grid{
-      max-width:1200px;
-      margin:auto;
+  display:block;
+  max-width:100%;
 
-      display:grid;
+}
 
-      grid-template-columns:
-      repeat(3,1fr);
 
-      gap:25px;
-    }
 
+/* =====================================================
+   HEADER
+===================================================== */
 
-    /* =====================================================
-       TARJETA
-    ===================================================== */
+header{
 
-    .service-card{
-      background:white;
+  height:82px;
 
-      border:1px solid var(--border);
+  padding:0 7%;
 
-      border-radius:16px;
+  display:flex;
 
-      overflow:hidden;
+  align-items:center;
 
-      transition:
-      transform .25s,
-      box-shadow .25s,
-      border-color .25s;
+  justify-content:
+  space-between;
 
-      display:flex;
-      flex-direction:column;
-    }
+  background:#ffffff;
 
-    .service-card:hover{
-      transform:translateY(-6px);
+  position:sticky;
 
-      box-shadow:
-      0 18px 45px
-      rgba(15,37,69,.10);
+  top:0;
 
-      border-color:#ccd6e4;
-    }
+  z-index:1000;
 
-    .service-image{
-      height:220px;
-      overflow:hidden;
+  border-bottom:
+  1px solid #edf0f4;
 
-      background:#eef2f6;
-    }
+}
 
-    .service-image img{
-      width:100%;
-      height:100%;
 
-      object-fit:cover;
+.brand img{
 
-      transition:transform .5s;
-    }
+  height:56px;
+  width:auto;
 
-    .service-card:hover
-    .service-image img{
+}
 
-      transform:scale(1.045);
 
-    }
+nav{
 
+  display:flex;
 
-    /* =====================================================
-       TEXTO TARJETA
-    ===================================================== */
+  align-items:center;
 
-    .service-content{
-      padding:25px;
+  gap:30px;
 
-      display:flex;
-      flex-direction:column;
+}
 
-      flex:1;
-    }
 
-    .service-number{
-      color:var(--blue);
+nav a{
 
-      font-weight:bold;
+  color:#31415a;
 
-      font-size:11px;
+  font-size:14px;
 
-      letter-spacing:2px;
+  font-weight:600;
 
-      margin-bottom:9px;
-    }
+  transition:.2s;
 
-    .service-content h3{
+}
 
-      color:var(--navy);
 
-      font-size:20px;
+nav a:hover{
 
-      line-height:1.3;
+  color:var(--blue);
 
-      margin-bottom:10px;
-    }
+}
 
-    .service-content p{
 
-      color:var(--muted);
+nav a.active{
 
-      line-height:1.65;
+  color:var(--blue);
 
-      font-size:14px;
+  position:relative;
 
-      margin-bottom:22px;
-    }
+}
 
 
-    /* =====================================================
-       BOTONES
-    ===================================================== */
+nav a.active::after{
 
-    .service-actions{
+  content:"";
 
-      display:flex;
+  position:absolute;
 
-      gap:10px;
+  width:100%;
 
-      margin-top:auto;
-    }
+  height:2px;
 
-    .btn-details{
+  left:0;
 
-      border:none;
+  bottom:-12px;
 
-      background:var(--blue-light);
+  background:var(--blue);
 
-      color:var(--blue);
+}
 
-      padding:11px 16px;
 
-      border-radius:22px;
+.nav-cta{
 
-      font-weight:bold;
+  color:white !important;
 
-      cursor:pointer;
+  background:var(--blue);
 
-      transition:.2s;
+  padding:12px 22px;
 
-      font-size:13px;
-    }
+  border-radius:25px;
 
-    .btn-details:hover{
+}
 
-      background:#dfe8ff;
 
-    }
 
-    .btn-quote{
+/* =====================================================
+   HERO SERVICIOS
+===================================================== */
 
-      background:var(--blue);
+.services-hero{
 
-      color:white;
+  min-height:280px;
 
-      padding:11px 16px;
+  display:flex;
 
-      border-radius:22px;
+  justify-content:center;
 
-      font-size:13px;
+  align-items:center;
 
-      font-weight:bold;
+  text-align:center;
 
-      transition:.2s;
-    }
+  color:white;
 
-    .btn-quote:hover{
+  position:relative;
 
-      background:#1946c7;
+  overflow:hidden;
 
-    }
+  background:
 
+  linear-gradient(
+    rgba(7,24,45,.82),
+    rgba(7,24,45,.82)
+  ),
 
-    /* =====================================================
-       MODAL
-    ===================================================== */
+  url("fotogrametria.jpg")
+  center 45% / cover no-repeat;
 
-    .modal{
+}
 
-      position:fixed;
 
-      inset:0;
+.services-hero::after{
 
-      background:
-      rgba(4,14,28,.76);
+  content:"";
 
-      backdrop-filter:blur(6px);
+  position:absolute;
 
-      z-index:5000;
+  inset:0;
 
-      display:none;
+  background:
 
-      align-items:center;
+  radial-gradient(
+    circle at 20% 50%,
+    rgba(62,123,173,.18),
+    transparent 30%
+  );
 
-      justify-content:center;
+}
 
-      padding:25px;
-    }
 
-    .modal.active{
+.services-hero-content{
 
-      display:flex;
+  position:relative;
 
-    }
+  z-index:2;
 
-    .modal-box{
+  padding:40px 20px;
 
-      width:100%;
+}
 
-      max-width:850px;
 
-      max-height:88vh;
+.services-hero .small-title{
 
-      background:white;
+  font-size:12px;
 
-      border-radius:22px;
+  letter-spacing:4px;
 
-      overflow-y:auto;
+  font-weight:bold;
 
-      position:relative;
+  color:#b9cbe3;
 
-      box-shadow:
-      0 30px 100px
-      rgba(0,0,0,.28);
-    }
+  margin-bottom:12px;
 
+}
 
-    /* =====================================================
-       MODAL IMAGEN
-    ===================================================== */
 
-    .modal-image{
+.services-hero h1{
 
-      width:100%;
+  font-size:54px;
 
-      height:280px;
+  letter-spacing:-1px;
 
-      object-fit:cover;
+  margin-bottom:12px;
 
-    }
+}
 
 
-    /* =====================================================
-       BOTÓN CERRAR
-    ===================================================== */
+.services-hero p{
 
-    .modal-close{
+  max-width:720px;
 
-      position:absolute;
+  margin:auto;
 
-      right:18px;
+  color:#d5dfec;
 
-      top:18px;
+  line-height:1.7;
 
-      width:42px;
+  font-size:17px;
 
-      height:42px;
+}
 
-      border:none;
 
-      border-radius:50%;
 
-      background:white;
+/* =====================================================
+   INTRO
+===================================================== */
 
-      color:var(--navy);
+.services-intro{
 
-      font-size:25px;
+  padding:70px 7% 45px;
 
-      cursor:pointer;
+  text-align:center;
 
-      z-index:2;
+}
 
-      box-shadow:
-      0 6px 20px
-      rgba(0,0,0,.18);
-    }
 
+.services-intro-inner{
 
-    /* =====================================================
-       MODAL CONTENIDO
-    ===================================================== */
+  max-width:830px;
 
-    .modal-content{
+  margin:auto;
 
-      padding:35px 40px 40px;
+}
 
-    }
 
-    .modal-label{
+.label{
 
-      color:var(--blue);
+  color:var(--blue);
 
-      font-size:11px;
+  font-size:12px;
 
-      letter-spacing:3px;
+  letter-spacing:4px;
 
-      font-weight:bold;
+  font-weight:bold;
 
-      margin-bottom:7px;
-    }
+}
 
-    .modal-title{
 
-      color:var(--navy);
+.services-intro h2{
 
-      font-size:31px;
+  font-size:37px;
 
-      margin-bottom:15px;
-    }
+  margin:12px 0 17px;
 
-    .modal-description{
+  color:var(--navy);
 
-      color:var(--muted);
+}
 
-      line-height:1.8;
 
-      font-size:15px;
-    }
+.services-intro p{
 
+  color:var(--muted);
 
-    /* =====================================================
-       ENTREGABLES MODAL
-    ===================================================== */
+  font-size:16px;
 
-    .modal-content h4{
+  line-height:1.8;
 
-      color:var(--navy);
+}
 
-      font-size:18px;
 
-      margin-top:27px;
 
-      margin-bottom:14px;
-    }
+/* =====================================================
+   GRID SERVICIOS
+===================================================== */
 
-    .modal-list{
+.services-section{
 
-      display:grid;
+  padding:20px 7% 90px;
 
-      grid-template-columns:
-      repeat(2,1fr);
+}
 
-      gap:10px 25px;
 
-      list-style:none;
+.services-grid{
 
-      margin-bottom:28px;
-    }
+  max-width:1200px;
 
-    .modal-list li{
+  margin:auto;
 
-      color:#4d5d72;
+  display:grid;
 
-      font-size:14px;
+  grid-template-columns:
+  repeat(3,1fr);
 
-      padding-left:21px;
+  gap:25px;
 
-      position:relative;
-    }
+}
 
-    .modal-list li::before{
 
-      content:"✓";
 
-      position:absolute;
+/* =====================================================
+   TARJETAS
+===================================================== */
 
-      left:0;
+.service-card{
 
-      color:var(--blue);
+  background:white;
 
-      font-weight:bold;
-    }
+  border:
+  1px solid var(--border);
 
+  border-radius:16px;
 
-    /* =====================================================
-       CTA MODAL
-    ===================================================== */
+  overflow:hidden;
 
-    .modal-cta{
+  transition:
+  transform .25s,
+  box-shadow .25s,
+  border-color .25s;
 
-      display:inline-block;
+  display:flex;
 
-      background:var(--blue);
+  flex-direction:column;
 
-      color:white;
+}
 
-      padding:14px 22px;
 
-      border-radius:26px;
+.service-card:hover{
 
-      font-weight:bold;
+  transform:
+  translateY(-6px);
 
-      font-size:14px;
-    }
+  box-shadow:
+  0 18px 45px
+  rgba(15,37,69,.10);
 
+  border-color:#ccd6e4;
 
-    /* =====================================================
-       CTA GENERAL
-    ===================================================== */
+}
 
-    .cta{
 
-      margin:0 7% 80px;
 
-      border-radius:20px;
+/* =====================================================
+   IMAGEN TARJETA
+===================================================== */
 
-      padding:55px;
+.service-image{
 
-      display:flex;
+  height:220px;
 
-      justify-content:
-      space-between;
+  overflow:hidden;
 
-      align-items:center;
+  background:#eef2f6;
 
-      gap:35px;
+}
 
-      color:white;
 
-      background:
-      linear-gradient(
-      115deg,
-      #0b213d,
-      #285785
-      );
-    }
+.service-image img{
 
-    .cta h2{
+  width:100%;
 
-      font-size:32px;
+  height:100%;
 
-      margin-bottom:10px;
-    }
+  object-fit:cover;
 
-    .cta p{
+  transition:
+  transform .5s;
 
-      color:#d7e3f0;
+}
 
-      line-height:1.7;
 
-      max-width:690px;
-    }
+.service-card:hover
+.service-image img{
 
-    .cta a{
+  transform:
+  scale(1.045);
 
-      background:white;
+}
 
-      color:var(--navy);
 
-      padding:15px 25px;
 
-      border-radius:28px;
+/* =====================================================
+   CONTENIDO TARJETA
+===================================================== */
 
-      font-weight:bold;
+.service-content{
 
-      white-space:nowrap;
-    }
+  padding:27px 25px 25px;
 
+  display:flex;
 
-    /* =====================================================
-       FOOTER
-    ===================================================== */
+  flex-direction:column;
 
-    footer{
+  flex:1;
 
-      background:var(--navy-dark);
+}
 
-      color:white;
 
-      padding:60px 7% 25px;
-    }
+.service-content h3{
 
-    .footer-grid{
+  color:var(--navy);
 
-      max-width:1180px;
+  font-size:20px;
 
-      margin:auto;
+  line-height:1.3;
 
-      display:grid;
+  margin-bottom:12px;
 
-      grid-template-columns:
-      2fr 1fr 1fr;
+}
 
-      gap:60px;
-    }
 
-    .footer-brand img{
+.service-content p{
 
-      height:58px;
+  color:var(--muted);
 
-      margin-bottom:16px;
-    }
+  line-height:1.65;
 
-    footer p,
-    footer a{
+  font-size:14px;
 
-      color:#aebdd0;
+  margin-bottom:23px;
 
-      font-size:14px;
+}
 
-      line-height:1.9;
-    }
 
-    footer h4{
 
-      margin-bottom:14px;
-    }
+/* =====================================================
+   BOTONES TARJETAS
+===================================================== */
 
-    .footer-bottom{
+.service-actions{
 
-      max-width:1180px;
+  display:flex;
 
-      margin:35px auto 0;
+  gap:10px;
 
-      padding-top:20px;
+  margin-top:auto;
 
-      border-top:
-      1px solid #21364f;
+}
 
-      color:#8494a8;
 
-      font-size:13px;
-    }
+.btn-details{
 
+  border:none;
 
-    /* =====================================================
-       WHATSAPP
-    ===================================================== */
+  background:
+  var(--blue-light);
 
-    .whatsapp{
+  color:var(--blue);
 
-      position:fixed;
+  padding:
+  11px 16px;
 
-      right:22px;
+  border-radius:22px;
 
-      bottom:22px;
+  font-weight:bold;
 
-      width:58px;
+  cursor:pointer;
 
-      height:58px;
+  transition:.2s;
 
-      border-radius:50%;
+  font-size:13px;
 
-      background:#25D366;
+}
 
-      color:white;
 
-      display:flex;
+.btn-details:hover{
 
-      align-items:center;
+  background:#dfe8ff;
 
-      justify-content:center;
+}
 
-      font-weight:bold;
 
-      z-index:1500;
+.btn-quote{
 
-      box-shadow:
-      0 10px 30px
-      rgba(0,0,0,.18);
-    }
+  background:var(--blue);
 
+  color:white;
 
-    /* =====================================================
-       RESPONSIVE
-    ===================================================== */
+  padding:
+  11px 16px;
 
-    @media(max-width:950px){
+  border-radius:22px;
 
-      .services-grid{
+  font-size:13px;
 
-        grid-template-columns:
-        repeat(2,1fr);
+  font-weight:bold;
 
-      }
+  transition:.2s;
 
-      nav a:not(.nav-cta){
+}
 
-        display:none;
 
-      }
+.btn-quote:hover{
 
-    }
+  background:#1946c7;
 
+}
 
-    @media(max-width:650px){
 
-      .services-hero h1{
 
-        font-size:42px;
+/* =====================================================
+   MODAL
+===================================================== */
 
-      }
+.modal{
 
-      .services-grid{
+  position:fixed;
 
-        grid-template-columns:1fr;
+  inset:0;
 
-      }
+  background:
+  rgba(4,14,28,.76);
 
-      .service-image{
+  backdrop-filter:
+  blur(6px);
 
-        height:230px;
+  z-index:5000;
 
-      }
+  display:none;
 
-      .modal-content{
+  align-items:center;
 
-        padding:
-        28px 24px 32px;
+  justify-content:center;
 
-      }
+  padding:25px;
 
-      .modal-image{
+}
 
-        height:220px;
 
-      }
+.modal.active{
 
-      .modal-list{
+  display:flex;
 
-        grid-template-columns:1fr;
+}
 
-      }
 
-      .cta{
+.modal-box{
 
-        flex-direction:column;
+  width:100%;
 
-        align-items:flex-start;
+  max-width:850px;
 
-        padding:38px 28px;
+  max-height:88vh;
 
-      }
+  background:white;
 
-      .footer-grid{
+  border-radius:22px;
 
-        grid-template-columns:1fr;
+  overflow-y:auto;
 
-      }
+  position:relative;
 
-    }
+  box-shadow:
+  0 30px 100px
+  rgba(0,0,0,.28);
 
-  </style>
+}
+
+
+
+/* =====================================================
+   IMAGEN MODAL
+===================================================== */
+
+.modal-image{
+
+  width:100%;
+
+  height:280px;
+
+  object-fit:cover;
+
+}
+
+
+
+/* =====================================================
+   CERRAR MODAL
+===================================================== */
+
+.modal-close{
+
+  position:absolute;
+
+  right:18px;
+
+  top:18px;
+
+  width:42px;
+
+  height:42px;
+
+  border:none;
+
+  border-radius:50%;
+
+  background:white;
+
+  color:var(--navy);
+
+  font-size:25px;
+
+  cursor:pointer;
+
+  z-index:2;
+
+  box-shadow:
+  0 6px 20px
+  rgba(0,0,0,.18);
+
+}
+
+
+
+/* =====================================================
+   CONTENIDO MODAL
+===================================================== */
+
+.modal-content{
+
+  padding:
+  35px 40px 40px;
+
+}
+
+
+.modal-title{
+
+  color:var(--navy);
+
+  font-size:31px;
+
+  margin-bottom:15px;
+
+}
+
+
+.modal-description{
+
+  color:var(--muted);
+
+  line-height:1.8;
+
+  font-size:15px;
+
+}
+
+
+.modal-content h4{
+
+  color:var(--navy);
+
+  font-size:18px;
+
+  margin-top:27px;
+
+  margin-bottom:14px;
+
+}
+
+
+
+/* =====================================================
+   LISTADO MODAL
+===================================================== */
+
+.modal-list{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,1fr);
+
+  gap:
+  10px 25px;
+
+  list-style:none;
+
+  margin-bottom:28px;
+
+}
+
+
+.modal-list li{
+
+  color:#4d5d72;
+
+  font-size:14px;
+
+  padding-left:21px;
+
+  position:relative;
+
+}
+
+
+.modal-list li::before{
+
+  content:"✓";
+
+  position:absolute;
+
+  left:0;
+
+  color:var(--blue);
+
+  font-weight:bold;
+
+}
+
+
+
+/* =====================================================
+   CTA MODAL
+===================================================== */
+
+.modal-cta{
+
+  display:inline-block;
+
+  background:var(--blue);
+
+  color:white;
+
+  padding:
+  14px 22px;
+
+  border-radius:26px;
+
+  font-weight:bold;
+
+  font-size:14px;
+
+}
+
+
+
+/* =====================================================
+   CTA GENERAL
+===================================================== */
+
+.cta{
+
+  margin:
+  0 7% 80px;
+
+  border-radius:20px;
+
+  padding:55px;
+
+  display:flex;
+
+  justify-content:
+  space-between;
+
+  align-items:center;
+
+  gap:35px;
+
+  color:white;
+
+  background:
+  linear-gradient(
+    115deg,
+    #0b213d,
+    #285785
+  );
+
+}
+
+
+.cta h2{
+
+  font-size:32px;
+
+  margin-bottom:10px;
+
+}
+
+
+.cta p{
+
+  color:#d7e3f0;
+
+  line-height:1.7;
+
+  max-width:690px;
+
+}
+
+
+.cta a{
+
+  background:white;
+
+  color:var(--navy);
+
+  padding:
+  15px 25px;
+
+  border-radius:28px;
+
+  font-weight:bold;
+
+  white-space:nowrap;
+
+}
+
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+  background:
+  var(--navy-dark);
+
+  color:white;
+
+  padding:
+  60px 7% 25px;
+
+}
+
+
+.footer-grid{
+
+  max-width:1180px;
+
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:
+  2fr 1fr 1fr;
+
+  gap:60px;
+
+}
+
+
+.footer-brand img{
+
+  height:58px;
+
+  margin-bottom:16px;
+
+}
+
+
+footer p,
+footer a{
+
+  color:#aebdd0;
+
+  font-size:14px;
+
+  line-height:1.9;
+
+}
+
+
+footer h4{
+
+  margin-bottom:14px;
+
+}
+
+
+.footer-bottom{
+
+  max-width:1180px;
+
+  margin:
+  35px auto 0;
+
+  padding-top:20px;
+
+  border-top:
+  1px solid #21364f;
+
+  color:#8494a8;
+
+  font-size:13px;
+
+}
+
+
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+.whatsapp{
+
+  position:fixed;
+
+  right:22px;
+
+  bottom:22px;
+
+  width:58px;
+
+  height:58px;
+
+  border-radius:50%;
+
+  background:#25D366;
+
+  color:white;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-weight:bold;
+
+  z-index:1500;
+
+  box-shadow:
+  0 10px 30px
+  rgba(0,0,0,.18);
+
+}
+
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:950px){
+
+  .services-grid{
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+  }
+
+
+  nav a:not(.nav-cta){
+
+    display:none;
+
+  }
+
+}
+
+
+
+@media(max-width:650px){
+
+  .services-hero h1{
+
+    font-size:42px;
+
+  }
+
+
+  .services-grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+
+  .service-image{
+
+    height:230px;
+
+  }
+
+
+  .modal-content{
+
+    padding:
+    28px 24px 32px;
+
+  }
+
+
+  .modal-image{
+
+    height:220px;
+
+  }
+
+
+  .modal-list{
+
+    grid-template-columns:1fr;
+
+  }
+
+
+  .cta{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    padding:
+    38px 28px;
+
+  }
+
+
+  .footer-grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+}
+
+
+</style>
 
 </head>
 
 
+
 <body>
+
 
 
 <!-- =====================================================
@@ -907,8 +1139,10 @@
 
 <header>
 
-  <a class="brand"
-     href="index.html">
+
+  <a
+  class="brand"
+  href="index.html">
 
     <img
     src="logo-geortega.png"
@@ -917,32 +1151,46 @@
   </a>
 
 
+
   <nav>
+
 
     <a href="index.html">
       Inicio
     </a>
 
+
     <a href="nosotros.html">
       Nosotros
     </a>
 
-    <a class="active"
-       href="servicios.html">
+
+    <a
+    class="active"
+    href="servicios.html">
+
       Servicios
+
     </a>
+
 
     <a href="contacto.html">
       Contacto
     </a>
 
-    <a class="nav-cta"
-       href="https://wa.me/56973401407"
-       target="_blank">
+
+    <a
+    class="nav-cta"
+    href="https://wa.me/56973401407"
+    target="_blank">
+
       Cotizar
+
     </a>
 
+
   </nav>
+
 
 </header>
 
@@ -954,510 +1202,685 @@
 
 <section class="services-hero">
 
+
   <div class="services-hero-content">
 
+
     <div class="small-title">
+
       TOPOGRAFÍA · GEOMENSURA · TECNOLOGÍA
+
     </div>
 
+
     <h1>
+
       Servicios
+
     </h1>
 
+
     <p>
+
       Soluciones topográficas y geoespaciales adaptadas
       a cada proyecto, utilizando tecnología de precisión
       y entregables técnicos confiables.
+
     </p>
 
+
   </div>
+
 
 </section>
 
 
 
 <!-- =====================================================
-     INTRO
+     INTRODUCCIÓN
 ===================================================== -->
 
 <section class="services-intro">
 
+
   <div class="services-intro-inner">
 
+
     <div class="label">
+
       SOLUCIONES GEORTEGA
+
     </div>
 
+
     <h2>
+
       Información precisa para tomar mejores decisiones.
+
     </h2>
 
+
     <p>
+
       Desde el levantamiento en terreno hasta el procesamiento
       digital, desarrollamos soluciones para construcción,
       ingeniería, arquitectura, gestión territorial y
       proyectos particulares.
+
     </p>
 
+
   </div>
+
 
 </section>
 
 
 
 <!-- =====================================================
-     TARJETAS
+     SERVICIOS
 ===================================================== -->
 
 <section class="services-section">
 
+
   <div class="services-grid">
 
 
-    <!-- ==========================
-         SERVICIO 1
-    =========================== -->
+
+    <!-- =================================================
+         LEVANTAMIENTOS
+    ================================================== -->
 
     <article class="service-card">
 
+
       <div class="service-image">
+
 
         <img
         src="levantamiento-topografico.jpg"
         alt="Levantamientos Topográficos GEORTEGA">
 
+
       </div>
+
 
       <div class="service-content">
 
-        <div class="service-number">
-        </div>
 
         <h3>
+
           Levantamientos Topográficos y GNSS
+
         </h3>
 
+
         <p>
+
           Medición precisa del terreno, coordenadas,
           superficies, desniveles y elementos existentes.
+
         </p>
 
+
         <div class="service-actions">
+
 
           <button
           class="btn-details"
           onclick="openService('levantamiento')">
+
             Ver servicio
+
           </button>
+
 
           <a
           class="btn-quote"
           href="https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20un%20levantamiento%20topografico"
           target="_blank">
+
             Cotizar
+
           </a>
+
 
         </div>
 
+
       </div>
+
 
     </article>
 
 
 
-    <!-- ==========================
-         SERVICIO 2
-    =========================== -->
+    <!-- =================================================
+         FOTOGRAMETRÍA
+    ================================================== -->
 
     <article class="service-card">
 
+
       <div class="service-image">
+
 
         <img
         src="fotogrametria.jpg"
-        alt="Fotogrametría GEORTEGA">
+        alt="Fotogrametría y Drones GEORTEGA">
+
 
       </div>
 
+
       <div class="service-content">
 
-        <div class="service-number">
-        </div>
 
         <h3>
+
           Fotogrametría y Vuelos con Drones
+
         </h3>
 
+
         <p>
+
           Ortofotos, nubes de puntos, modelos digitales
           y documentación aérea de alta resolución.
+
         </p>
 
+
         <div class="service-actions">
+
 
           <button
           class="btn-details"
           onclick="openService('fotogrametria')">
+
             Ver servicio
+
           </button>
+
 
           <a
           class="btn-quote"
           href="https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20fotogrametria%20con%20dron"
           target="_blank">
+
             Cotizar
+
           </a>
+
 
         </div>
 
+
       </div>
+
 
     </article>
 
 
 
-    <!-- ==========================
-         SERVICIO 3
-    =========================== -->
+    <!-- =================================================
+         CURVAS DE NIVEL
+    ================================================== -->
 
     <article class="service-card">
 
+
       <div class="service-image">
+
 
         <img
         src="curvas-nivel.jpg"
         onerror="this.onerror=null;this.src='fotogrametria.jpg';"
         alt="Curvas de Nivel GEORTEGA">
 
+
       </div>
+
 
       <div class="service-content">
 
-        <div class="service-number">
-        </div>
 
         <h3>
+
           Curvas de Nivel y Modelos de Terreno
+
         </h3>
 
+
         <p>
+
           Modelos digitales, curvas de nivel,
           pendientes y representación del relieve.
+
         </p>
 
+
         <div class="service-actions">
+
 
           <button
           class="btn-details"
           onclick="openService('curvas')">
+
             Ver servicio
+
           </button>
+
 
           <a
           class="btn-quote"
           href="https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20curvas%20de%20nivel"
           target="_blank">
+
             Cotizar
+
           </a>
+
 
         </div>
 
+
       </div>
+
 
     </article>
 
 
 
-    <!-- ==========================
-         SERVICIO 4
-    =========================== -->
+    <!-- =================================================
+         CUBICACIONES
+    ================================================== -->
 
     <article class="service-card">
 
+
       <div class="service-image">
+
 
         <img
         src="cubicacion-volumenes.jpg"
         onerror="this.onerror=null;this.src='levantamiento-topografico.jpg';"
         alt="Cubicaciones GEORTEGA">
 
+
       </div>
+
 
       <div class="service-content">
 
-        <div class="service-number">
-        </div>
 
         <h3>
+
           Cubicación de Volúmenes
+
         </h3>
 
+
         <p>
+
           Cálculo de excavaciones, rellenos,
           movimientos de tierra y acopios.
+
         </p>
 
+
         <div class="service-actions">
+
 
           <button
           class="btn-details"
           onclick="openService('cubicacion')">
+
             Ver servicio
+
           </button>
+
 
           <a
           class="btn-quote"
           href="https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20una%20cubicacion"
           target="_blank">
+
             Cotizar
+
           </a>
+
 
         </div>
 
+
       </div>
+
 
     </article>
 
 
 
-    <!-- ==========================
-         SERVICIO 5
-    =========================== -->
+    <!-- =================================================
+         SUBDIVISIONES
+    ================================================== -->
 
     <article class="service-card">
 
+
       <div class="service-image">
+
 
         <img
         src="subdivision-loteos.jpg"
         onerror="this.onerror=null;this.src='levantamiento-topografico.jpg';"
         alt="Subdivisión y Loteos GEORTEGA">
 
+
       </div>
+
 
       <div class="service-content">
 
-        <div class="service-number">
-        </div>
 
         <h3>
+
           Subdivisiones y Loteos
+
         </h3>
 
+
         <p>
+
           Levantamiento, superficies y planos
           para la definición técnica de terrenos.
+
         </p>
 
+
         <div class="service-actions">
+
 
           <button
           class="btn-details"
           onclick="openService('subdivision')">
+
             Ver servicio
+
           </button>
+
 
           <a
           class="btn-quote"
           href="https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20una%20subdivision"
           target="_blank">
+
             Cotizar
+
           </a>
+
 
         </div>
 
+
       </div>
+
 
     </article>
 
 
 
-    <!-- ==========================
-         SERVICIO 6
-    =========================== -->
+    <!-- =================================================
+         REPLANTEOS
+    ================================================== -->
 
     <article class="service-card">
 
+
       <div class="service-image">
+
 
         <img
         src="replanteo-estacado.jpg"
         onerror="this.onerror=null;this.src='levantamiento-topografico.jpg';"
-        alt="Replanteo y Estacado GEORTEGA">
+        alt="Replanteos y Estacados GEORTEGA">
+
 
       </div>
 
+
       <div class="service-content">
 
-        <div class="service-number">
-        </div>
 
         <h3>
+
           Replanteos y Estacados
+
         </h3>
 
+
         <p>
+
           Materialización en terreno de vértices,
           ejes, lotes, obras y elementos proyectados.
+
         </p>
 
+
         <div class="service-actions">
+
 
           <button
           class="btn-details"
           onclick="openService('replanteo')">
+
             Ver servicio
+
           </button>
+
 
           <a
           class="btn-quote"
           href="https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20un%20replanteo"
           target="_blank">
+
             Cotizar
+
           </a>
+
 
         </div>
 
+
       </div>
+
 
     </article>
 
 
 
-    <!-- ==========================
-         SERVICIO 7
-    =========================== -->
+    <!-- =================================================
+         PERITAJES
+    ================================================== -->
 
     <article class="service-card">
 
+
       <div class="service-image">
+
 
         <img
         src="peritajes-deslindes.jpg"
         onerror="this.onerror=null;this.src='levantamiento-topografico.jpg';"
         alt="Peritajes Topográficos GEORTEGA">
 
+
       </div>
+
 
       <div class="service-content">
 
-        <div class="service-number">
-        </div>
 
         <h3>
+
           Peritajes y Verificación de Deslindes
+
         </h3>
 
+
         <p>
+
           Análisis técnico, medición y comparación
           de límites y antecedentes existentes.
+
         </p>
 
+
         <div class="service-actions">
+
 
           <button
           class="btn-details"
           onclick="openService('peritaje')">
+
             Ver servicio
+
           </button>
+
 
           <a
           class="btn-quote"
           href="https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20un%20peritaje%20topografico"
           target="_blank">
+
             Cotizar
+
           </a>
+
 
         </div>
 
+
       </div>
+
 
     </article>
 
 
 
-    <!-- ==========================
-         SERVICIO 8
-    =========================== -->
+    <!-- =================================================
+         INSPECCIÓN
+    ================================================== -->
 
     <article class="service-card">
 
+
       <div class="service-image">
+
 
         <img
         src="inspeccion-drones.jpg"
         onerror="this.onerror=null;this.src='fotogrametria.jpg';"
-        alt="Inspección con Drones GEORTEGA">
+        alt="Inspección Técnica con Drones GEORTEGA">
+
 
       </div>
 
+
       <div class="service-content">
 
-        <div class="service-number">
-        </div>
 
         <h3>
+
           Inspección Técnica y Modelación 3D
+
         </h3>
 
+
         <p>
+
           Documentación visual, inspección aérea
           y representación tridimensional de proyectos.
+
         </p>
 
+
         <div class="service-actions">
+
 
           <button
           class="btn-details"
           onclick="openService('inspeccion')">
+
             Ver servicio
+
           </button>
+
 
           <a
           class="btn-quote"
           href="https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20una%20inspeccion%20con%20dron"
           target="_blank">
+
             Cotizar
+
           </a>
+
 
         </div>
 
+
       </div>
+
 
     </article>
 
 
   </div>
+
 
 </section>
 
 
 
 <!-- =====================================================
-     CTA GENERAL
+     CTA
 ===================================================== -->
 
 <section class="cta">
 
+
   <div>
 
+
     <h2>
+
       ¿Necesitas información precisa de tu terreno o proyecto?
+
     </h2>
 
+
     <p>
+
       Cuéntanos qué necesitas realizar y evaluaremos
       la solución topográfica y geoespacial adecuada
       para tu proyecto.
+
     </p>
 
+
   </div>
+
 
   <a
   href="https://wa.me/56973401407"
   target="_blank">
+
     Solicitar cotización
+
   </a>
+
 
 </section>
 
@@ -1469,68 +1892,106 @@
 
 <footer>
 
+
   <div class="footer-grid">
 
+
     <div class="footer-brand">
+
 
       <img
       src="logo-geortega.png"
       alt="GEORTEGA">
 
+
       <p>
+
         Topografía, geomensura y soluciones geoespaciales
         para ingeniería, construcción y desarrollo territorial.
+
       </p>
+
 
     </div>
 
 
+
     <div>
 
+
       <h4>
+
         Navegación
+
       </h4>
+
 
       <a href="index.html">
         Inicio
-      </a><br>
+      </a>
+
+      <br>
+
 
       <a href="nosotros.html">
         Nosotros
-      </a><br>
+      </a>
+
+      <br>
+
 
       <a href="servicios.html">
         Servicios
-      </a><br>
+      </a>
+
+      <br>
+
 
       <a href="contacto.html">
         Contacto
       </a>
 
+
     </div>
+
 
 
     <div>
 
+
       <h4>
+
         Contacto
+
       </h4>
 
+
       <p>
+
         Geortega1996@gmail.com
+
       </p>
 
+
       <p>
+
         +56 9 7340 1407
+
       </p>
 
+
       <p>
+
         Chile
+
       </p>
+
 
     </div>
 
+
   </div>
+
 
 
   <div class="footer-bottom">
@@ -1539,6 +2000,7 @@
     Topografía y Geomática
 
   </div>
+
 
 </footer>
 
@@ -1551,14 +2013,17 @@
 <a
 class="whatsapp"
 href="https://wa.me/56973401407"
-target="_blank">
-WA
+target="_blank"
+aria-label="Contactar por WhatsApp">
+
+  WA
+
 </a>
 
 
 
 <!-- =====================================================
-     MODAL
+     MODAL SERVICIOS
 ===================================================== -->
 
 <div
@@ -1566,44 +2031,59 @@ class="modal"
 id="serviceModal"
 onclick="backgroundClose(event)">
 
+
   <div class="modal-box">
+
 
     <button
     class="modal-close"
-    onclick="closeService()">
+    onclick="closeService()"
+    aria-label="Cerrar">
+
       ×
+
     </button>
+
+
 
     <img
     id="modalImage"
     class="modal-image"
     src=""
-    alt="Servicio GEORTEGA">
+    alt="GEORTEGA">
+
+
 
     <div class="modal-content">
 
-      <div class="modal-label">
-        SERVICIO GEORTEGA
-      </div>
 
       <h2
       id="modalTitle"
       class="modal-title">
+
       </h2>
+
 
       <p
       id="modalDescription"
       class="modal-description">
+
       </p>
 
+
       <h4>
-        El servicio puede incluir:
+
+        Este trabajo puede incluir:
+
       </h4>
+
 
       <ul
       id="modalList"
       class="modal-list">
+
       </ul>
+
 
       <a
       id="modalQuote"
@@ -1615,9 +2095,12 @@ onclick="backgroundClose(event)">
 
       </a>
 
+
     </div>
 
+
   </div>
+
 
 </div>
 
@@ -1629,260 +2112,384 @@ onclick="backgroundClose(event)">
 
 <script>
 
+
 const services = {
 
-  levantamiento:{
 
-    title:
-    "Levantamientos Topográficos y GNSS",
 
-    image:
-    "levantamiento-topografico.jpg",
+/* =====================================================
+   LEVANTAMIENTO
+===================================================== */
 
-    description:
-    "Realizamos levantamientos topográficos de precisión para representar fielmente las condiciones existentes del terreno. La información obtenida permite desarrollar proyectos, verificar superficies, definir geometrías y contar con una base técnica confiable para ingeniería, arquitectura y construcción.",
+levantamiento:{
 
-    items:[
-      "Levantamiento planimétrico",
-      "Levantamiento altimétrico",
-      "Coordenadas UTM",
-      "Superficies y dimensiones",
-      "Caminos y accesos",
-      "Construcciones existentes",
-      "Deslindes físicos",
-      "Planos PDF y DWG"
-    ],
+  title:
+  "Levantamientos Topográficos y GNSS",
 
-    whatsapp:
-    "https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20un%20levantamiento%20topografico%20con%20GNSS"
+  image:
+  "levantamiento-topografico.jpg",
 
-  },
+  description:
+  "Realizamos levantamientos topográficos de precisión para representar fielmente las condiciones existentes del terreno. La información obtenida permite desarrollar proyectos, verificar superficies, definir geometrías y contar con una base técnica confiable para ingeniería, arquitectura y construcción.",
 
+  items:[
 
-  fotogrametria:{
+    "Levantamiento planimétrico",
 
-    title:
-    "Fotogrametría y Vuelos con Drones",
+    "Levantamiento altimétrico",
 
-    image:
-    "fotogrametria.jpg",
+    "Coordenadas UTM",
 
-    description:
-    "Utilizamos drones y procesamiento fotogramétrico para generar información aérea actualizada y medible. Esta tecnología permite documentar grandes superficies con alto nivel de detalle y complementar los levantamientos realizados en terreno.",
+    "Superficies y dimensiones",
 
-    items:[
-      "Ortofoto georreferenciada",
-      "Nube de puntos",
-      "Modelo digital de terreno",
-      "Modelo digital de superficie",
-      "Superficies",
-      "Modelos 3D",
-      "Registro fotográfico",
-      "Respaldo aéreo"
-    ],
+    "Caminos y accesos",
 
-    whatsapp:
-    "https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20fotogrametria%20con%20dron"
+    "Construcciones existentes",
 
-  },
+    "Deslindes físicos",
 
+    "Planos PDF y DWG"
 
-  curvas:{
+  ],
 
-    title:
-    "Curvas de Nivel y Modelos de Terreno",
+  whatsapp:
+  "https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20un%20levantamiento%20topografico%20con%20GNSS"
 
-    image:
-    "curvas-nivel.jpg",
+},
 
-    fallback:
-    "fotogrametria.jpg",
 
-    description:
-    "Generamos representaciones altimétricas que permiten comprender la geometría, pendientes y comportamiento del terreno para diseño, planificación, movimiento de tierra y estudios de ingeniería.",
 
-    items:[
-      "Curvas de nivel",
-      "Modelos digitales de terreno",
-      "Superficies Civil 3D",
-      "Pendientes",
-      "Perfiles",
-      "Elevaciones",
-      "Nubes de puntos",
-      "Planos topográficos"
-    ],
+/* =====================================================
+   FOTOGRAMETRÍA
+===================================================== */
 
-    whatsapp:
-    "https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20curvas%20de%20nivel"
+fotogrametria:{
 
-  },
+  title:
+  "Fotogrametría y Vuelos con Drones",
 
+  image:
+  "fotogrametria.jpg",
 
-  cubicacion:{
+  description:
+  "Utilizamos drones y procesamiento fotogramétrico para generar información aérea actualizada y medible. Esta tecnología permite documentar grandes superficies con alto nivel de detalle y complementar los levantamientos realizados en terreno.",
 
-    title:
-    "Cubicación de Volúmenes",
+  items:[
 
-    image:
-    "cubicacion-volumenes.jpg",
+    "Ortofoto georreferenciada",
 
-    fallback:
-    "levantamiento-topografico.jpg",
+    "Nube de puntos",
 
-    description:
-    "Calculamos volúmenes mediante superficies topográficas y modelos digitales para controlar movimientos de tierra, excavaciones, rellenos y acopios con respaldo técnico.",
+    "Modelo digital de terreno",
 
-    items:[
-      "Corte y relleno",
-      "Excavaciones",
-      "Terraplenes",
-      "Acopios",
-      "Movimiento de tierra",
-      "Comparación de superficies",
-      "Control de avance",
-      "Informe de volúmenes"
-    ],
+    "Modelo digital de superficie",
 
-    whatsapp:
-    "https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20una%20cubicacion"
+    "Superficies",
 
-  },
+    "Modelos 3D",
 
+    "Registro fotográfico",
 
-  subdivision:{
+    "Respaldo aéreo"
 
-    title:
-    "Subdivisiones y Loteos",
+  ],
 
-    image:
-    "subdivision-loteos.jpg",
+  whatsapp:
+  "https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20fotogrametria%20con%20dron"
 
-    fallback:
-    "levantamiento-topografico.jpg",
+},
 
-    description:
-    "Desarrollamos el apoyo topográfico necesario para identificar, medir y representar terrenos y lotes, generando información de superficies, dimensiones, accesos y antecedentes técnicos.",
 
-    items:[
-      "Levantamiento del terreno",
-      "Superficies",
-      "Dimensiones",
-      "Lotes",
-      "Accesos",
-      "Coordenadas",
-      "Planos digitales",
-      "Apoyo técnico"
-    ],
 
-    whatsapp:
-    "https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20una%20subdivision"
+/* =====================================================
+   CURVAS
+===================================================== */
 
-  },
+curvas:{
 
+  title:
+  "Curvas de Nivel y Modelos de Terreno",
 
-  replanteo:{
+  image:
+  "curvas-nivel.jpg",
 
-    title:
-    "Replanteos y Estacados",
+  fallback:
+  "fotogrametria.jpg",
 
-    image:
-    "replanteo-estacado.jpg",
+  description:
+  "Generamos representaciones altimétricas que permiten comprender la geometría, pendientes y comportamiento del terreno para diseño, planificación, movimiento de tierra y estudios de ingeniería.",
 
-    fallback:
-    "levantamiento-topografico.jpg",
+  items:[
 
-    description:
-    "Transferimos al terreno la información definida en planos y proyectos, permitiendo materializar con precisión vértices, ejes, límites, edificaciones y obras proyectadas.",
+    "Curvas de nivel",
 
-    items:[
-      "Estacado de lotes",
-      "Vértices",
-      "Deslindes",
-      "Ejes",
-      "Fundaciones",
-      "Caminos",
-      "Emplazamientos",
-      "Control GNSS"
-    ],
+    "Modelos digitales de terreno",
 
-    whatsapp:
-    "https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20un%20replanteo"
+    "Superficies Civil 3D",
 
-  },
+    "Pendientes",
 
+    "Perfiles",
 
-  peritaje:{
+    "Elevaciones",
 
-    title:
-    "Peritajes y Verificación de Deslindes",
+    "Nubes de puntos",
 
-    image:
-    "peritajes-deslindes.jpg",
+    "Planos topográficos"
 
-    fallback:
-    "levantamiento-topografico.jpg",
+  ],
 
-    description:
-    "Realizamos mediciones y análisis técnicos orientados a verificar la situación física de terrenos, comparar antecedentes y generar documentación topográfica objetiva como respaldo.",
+  whatsapp:
+  "https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20curvas%20de%20nivel"
 
-    items:[
-      "Verificación de límites",
-      "Medición de deslindes",
-      "Comparación de antecedentes",
-      "Superficies",
-      "Coordenadas",
-      "Planos técnicos",
-      "Registro fotográfico",
-      "Informe de respaldo"
-    ],
+},
 
-    whatsapp:
-    "https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20un%20peritaje%20topografico"
 
-  },
 
+/* =====================================================
+   CUBICACIÓN
+===================================================== */
 
-  inspeccion:{
+cubicacion:{
 
-    title:
-    "Inspección Técnica y Modelación 3D",
+  title:
+  "Cubicación de Volúmenes",
 
-    image:
-    "inspeccion-drones.jpg",
+  image:
+  "cubicacion-volumenes.jpg",
 
-    fallback:
-    "fotogrametria.jpg",
+  fallback:
+  "levantamiento-topografico.jpg",
 
-    description:
-    "Utilizamos captura aérea y procesamiento digital para documentar el estado de proyectos, terrenos y estructuras, permitiendo realizar inspecciones visuales y generar representaciones tridimensionales.",
+  description:
+  "Calculamos volúmenes mediante superficies topográficas y modelos digitales para controlar movimientos de tierra, excavaciones, rellenos y acopios con respaldo técnico.",
 
-    items:[
-      "Inspección aérea",
-      "Fotografía de alta resolución",
-      "Seguimiento de proyectos",
-      "Modelación 3D",
-      "Nubes de puntos",
-      "Registro de avance",
-      "Documentación visual",
-      "Respaldo digital"
-    ],
+  items:[
 
-    whatsapp:
-    "https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20una%20inspeccion%20con%20dron"
+    "Corte y relleno",
 
-  }
+    "Excavaciones",
+
+    "Terraplenes",
+
+    "Acopios",
+
+    "Movimiento de tierra",
+
+    "Comparación de superficies",
+
+    "Control de avance",
+
+    "Informe de volúmenes"
+
+  ],
+
+  whatsapp:
+  "https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20una%20cubicacion"
+
+},
+
+
+
+/* =====================================================
+   SUBDIVISIÓN
+===================================================== */
+
+subdivision:{
+
+  title:
+  "Subdivisiones y Loteos",
+
+  image:
+  "subdivision-loteos.jpg",
+
+  fallback:
+  "levantamiento-topografico.jpg",
+
+  description:
+  "Desarrollamos el apoyo topográfico necesario para identificar, medir y representar terrenos y lotes, generando información de superficies, dimensiones, accesos y antecedentes técnicos.",
+
+  items:[
+
+    "Levantamiento del terreno",
+
+    "Superficies",
+
+    "Dimensiones",
+
+    "Lotes",
+
+    "Accesos",
+
+    "Coordenadas",
+
+    "Planos digitales",
+
+    "Apoyo técnico"
+
+  ],
+
+  whatsapp:
+  "https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20una%20subdivision"
+
+},
+
+
+
+/* =====================================================
+   REPLANTEO
+===================================================== */
+
+replanteo:{
+
+  title:
+  "Replanteos y Estacados",
+
+  image:
+  "replanteo-estacado.jpg",
+
+  fallback:
+  "levantamiento-topografico.jpg",
+
+  description:
+  "Transferimos al terreno la información definida en planos y proyectos, permitiendo materializar con precisión vértices, ejes, límites, edificaciones y obras proyectadas.",
+
+  items:[
+
+    "Estacado de lotes",
+
+    "Vértices",
+
+    "Deslindes",
+
+    "Ejes",
+
+    "Fundaciones",
+
+    "Caminos",
+
+    "Emplazamientos",
+
+    "Control GNSS"
+
+  ],
+
+  whatsapp:
+  "https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20un%20replanteo"
+
+},
+
+
+
+/* =====================================================
+   PERITAJE
+===================================================== */
+
+peritaje:{
+
+  title:
+  "Peritajes y Verificación de Deslindes",
+
+  image:
+  "peritajes-deslindes.jpg",
+
+  fallback:
+  "levantamiento-topografico.jpg",
+
+  description:
+  "Realizamos mediciones y análisis técnicos orientados a verificar la situación física de terrenos, comparar antecedentes y generar documentación topográfica objetiva como respaldo.",
+
+  items:[
+
+    "Verificación de límites",
+
+    "Medición de deslindes",
+
+    "Comparación de antecedentes",
+
+    "Superficies",
+
+    "Coordenadas",
+
+    "Planos técnicos",
+
+    "Registro fotográfico",
+
+    "Informe de respaldo"
+
+  ],
+
+  whatsapp:
+  "https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20un%20peritaje%20topografico"
+
+},
+
+
+
+/* =====================================================
+   INSPECCIÓN
+===================================================== */
+
+inspeccion:{
+
+  title:
+  "Inspección Técnica y Modelación 3D",
+
+  image:
+  "inspeccion-drones.jpg",
+
+  fallback:
+  "fotogrametria.jpg",
+
+  description:
+  "Utilizamos captura aérea y procesamiento digital para documentar el estado de proyectos, terrenos y estructuras, permitiendo realizar inspecciones visuales y generar representaciones tridimensionales.",
+
+  items:[
+
+    "Inspección aérea",
+
+    "Fotografía de alta resolución",
+
+    "Seguimiento de proyectos",
+
+    "Modelación 3D",
+
+    "Nubes de puntos",
+
+    "Registro de avance",
+
+    "Documentación visual",
+
+    "Respaldo digital"
+
+  ],
+
+  whatsapp:
+  "https://wa.me/56973401407?text=Hola%2C%20quiero%20cotizar%20una%20inspeccion%20con%20dron"
+
+}
+
 
 };
 
 
 
+/* =====================================================
+   ABRIR MODAL
+===================================================== */
+
 function openService(service){
+
 
   const data =
   services[service];
 
+
   const image =
-  document.getElementById("modalImage");
+  document.getElementById(
+    "modalImage"
+  );
+
 
   document.getElementById(
     "modalTitle"
@@ -1899,17 +2506,23 @@ function openService(service){
   image.onerror =
   function(){
 
+
     this.onerror=null;
 
+
     this.src =
+
     data.fallback ||
+
     "levantamiento-topografico.jpg";
+
 
   };
 
 
   image.src =
   data.image;
+
 
 
   const list =
@@ -1921,15 +2534,26 @@ function openService(service){
   list.innerHTML="";
 
 
+
   data.items.forEach(
-  item=>{
+
+  item => {
+
 
     const li =
-    document.createElement("li");
+    document.createElement(
+      "li"
+    );
 
-    li.textContent=item;
 
-    list.appendChild(li);
+    li.textContent =
+    item;
+
+
+    list.appendChild(
+      li
+    );
+
 
   });
 
@@ -1952,11 +2576,17 @@ function openService(service){
     "modal-open"
   );
 
+
 }
 
 
 
+/* =====================================================
+   CERRAR MODAL
+===================================================== */
+
 function closeService(){
+
 
   document.getElementById(
     "serviceModal"
@@ -1964,44 +2594,70 @@ function closeService(){
     "active"
   );
 
+
   document.body
   .classList.remove(
     "modal-open"
   );
 
+
 }
 
 
 
+/* =====================================================
+   CERRAR HACIENDO CLICK AFUERA
+===================================================== */
+
 function backgroundClose(event){
+
 
   if(
     event.target.id ===
     "serviceModal"
   ){
 
+
     closeService();
 
+
   }
+
 
 }
 
 
 
+/* =====================================================
+   CERRAR CON ESC
+===================================================== */
+
 document.addEventListener(
+
 "keydown",
+
 function(event){
 
-  if(event.key==="Escape"){
+
+  if(
+    event.key ===
+    "Escape"
+  ){
+
 
     closeService();
 
+
   }
 
+
 });
+
 
 </script>
 
 
+
 </body>
+
 </html>
