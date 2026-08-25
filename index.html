@@ -100,24 +100,16 @@
        HERO
     ========================= */
 
-    .hero{
-      min-height:620px;
-      display:flex;
-      align-items:center;
-      padding:80px 7%;
-      color:white;
-      position:relative;
-      overflow:hidden;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(5,18,35,.93) 0%,
-          rgba(5,18,35,.75) 44%,
-          rgba(5,18,35,.20) 100%
-        ),
-        url("matrice4e-portada.jpg") center/cover no-repeat;
-    }
+   .hero{
+  min-height:620px;
+  display:flex;
+  align-items:center;
+  padding:80px 7%;
+  color:white;
+  position:relative;
+  overflow:hidden;
+  background:#07182d;
+}
 
     .hero-content{
       max-width:720px;
@@ -714,6 +706,21 @@
 
 <section class="hero">
 
+  <video
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    poster="matrice4e-portada.jpg">
+
+    <source src="video-portada.mp4" type="video/mp4">
+
+  </video>
+
+  <div class="hero-overlay"></div>
+
+
   <div class="hero-content">
 
     <div class="hero-kicker">
@@ -770,7 +777,6 @@
   </div>
 
 </section>
-
 
 <section class="intro">
 
