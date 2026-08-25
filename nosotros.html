@@ -270,56 +270,240 @@
       color:#8091a6;
       font-size:13px;
     }
+/* =========================
+   MENÚ MÓVIL
+========================= */
 
-    @media (max-width: 920px){
+.mobile-controls{
+  display:none;
+  align-items:center;
+  gap:10px;
+}
 
-      nav a:not(.nav-btn){
-        display:none;
-      }
+.mobile-cta{
+  display:none;
+  background:var(--blue);
+  color:white !important;
+  padding:11px 19px;
+  border-radius:25px;
+  font-size:14px;
+  font-weight:600;
+}
 
-      .banner h1{
-        font-size:42px;
-      }
+.menu-toggle{
+  display:none;
+  width:44px;
+  height:44px;
+  border:none;
+  background:#f4f6fa;
+  border-radius:12px;
+  cursor:pointer;
 
-      .about-grid,
-      .drone-block,
-      .footer-grid{
-        grid-template-columns:1fr;
-      }
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:5px;
+}
 
-      .about-grid,
-      .drone-block{
-        gap:35px;
-      }
+.menu-toggle span{
+  width:21px;
+  height:2px;
+  background:var(--navy);
+  border-radius:3px;
+  transition:.25s;
+}
 
-      .drone-text h2{
-        font-size:38px;
-      }
+.menu-toggle.active span:nth-child(1){
+  transform:translateY(7px) rotate(45deg);
+}
 
-      .cta{
-        flex-direction:column;
-        align-items:flex-start;
-        padding:38px 28px;
-      }
-    }
+.menu-toggle.active span:nth-child(2){
+  opacity:0;
+}
+
+.menu-toggle.active span:nth-child(3){
+  transform:translateY(-7px) rotate(-45deg);
+}
+    @media (max-width:920px){
+
+  header{
+    height:82px;
+    padding:0 5%;
+  }
+
+  .brand img{
+    height:52px;
+  }
+
+
+  /* CONTROLES MÓVILES */
+
+  .mobile-controls{
+    display:flex;
+  }
+
+  .mobile-cta{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .menu-toggle{
+    display:flex;
+  }
+
+
+  /* MENÚ DESPLEGABLE */
+
+  nav{
+    position:absolute;
+    top:82px;
+    left:0;
+    right:0;
+
+    width:100%;
+    background:white;
+
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+
+    padding:0 5%;
+
+    max-height:0;
+    overflow:hidden;
+
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+
+    box-shadow:0 14px 30px rgba(15,37,69,.10);
+
+    transition:
+      max-height .3s ease,
+      opacity .25s ease,
+      padding .3s ease;
+  }
+
+  nav.open{
+    max-height:420px;
+
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+
+    padding-top:10px;
+    padding-bottom:18px;
+  }
+
+  nav a{
+    display:block;
+    width:100%;
+    padding:15px 12px;
+    font-size:15px;
+    border-bottom:1px solid #edf0f4;
+  }
+
+  nav a.active{
+    background:#edf2ff;
+    color:var(--blue);
+    border-radius:10px;
+  }
+
+  nav .nav-btn{
+    display:none;
+  }
+
+
+  /* RESPONSIVE ORIGINAL DE NOSOTROS */
+
+  .banner h1{
+    font-size:42px;
+  }
+
+  .about-grid,
+  .drone-block,
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .about-grid,
+  .drone-block{
+    gap:35px;
+  }
+
+  .drone-text h2{
+    font-size:38px;
+  }
+
+  .cta{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:38px 28px;
+  }
+
+}
   </style>
-</head>
-<body>
+<header>
 
-  <header>
-    <a class="brand" href="index.html">
-  <img src="logo-geortega.png" alt="Logo GEORTEGA">
-</a>
+  <a class="brand" href="index.html">
+    <img src="logo-geortega.png" alt="Logo GEORTEGA">
+  </a>
 
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a class="active" href="nosotros.html">Nosotros</a>
-      <a href="servicios.html">Servicios</a>
-      <a href="contacto.html">Contacto</a>
-      <a class="nav-btn" href="https://wa.me/56973401407" target="_blank">Cotizar</a>
-    </nav>
-  </header>
 
+  <nav id="mainNav">
+
+    <a href="index.html">
+      Inicio
+    </a>
+
+    <a class="active" href="nosotros.html">
+      Nosotros
+    </a>
+
+    <a href="servicios.html">
+      Servicios
+    </a>
+
+    <a href="contacto.html">
+      Contacto
+    </a>
+
+    <a
+      class="nav-btn"
+      href="https://wa.me/56973401407"
+      target="_blank">
+      Cotizar
+    </a>
+
+  </nav>
+
+
+  <div class="mobile-controls">
+
+    <a
+      class="mobile-cta"
+      href="https://wa.me/56973401407"
+      target="_blank">
+      Cotizar
+    </a>
+
+    <button
+      id="menuToggle"
+      class="menu-toggle"
+      type="button"
+      aria-label="Abrir menú"
+      aria-expanded="false">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+  </div>
+
+</header>
   <section class="banner">
     <div class="banner-content">
       <small>NUESTRA HISTORIA</small>
@@ -422,6 +606,79 @@
       © 2026 GEORTEGA · Todos los derechos reservados.
     </div>
   </footer>
+<script>
 
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
+
+menuToggle.addEventListener("click", function(){
+
+  const abierto = mainNav.classList.toggle("open");
+
+  menuToggle.classList.toggle("active", abierto);
+
+  menuToggle.setAttribute(
+    "aria-expanded",
+    abierto
+  );
+
+});
+
+
+mainNav.querySelectorAll("a").forEach(function(enlace){
+
+  enlace.addEventListener("click", function(){
+
+    mainNav.classList.remove("open");
+    menuToggle.classList.remove("active");
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+  });
+
+});
+
+
+document.addEventListener("click", function(event){
+
+  if(
+    window.innerWidth <= 920 &&
+    !mainNav.contains(event.target) &&
+    !menuToggle.contains(event.target)
+  ){
+
+    mainNav.classList.remove("open");
+    menuToggle.classList.remove("active");
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+  }
+
+});
+
+
+window.addEventListener("resize", function(){
+
+  if(window.innerWidth > 920){
+
+    mainNav.classList.remove("open");
+    menuToggle.classList.remove("active");
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+  }
+
+});
+
+</script>
 </body>
 </html>
