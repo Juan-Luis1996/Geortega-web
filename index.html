@@ -1,110 +1,221 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>GEORTEGA | Topografía, Geomensura y Soluciones Geoespaciales</title>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-  <meta name="description"
-        content="GEORTEGA entrega soluciones profesionales en topografía, geomensura, fotogrametría, drones, subdivisiones y apoyo técnico para proyectos de ingeniería y construcción.">
+  <title>
+    GEORTEGA | Topografía, Geomensura y Soluciones Geoespaciales
+  </title>
 
-  <style>
+  <meta
+    name="description"
+    content="GEORTEGA entrega soluciones profesionales en topografía, geomensura, GNSS, fotogrametría, drones, subdivisiones, cubicaciones y soluciones geoespaciales para ingeniería y construcción.">
 
-    :root{
-      --navy:#102746;
-      --navy-dark:#07182d;
-      --blue:#2856d8;
-      --text:#17263d;
-      --muted:#66758a;
-      --light:#f7f9fc;
-      --border:#e4e9f0;
-    }
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+<style>
 
-    html{
-      scroll-behavior:smooth;
-    }
 
-    body{
-      font-family:Arial, Helvetica, sans-serif;
-      color:var(--text);
-      background:#ffffff;
-    }
+/* =====================================================
+   VARIABLES
+===================================================== */
 
-    a{
-      text-decoration:none;
-    }
+:root{
 
-    img{
-      max-width:100%;
-      display:block;
-    }
+  --navy:#102746;
+  --navy-dark:#07182d;
 
-    /* =========================
-       HEADER
-    ========================= */
+  --blue:#2856d8;
+  --blue-light:#edf2ff;
 
-    header{
-      height:82px;
-      padding:0 7%;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      background:white;
-      position:sticky;
-      top:0;
-      z-index:1000;
-      border-bottom:1px solid #edf0f4;
-    }
+  --text:#17263d;
+  --muted:#66758a;
 
-    .brand img{
-      height:56px;
-      width:auto;
-    }
+  --light:#f7f9fc;
+  --border:#e4e9f0;
 
-    nav{
-      display:flex;
-      align-items:center;
-      gap:30px;
-    }
+}
 
-    nav a{
-      color:#31415a;
-      font-size:14px;
-      font-weight:600;
-      transition:.2s;
-    }
 
-    nav a:hover{
-      color:var(--blue);
-    }
+/* =====================================================
+   GENERAL
+===================================================== */
 
-    nav .active{
-      color:var(--blue);
-    }
+*{
 
-    .nav-cta{
-      background:var(--blue);
-      color:white !important;
-      padding:12px 22px;
-      border-radius:25px;
-    }
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 
-    /* =========================
-       HERO
-    ========================= */
+}
+
+
+html{
+
+  scroll-behavior:smooth;
+
+}
+
+
+body{
+
+  font-family:
+  Arial,
+  Helvetica,
+  sans-serif;
+
+  color:var(--text);
+
+  background:#ffffff;
+
+}
+
+
+a{
+
+  text-decoration:none;
+
+}
+
+
+img{
+
+  display:block;
+
+  max-width:100%;
+
+}
+
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+
+  height:82px;
+
+  padding:0 7%;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  background:white;
+
+  position:sticky;
+
+  top:0;
+
+  z-index:1000;
+
+  border-bottom:
+  1px solid #edf0f4;
+
+}
+
+
+.brand img{
+
+  height:56px;
+
+  width:auto;
+
+}
+
+
+nav{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:30px;
+
+}
+
+
+nav a{
+
+  color:#31415a;
+
+  font-size:14px;
+
+  font-weight:600;
+
+  transition:.2s;
+
+}
+
+
+nav a:hover{
+
+  color:var(--blue);
+
+}
+
+
+nav a.active{
+
+  color:var(--blue);
+
+  position:relative;
+
+}
+
+
+nav a.active::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+
+  bottom:-12px;
+
+  width:100%;
+
+  height:2px;
+
+  background:var(--blue);
+
+}
+
+
+.nav-cta{
+
+  background:var(--blue);
+
+  color:white !important;
+
+  padding:12px 22px;
+
+  border-radius:25px;
+
+}
+
+
+
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
+
   min-height:620px;
+
   width:100%;
 
   display:flex;
+
   align-items:center;
 
   padding:80px 7%;
@@ -112,642 +223,1430 @@
   color:white;
 
   position:relative;
+
   overflow:hidden;
 
-  background:#07182d;
+  background:var(--navy-dark);
+
 }
 
 
-/* VIDEO DE FONDO */
+/* VIDEO */
 
 .hero-video{
+
   position:absolute;
 
-  top:0;
-  left:0;
+  inset:0;
 
   width:100%;
+
   height:100%;
 
   object-fit:cover;
+
   object-position:center center;
 
   z-index:0;
 
   pointer-events:none;
+
 }
 
 
-/* CAPA OSCURA SOBRE EL VIDEO */
+/* OSCURECIMIENTO */
 
 .hero-overlay{
+
   position:absolute;
 
-  top:0;
-  left:0;
-
-  width:100%;
-  height:100%;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(5,18,35,.94) 0%,
-      rgba(5,18,35,.78) 45%,
-      rgba(5,18,35,.40) 100%
-    );
+  inset:0;
 
   z-index:1;
 
   pointer-events:none;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      rgba(5,18,35,.96) 0%,
+      rgba(5,18,35,.83) 43%,
+      rgba(5,18,35,.42) 100%
+    );
+
 }
 
 
-/* TEXTO ENCIMA DEL VIDEO */
+/* CONTENIDO */
 
 .hero-content{
-  width:100%;
-  max-width:720px;
 
   position:relative;
 
   z-index:2;
+
+  width:100%;
+
+  max-width:1200px;
+
 }
 
-    .hero-content{
-      max-width:720px;
-      position:relative;
-      z-index:2;
-    }
 
-    .hero-kicker{
-      font-size:13px;
-      font-weight:bold;
-      letter-spacing:4px;
-      margin-bottom:18px;
-      color:#d1def5;
-    }
+.hero-kicker{
 
-    .hero h1{
-      font-size:66px;
-      line-height:1;
-      margin-bottom:18px;
-      letter-spacing:-2px;
-    }
+  font-size:13px;
 
-    .hero h2{
-      font-size:30px;
-      font-weight:500;
-      margin-bottom:20px;
-    }
+  font-weight:bold;
 
-    .hero p{
-      font-size:18px;
-      line-height:1.7;
-      color:#e0e8f3;
-      max-width:650px;
-    }
+  letter-spacing:4px;
 
-    .hero-actions{
-      margin-top:34px;
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-    }
+  color:#d1def5;
 
-    .btn-primary,
-    .btn-secondary{
-      display:inline-block;
-      padding:15px 26px;
-      border-radius:28px;
-      font-weight:bold;
-    }
+  margin-bottom:18px;
 
-    .btn-primary{
-      background:white;
-      color:var(--navy);
-    }
+}
 
-    .btn-secondary{
-      border:1px solid rgba(255,255,255,.7);
-      color:white;
-    }
 
-    .hero-points{
-      margin-top:45px;
-      display:flex;
-      gap:28px;
-      flex-wrap:wrap;
-    }
+.hero h1{
 
-    .hero-point{
-      border-left:2px solid #668ff2;
-      padding-left:14px;
-    }
+  font-size:66px;
 
-    .hero-point strong{
-      display:block;
-      font-size:16px;
-    }
+  line-height:1;
 
-    .hero-point span{
-      font-size:13px;
-      color:#cad6e8;
-    }
+  margin-bottom:18px;
 
-    /* =========================
-       INTRO
-    ========================= */
+  letter-spacing:-2px;
 
-    .intro{
-      padding:80px 8%;
-      text-align:center;
-    }
+}
 
-    .intro-content{
-      max-width:850px;
-      margin:auto;
-    }
 
-    .label{
-      color:var(--blue);
-      font-size:12px;
-      letter-spacing:4px;
-      font-weight:bold;
-    }
+.hero h2{
 
-    .intro h2{
-      font-size:40px;
-      margin:12px 0 20px;
-      line-height:1.2;
-    }
+  font-size:30px;
 
-    .intro p{
-      color:var(--muted);
-      font-size:17px;
-      line-height:1.8;
-    }
+  font-weight:500;
 
-    /* =========================
-       SERVICIOS DESTACADOS
-    ========================= */
+  margin-bottom:0;
 
-    .services-section{
-      padding:80px 7%;
-      background:var(--light);
-    }
+}
 
-    .section-title{
-      text-align:center;
-      max-width:800px;
-      margin:0 auto 45px;
-    }
 
-    .section-title h2{
-      font-size:38px;
-      margin-top:12px;
-    }
 
-    .section-title p{
-      color:var(--muted);
-      margin-top:16px;
-      line-height:1.7;
-    }
+/* =====================================================
+   ÁREAS HERO
+===================================================== */
 
-    .services{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:24px;
-      max-width:1180px;
-      margin:auto;
-    }
+.hero-points{
 
-    .service{
-      background:white;
-      border:1px solid var(--border);
-      border-radius:16px;
-      overflow:hidden;
-      transition:.25s;
-    }
+  margin-top:52px;
 
-    .service:hover{
-      transform:translateY(-6px);
-      box-shadow:0 18px 45px rgba(15,37,69,.09);
-    }
+  width:100%;
 
-    .service img{
-      width:100%;
-      height:210px;
-      object-fit:cover;
-    }
+  max-width:1120px;
 
-    .service-content{
-      padding:28px;
-    }
+  display:grid;
 
-    .service-number{
-      width:42px;
-      height:42px;
-      background:#edf2ff;
-      color:var(--blue);
-      border-radius:10px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:bold;
-      margin-bottom:20px;
-    }
+  grid-template-columns:
+  repeat(5,1fr);
 
-    .service h3{
-      font-size:21px;
-      margin-bottom:12px;
-    }
+  gap:20px;
 
-    .service p{
-      color:var(--muted);
-      line-height:1.65;
-      font-size:15px;
-    }
+}
 
-    .service-link{
-      display:inline-block;
-      color:var(--blue);
-      margin-top:20px;
-      font-weight:bold;
-      font-size:14px;
-    }
 
-    .services-more{
-      text-align:center;
-      margin-top:38px;
-    }
+.hero-point{
 
-    .services-more a{
-      display:inline-block;
-      background:var(--blue);
-      color:white;
-      padding:14px 24px;
-      border-radius:28px;
-      font-weight:bold;
-    }
+  min-height:58px;
 
-    /* =========================
-       CTA
-    ========================= */
+  padding-left:15px;
 
-    .cta{
-      margin:80px 7%;
-      border-radius:20px;
-      padding:55px;
-      color:white;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:35px;
-      background:linear-gradient(115deg,#0b213d,#285785);
-    }
+  border-left:
+  2px solid #668ff2;
 
-    .cta h2{
-      font-size:34px;
-      margin-bottom:10px;
-      max-width:650px;
-    }
+}
 
-    .cta p{
-      color:#d7e3f0;
-      line-height:1.7;
-    }
 
-    .cta a{
-      background:white;
-      color:var(--navy);
-      padding:15px 25px;
-      border-radius:28px;
-      font-weight:bold;
-      white-space:nowrap;
-    }
+.hero-point strong{
 
-    /* =========================
-       FOOTER
-    ========================= */
+  display:block;
 
-    footer{
-      background:var(--navy-dark);
-      color:white;
-      padding:60px 7% 25px;
-    }
+  margin-bottom:5px;
 
-    .footer-grid{
-      max-width:1180px;
-      margin:auto;
-      display:grid;
-      grid-template-columns:2fr 1fr 1fr;
-      gap:60px;
-    }
+  font-size:15px;
 
-    .footer-brand img{
-      height:58px;
-      margin-bottom:16px;
-    }
+  letter-spacing:.4px;
 
-    footer p,
-    footer a{
-      color:#aebdd0;
-      font-size:14px;
-      line-height:1.9;
-    }
+}
 
-    footer h4{
-      margin-bottom:14px;
-      color:white;
-    }
 
-    .footer-bottom{
-      max-width:1180px;
-      margin:35px auto 0;
-      padding-top:20px;
-      border-top:1px solid #21364f;
-      color:#8494a8;
-      font-size:13px;
-    }
+.hero-point span{
 
-    /* =========================
-       WHATSAPP
-    ========================= */
+  display:block;
 
-    .whatsapp{
-      position:fixed;
-      right:22px;
-      bottom:22px;
-      width:58px;
-      height:58px;
-      border-radius:50%;
-      background:#25D366;
-      color:white;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:bold;
-      z-index:1000;
-      box-shadow:0 10px 30px rgba(0,0,0,.18);
-    }
-/* =========================
+  max-width:170px;
+
+  color:#cad6e8;
+
+  font-size:12px;
+
+  line-height:1.45;
+
+}
+
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.intro{
+
+  padding:85px 8%;
+
+  text-align:center;
+
+}
+
+
+.intro-content{
+
+  max-width:850px;
+
+  margin:auto;
+
+}
+
+
+.label{
+
+  color:var(--blue);
+
+  font-size:12px;
+
+  letter-spacing:4px;
+
+  font-weight:bold;
+
+}
+
+
+.intro h2{
+
+  margin:
+  12px 0 20px;
+
+  font-size:40px;
+
+  line-height:1.2;
+
+}
+
+
+.intro p{
+
+  color:var(--muted);
+
+  font-size:17px;
+
+  line-height:1.8;
+
+}
+
+
+
+/* =====================================================
+   SERVICIOS DESTACADOS
+===================================================== */
+
+.services-section{
+
+  padding:
+  80px 7% 90px;
+
+  background:var(--light);
+
+}
+
+
+.section-title{
+
+  max-width:800px;
+
+  margin:
+  0 auto 45px;
+
+  text-align:center;
+
+}
+
+
+.section-title h2{
+
+  margin-top:12px;
+
+  font-size:38px;
+
+  line-height:1.2;
+
+}
+
+
+.section-title p{
+
+  margin-top:16px;
+
+  color:var(--muted);
+
+  line-height:1.7;
+
+}
+
+
+.services{
+
+  max-width:1180px;
+
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap:24px;
+
+}
+
+
+/* TARJETA */
+
+.service{
+
+  background:white;
+
+  border:
+  1px solid var(--border);
+
+  border-radius:16px;
+
+  overflow:hidden;
+
+  transition:
+  transform .25s,
+  box-shadow .25s;
+
+}
+
+
+.service:hover{
+
+  transform:
+  translateY(-6px);
+
+  box-shadow:
+  0 18px 45px
+  rgba(15,37,69,.09);
+
+}
+
+
+.service img{
+
+  width:100%;
+
+  height:220px;
+
+  object-fit:cover;
+
+}
+
+
+.service-content{
+
+  padding:
+  28px 28px 30px;
+
+}
+
+
+.service h3{
+
+  margin-bottom:12px;
+
+  font-size:21px;
+
+  color:var(--navy);
+
+}
+
+
+.service p{
+
+  color:var(--muted);
+
+  line-height:1.65;
+
+  font-size:15px;
+
+}
+
+
+.service-link{
+
+  display:inline-block;
+
+  margin-top:20px;
+
+  color:var(--blue);
+
+  font-weight:bold;
+
+  font-size:14px;
+
+}
+
+
+.services-more{
+
+  margin-top:40px;
+
+  text-align:center;
+
+}
+
+
+.services-more a{
+
+  display:inline-block;
+
+  padding:
+  14px 25px;
+
+  background:var(--blue);
+
+  color:white;
+
+  border-radius:28px;
+
+  font-weight:bold;
+
+  transition:.2s;
+
+}
+
+
+.services-more a:hover{
+
+  background:#1946c7;
+
+}
+
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.cta{
+
+  margin:
+  80px 7%;
+
+  padding:55px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:35px;
+
+  border-radius:20px;
+
+  color:white;
+
+  background:
+  linear-gradient(
+    115deg,
+    #0b213d,
+    #285785
+  );
+
+}
+
+
+.cta h2{
+
+  max-width:680px;
+
+  margin-bottom:10px;
+
+  font-size:34px;
+
+}
+
+
+.cta p{
+
+  max-width:700px;
+
+  color:#d7e3f0;
+
+  line-height:1.7;
+
+}
+
+
+.cta a{
+
+  padding:
+  15px 25px;
+
+  background:white;
+
+  color:var(--navy);
+
+  border-radius:28px;
+
+  font-weight:bold;
+
+  white-space:nowrap;
+
+}
+
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+  background:var(--navy-dark);
+
+  color:white;
+
+  padding:
+  62px 7% 26px;
+
+}
+
+
+.footer-grid{
+
+  max-width:1200px;
+
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:
+  1.6fr .75fr 1fr;
+
+  gap:70px;
+
+}
+
+
+.footer-brand img{
+
+  height:64px;
+
+  width:auto;
+
+  margin-bottom:22px;
+
+}
+
+
+footer h4{
+
+  color:white;
+
+  margin-bottom:15px;
+
+  font-size:16px;
+
+}
+
+
+footer p,
+footer a{
+
+  color:#aebdd0;
+
+  font-size:14px;
+
+  line-height:1.9;
+
+}
+
+
+footer a{
+
+  transition:.2s;
+
+}
+
+
+footer a:hover{
+
+  color:white;
+
+}
+
+
+
+/* =====================================================
+   MÉTODOS DE PAGO
+===================================================== */
+
+.payment-title{
+
+  margin-top:12px;
+
+}
+
+
+.payment-methods{
+
+  display:grid;
+
+  gap:9px;
+
+  max-width:350px;
+
+  margin-top:15px;
+
+}
+
+
+.payment-item{
+
+  min-height:57px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+  padding:
+  10px 13px;
+
+  background:#0b2038;
+
+  border:
+  1px solid #203750;
+
+  border-radius:11px;
+
+}
+
+
+.payment-icon{
+
+  width:37px;
+
+  height:37px;
+
+  flex:0 0 37px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  color:white;
+
+  background:#142d49;
+
+  border-radius:9px;
+
+}
+
+
+.payment-icon svg{
+
+  width:21px;
+
+  height:21px;
+
+  stroke:white;
+
+  fill:none;
+
+  stroke-width:1.7;
+
+}
+
+
+.payment-item strong{
+
+  display:block;
+
+  color:white;
+
+  font-size:13px;
+
+}
+
+
+.payment-item small{
+
+  display:block;
+
+  margin-top:2px;
+
+  color:#8497ad;
+
+  font-size:11px;
+
+}
+
+
+
+/* =====================================================
+   REDES SOCIALES
+===================================================== */
+
+.social-title{
+
+  margin-top:24px;
+
+}
+
+
+.social-links{
+
+  display:flex;
+
+  gap:10px;
+
+  margin-top:12px;
+
+}
+
+
+.social-links a{
+
+  width:41px;
+
+  height:41px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:#122a45;
+
+  transition:
+  background .2s,
+  transform .2s;
+
+}
+
+
+.social-links a:hover{
+
+  background:var(--blue);
+
+  transform:
+  translateY(-2px);
+
+}
+
+
+.social-links svg{
+
+  width:20px;
+
+  height:20px;
+
+  fill:white;
+
+}
+
+
+
+/* =====================================================
+   FOOTER BOTTOM
+===================================================== */
+
+.footer-bottom{
+
+  max-width:1200px;
+
+  margin:
+  40px auto 0;
+
+  padding-top:22px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:20px;
+
+  border-top:
+  1px solid #21364f;
+
+  color:#8494a8;
+
+  font-size:13px;
+
+}
+
+
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+.whatsapp{
+
+  position:fixed;
+
+  right:22px;
+
+  bottom:22px;
+
+  width:60px;
+
+  height:60px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:#25D366;
+
+  z-index:1500;
+
+  box-shadow:
+  0 10px 30px
+  rgba(0,0,0,.20);
+
+  transition:
+  transform .2s,
+  box-shadow .2s;
+
+}
+
+
+.whatsapp:hover{
+
+  transform:
+  translateY(-3px);
+
+  box-shadow:
+  0 14px 34px
+  rgba(0,0,0,.24);
+
+}
+
+
+.whatsapp svg{
+
+  width:31px;
+
+  height:31px;
+
+  fill:white;
+
+}
+
+
+
+/* =====================================================
    MENÚ MÓVIL
-========================= */
+===================================================== */
 
 .mobile-controls{
+
   display:none;
+
   align-items:center;
+
   gap:10px;
+
 }
+
 
 .mobile-cta{
+
   display:none;
+
+  padding:
+  11px 19px;
+
   background:var(--blue);
+
   color:white;
-  padding:11px 19px;
+
   border-radius:25px;
+
   font-size:14px;
+
   font-weight:600;
+
 }
+
 
 .menu-toggle{
+
   display:none;
+
   width:44px;
+
   height:44px;
+
   border:none;
-  background:#f4f6fa;
+
   border-radius:12px;
+
+  background:#f4f6fa;
+
   cursor:pointer;
+
   align-items:center;
+
   justify-content:center;
+
   flex-direction:column;
+
   gap:5px;
+
 }
+
 
 .menu-toggle span{
+
   width:21px;
+
   height:2px;
+
   background:var(--navy);
+
   border-radius:3px;
+
   transition:.25s;
+
 }
+
 
 .menu-toggle.active span:nth-child(1){
-  transform:translateY(7px) rotate(45deg);
+
+  transform:
+  translateY(7px)
+  rotate(45deg);
+
 }
+
 
 .menu-toggle.active span:nth-child(2){
+
   opacity:0;
+
 }
+
 
 .menu-toggle.active span:nth-child(3){
-  transform:translateY(-7px) rotate(-45deg);
+
+  transform:
+  translateY(-7px)
+  rotate(-45deg);
+
 }
 
 
-/* =========================
-   RESPONSIVE
-========================= */
+
+/* =====================================================
+   RESPONSIVE TABLET / CELULAR
+===================================================== */
 
 @media(max-width:900px){
 
+
+  /* HEADER */
+
   header{
+
     height:82px;
-    padding:0 5%;
+
+    padding:
+    0 5%;
+
   }
+
 
   .brand img{
+
     height:52px;
+
   }
+
 
   .mobile-controls{
+
     display:flex;
+
   }
+
 
   .mobile-cta{
+
     display:inline-flex;
+
     align-items:center;
+
     justify-content:center;
+
   }
+
 
   .menu-toggle{
+
     display:flex;
+
   }
 
+
+  /* NAVEGACIÓN */
+
   nav{
+
     position:absolute;
+
     top:82px;
+
     left:0;
+
     right:0;
+
     width:100%;
-    background:white;
+
+    display:flex;
 
     flex-direction:column;
+
     align-items:stretch;
+
     gap:0;
 
-    padding:0 5%;
+    padding:
+    0 5%;
+
+    background:white;
 
     max-height:0;
+
     overflow:hidden;
 
     opacity:0;
+
     visibility:hidden;
+
     pointer-events:none;
 
-    box-shadow:0 14px 30px rgba(15,37,69,.10);
+    box-shadow:
+    0 14px 30px
+    rgba(15,37,69,.10);
 
     transition:
-      max-height .3s ease,
-      opacity .25s ease,
-      padding .3s ease;
+    max-height .3s ease,
+    opacity .25s ease,
+    padding .3s ease;
+
   }
+
 
   nav.open{
+
     max-height:420px;
-    opacity:1;
-    visibility:visible;
-    pointer-events:auto;
 
     padding-top:10px;
+
     padding-bottom:18px;
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
   }
+
 
   nav a{
+
     display:block;
+
     width:100%;
-    padding:15px 12px;
+
+    padding:
+    15px 12px;
+
     font-size:15px;
-    border-bottom:1px solid #edf0f4;
+
+    border-bottom:
+    1px solid #edf0f4;
+
   }
+
 
   nav a.active{
-    background:#edf2ff;
+
+    background:var(--blue-light);
+
     color:var(--blue);
+
     border-radius:10px;
+
   }
+
 
   nav a.active::after{
+
     display:none;
+
   }
+
 
   nav .nav-cta{
+
     display:none;
+
   }
 
 
-  /* SE CONSERVA EL RESPONSIVE DE INICIO */
+  /* HERO */
 
   .hero{
+
     min-height:580px;
+
+    padding:
+    65px 6%;
+
   }
+
 
   .hero h1{
+
     font-size:48px;
+
   }
+
 
   .hero h2{
+
     font-size:24px;
+
   }
+
+
+  .hero-points{
+
+    margin-top:40px;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:
+    20px 12px;
+
+  }
+
+
+  .hero-point:last-child{
+
+    grid-column:
+    1 / -1;
+
+  }
+
+
+  /* SERVICIOS */
 
   .services{
+
     grid-template-columns:1fr;
+
   }
+
+
+  .service{
+
+    max-width:600px;
+
+    width:100%;
+
+    margin:auto;
+
+  }
+
+
+  /* CTA */
 
   .cta{
+
     flex-direction:column;
+
     align-items:flex-start;
-    padding:40px 28px;
+
+    padding:
+    40px 28px;
+
   }
 
+
+  /* FOOTER */
+
   .footer-grid{
+
     grid-template-columns:1fr;
+
+    gap:40px;
+
+  }
+
+
+  .footer-bottom{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:10px;
+
   }
 
 }
-    /* =========================
-       RESPONSIVE
-    ========================= */
 
-    @media(max-width:900px){
 
-      .hero{
-        min-height:580px;
-      }
 
-      .hero h1{
-        font-size:48px;
-      }
+/* =====================================================
+   RESPONSIVE CELULAR PEQUEÑO
+===================================================== */
 
-      .hero h2{
-        font-size:24px;
-      }
+@media(max-width:540px){
 
-      .services{
-        grid-template-columns:1fr;
-      }
 
-      .cta{
-        flex-direction:column;
-        align-items:flex-start;
-        padding:40px 28px;
-      }
+  .hero{
 
-      .footer-grid{
-        grid-template-columns:1fr;
-      }
+    min-height:610px;
 
-    }
+  }
 
-  </style>
+
+  .hero-kicker{
+
+    font-size:10px;
+
+    letter-spacing:2.5px;
+
+  }
+
+
+  .hero h1{
+
+    font-size:43px;
+
+  }
+
+
+  .hero h2{
+
+    font-size:22px;
+
+  }
+
+
+  .hero-points{
+
+    grid-template-columns:1fr;
+
+    gap:17px;
+
+  }
+
+
+  .hero-point:last-child{
+
+    grid-column:auto;
+
+  }
+
+
+  .hero-point span{
+
+    max-width:none;
+
+  }
+
+
+  .intro{
+
+    padding:
+    65px 6%;
+
+  }
+
+
+  .intro h2{
+
+    font-size:32px;
+
+  }
+
+
+  .services-section{
+
+    padding:
+    65px 5% 75px;
+
+  }
+
+
+  .section-title h2{
+
+    font-size:31px;
+
+  }
+
+
+  .cta{
+
+    margin:
+    60px 5%;
+
+  }
+
+
+  .mobile-cta{
+
+    padding:
+    10px 15px;
+
+  }
+
+
+  .whatsapp{
+
+    width:56px;
+
+    height:56px;
+
+  }
+
+}
+
+
+</style>
+
 </head>
+
+
 
 <body>
 
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
 <header>
 
-  <a class="brand" href="index.html">
-    <img src="logo-geortega.png" alt="Logo GEORTEGA">
+
+  <a
+    class="brand"
+    href="index.html">
+
+    <img
+      src="logo-geortega.png"
+      alt="Logo GEORTEGA">
+
   </a>
 
 
   <nav id="mainNav">
 
-    <a class="active" href="index.html">
+
+    <a
+      class="active"
+      href="index.html">
+
       Inicio
+
     </a>
+
 
     <a href="nosotros.html">
+
       Nosotros
+
     </a>
+
 
     <a href="servicios.html">
+
       Servicios
+
     </a>
 
+
     <a href="contacto.html">
+
       Contacto
+
     </a>
+
 
     <a
       class="nav-cta"
       href="https://wa.me/56973401407"
-      target="_blank">
+      target="_blank"
+      rel="noopener noreferrer">
+
       Cotizar
+
     </a>
+
 
   </nav>
 
 
+
+  <!-- MÓVIL -->
+
   <div class="mobile-controls">
+
 
     <a
       class="mobile-cta"
       href="https://wa.me/56973401407"
-      target="_blank">
+      target="_blank"
+      rel="noopener noreferrer">
+
       Cotizar
+
     </a>
+
 
     <button
       id="menuToggle"
@@ -757,17 +1656,27 @@
       aria-expanded="false">
 
       <span></span>
+
       <span></span>
+
       <span></span>
 
     </button>
 
+
   </div>
+
 
 </header>
 
 
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
 <section class="hero">
+
 
   <video
     class="hero-video"
@@ -775,270 +1684,582 @@
     muted
     loop
     playsinline
-    poster="matrice4e-portada.jpg">
+    preload="metadata"
+    poster="fotogrametria.jpg">
 
-    <source src="video-portada.mp4" type="video/mp4">
+    <source
+      src="video-portada.mp4"
+      type="video/mp4">
 
   </video>
+
 
   <div class="hero-overlay"></div>
 
 
+
   <div class="hero-content">
 
+
     <div class="hero-kicker">
+
       TOPOGRAFÍA · GEOMENSURA · TECNOLOGÍA GEOESPACIAL
+
     </div>
 
-    <h1>GEORTEGA</h1>
+
+    <h1>
+
+      GEORTEGA
+
+    </h1>
+
 
     <h2>
+
       Precisión que da confianza.
+
     </h2>
 
-    <p>
-      Soluciones topográficas y geoespaciales para construcción,
-      ingeniería y desarrollo territorial. Transformamos datos
-      del terreno en información útil para tomar decisiones
-      con mayor seguridad.
-    </p>
 
-    <div class="hero-actions">
 
-      <a class="btn-primary"
-         href="servicios.html">
-        Ver servicios
-      </a>
-
-      <a class="btn-secondary"
-         href="https://wa.me/56973401407"
-         target="_blank">
-        Solicitar cotización
-      </a>
-
-    </div>
+    <!-- ÁREAS -->
 
     <div class="hero-points">
 
-      <div class="hero-point">
-        <strong>GNSS</strong>
-        <span>Posicionamiento de precisión</span>
-      </div>
 
       <div class="hero-point">
-        <strong>DRONES</strong>
-        <span>Fotogrametría y registro aéreo</span>
+
+        <strong>
+          GNSS
+        </strong>
+
+        <span>
+          Posicionamiento y medición de precisión
+        </span>
+
       </div>
 
+
+
       <div class="hero-point">
-        <strong>CAD</strong>
-        <span>Entregables técnicos digitales</span>
+
+        <strong>
+          DRONES
+        </strong>
+
+        <span>
+          Fotogrametría y registro aéreo
+        </span>
+
       </div>
+
+
+
+      <div class="hero-point">
+
+        <strong>
+          CAD
+        </strong>
+
+        <span>
+          Procesamiento y dibujo técnico digital
+        </span>
+
+      </div>
+
+
+
+      <div class="hero-point">
+
+        <strong>
+          PLANOS
+        </strong>
+
+        <span>
+          Entregables técnicos para tus proyectos
+        </span>
+
+      </div>
+
+
+
+      <div class="hero-point">
+
+        <strong>
+          INSPECCIÓN
+        </strong>
+
+        <span>
+          Control visual y documentación técnica
+        </span>
+
+      </div>
+
 
     </div>
 
+
   </div>
 
+
 </section>
+
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
 
 <section class="intro">
 
+
   <div class="intro-content">
 
+
     <div class="label">
+
       SOLUCIONES GEOESPACIALES
+
     </div>
 
+
     <h2>
+
       Información precisa para desarrollar mejores proyectos.
+
     </h2>
 
+
     <p>
-      En GEORTEGA combinamos levantamientos topográficos,
-      tecnologías GNSS, drones, fotogrametría y procesamiento
-      digital para entregar información confiable y adaptada
-      a las necesidades de cada proyecto.
+
+      Integramos mediciones en terreno, GNSS, drones,
+      fotogrametría y procesamiento digital para transformar
+      información geoespacial en entregables técnicos útiles
+      para ingeniería, construcción y desarrollo territorial.
+
     </p>
 
+
   </div>
+
 
 </section>
 
 
+
+<!-- =====================================================
+     SERVICIOS DESTACADOS
+===================================================== -->
+
 <section class="services-section">
+
 
   <div class="section-title">
 
+
     <div class="label">
+
       SERVICIOS DESTACADOS
+
     </div>
 
+
     <h2>
+
       Soluciones para distintas etapas del proyecto
+
     </h2>
 
+
     <p>
+
       Conoce algunas de nuestras principales áreas de trabajo.
+
     </p>
 
+
   </div>
+
 
 
   <div class="services">
 
+
+
+    <!-- LEVANTAMIENTO -->
+
     <article class="service">
+
 
       <img
         src="levantamiento-topografico.jpg"
-        alt="Levantamiento Topográfico GEORTEGA">
+        loading="lazy"
+        alt="Levantamientos Topográficos GEORTEGA">
+
 
       <div class="service-content">
 
-        <div class="service-number">
-          01
-        </div>
 
         <h3>
+
           Levantamientos Topográficos
+
         </h3>
 
+
         <p>
+
           Información planimétrica y altimétrica para
           proyectos de construcción, ingeniería,
           diseño y planificación.
+
         </p>
 
-        <a class="service-link"
-           href="servicios.html">
+
+        <a
+          class="service-link"
+          href="servicios.html">
+
           Conocer servicio →
+
         </a>
 
+
       </div>
+
 
     </article>
 
 
+
+    <!-- FOTOGRAMETRÍA -->
+
     <article class="service">
+
 
       <img
         src="fotogrametria.jpg"
+        loading="lazy"
         alt="Fotogrametría y Drones GEORTEGA">
+
 
       <div class="service-content">
 
-        <div class="service-number">
-          02
-        </div>
 
         <h3>
+
           Fotogrametría y Drones
+
         </h3>
 
+
         <p>
+
           Ortofotos, modelos digitales, nubes de puntos,
           superficies y documentación aérea de alta resolución.
+
         </p>
 
-        <a class="service-link"
-           href="servicios.html">
+
+        <a
+          class="service-link"
+          href="servicios.html">
+
           Conocer servicio →
+
         </a>
+
 
       </div>
 
+
     </article>
 
+
+
+    <!-- SUBDIVISIONES -->
 
     <article class="service">
 
+
       <img
-        src="matrice4e-portada.jpg"
-        alt="Tecnología geoespacial GEORTEGA">
+        src="subdivision-loteos.jpg"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='levantamiento-topografico.jpg';"
+        alt="Subdivisiones y Loteos GEORTEGA">
+
 
       <div class="service-content">
 
-        <div class="service-number">
-          03
-        </div>
 
         <h3>
+
           Subdivisiones y Loteos
+
         </h3>
 
+
         <p>
+
           Levantamiento, análisis de superficies,
           deslindes y documentación técnica para
           proyectos de división territorial.
+
         </p>
 
-        <a class="service-link"
-           href="servicios.html">
+
+        <a
+          class="service-link"
+          href="servicios.html">
+
           Conocer servicio →
+
         </a>
+
 
       </div>
 
+
     </article>
 
+
   </div>
+
 
 
   <div class="services-more">
 
+
     <a href="servicios.html">
+
       Ver todos los servicios
+
     </a>
+
 
   </div>
 
+
 </section>
 
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
 
 <section class="cta">
 
+
   <div>
 
+
     <h2>
+
       ¿Tienes un proyecto que necesita información precisa del terreno?
+
     </h2>
 
+
     <p>
-      Envíanos tus antecedentes y evaluaremos la solución
-      técnica adecuada para tus necesidades.
+
+      Cuéntanos tu requerimiento y evaluaremos la solución
+      topográfica y geoespacial adecuada para tu proyecto.
+
     </p>
+
 
   </div>
 
+
   <a href="contacto.html">
+
     Contactar a GEORTEGA
+
   </a>
+
 
 </section>
 
 
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
+
 
   <div class="footer-grid">
 
+
+
+    <!-- MÉTODOS DE PAGO -->
+
     <div class="footer-brand">
+
 
       <img
         src="logo-geortega.png"
         alt="GEORTEGA">
 
-      <p>
-        Soluciones profesionales en topografía,
-        geomensura, fotogrametría y tecnologías geoespaciales.
-      </p>
+
+      <h4 class="payment-title">
+
+        Métodos de pago
+
+      </h4>
+
+
+      <div class="payment-methods">
+
+
+
+        <div class="payment-item">
+
+
+          <span class="payment-icon">
+
+            <svg viewBox="0 0 24 24">
+
+              <rect
+                x="2"
+                y="5"
+                width="20"
+                height="14"
+                rx="2">
+
+              </rect>
+
+              <path d="M2 10h20"></path>
+
+            </svg>
+
+          </span>
+
+
+          <div>
+
+            <strong>
+              Tarjetas de crédito
+            </strong>
+
+            <small>
+              Pago electrónico
+            </small>
+
+          </div>
+
+
+        </div>
+
+
+
+        <div class="payment-item">
+
+
+          <span class="payment-icon">
+
+            <svg viewBox="0 0 24 24">
+
+              <rect
+                x="3"
+                y="3"
+                width="18"
+                height="18"
+                rx="3">
+
+              </rect>
+
+              <path d="M7 8h10"></path>
+
+              <path d="M7 12h6"></path>
+
+              <path d="M7 16h4"></path>
+
+            </svg>
+
+          </span>
+
+
+          <div>
+
+            <strong>
+              Tarjetas de débito
+            </strong>
+
+            <small>
+              Débito bancario
+            </small>
+
+          </div>
+
+
+        </div>
+
+
+
+        <div class="payment-item">
+
+
+          <span class="payment-icon">
+
+            <svg viewBox="0 0 24 24">
+
+              <path d="M3 10h18"></path>
+
+              <path d="M5 10v8"></path>
+
+              <path d="M9 10v8"></path>
+
+              <path d="M15 10v8"></path>
+
+              <path d="M19 10v8"></path>
+
+              <path d="M2 18h20"></path>
+
+              <path d="M12 3 3 8h18z"></path>
+
+            </svg>
+
+          </span>
+
+
+          <div>
+
+            <strong>
+              Transferencia bancaria
+            </strong>
+
+            <small>
+              Bancos nacionales
+            </small>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
 
     </div>
 
 
+
+    <!-- NAVEGACIÓN -->
+
     <div>
 
+
       <h4>
+
         Secciones
+
       </h4>
+
 
       <p>
         <a href="index.html">
@@ -1046,11 +2267,13 @@
         </a>
       </p>
 
+
       <p>
         <a href="nosotros.html">
           Nosotros
         </a>
       </p>
+
 
       <p>
         <a href="servicios.html">
@@ -1058,96 +2281,282 @@
         </a>
       </p>
 
+
       <p>
         <a href="contacto.html">
           Contacto
         </a>
       </p>
 
+
     </div>
 
+
+
+    <!-- CONTACTO / REDES -->
 
     <div>
 
+
       <h4>
+
         Contacto
+
       </h4>
 
-      <p>
-        contacto@geortega.cl
-      </p>
 
       <p>
-        +56 9 7340 1407
+
+        <a href="mailto:contacto@geortega.cl">
+
+          contacto@geortega.cl
+
+        </a>
+
       </p>
 
+
       <p>
+
+        <a href="tel:+56973401407">
+
+          +56 9 7340 1407
+
+        </a>
+
+      </p>
+
+
+      <p>
+
         Chile
+
       </p>
+
+
+
+      <h4 class="social-title">
+
+        Síguenos
+
+      </h4>
+
+
+      <div class="social-links">
+
+
+
+        <!-- INSTAGRAM
+             CAMBIA TU_USUARIO POR EL PERFIL REAL -->
+
+        <a
+          href="https://www.instagram.com/TU_USUARIO"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram">
+
+          <svg viewBox="0 0 24 24">
+
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6-1.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z">
+
+            </path>
+
+          </svg>
+
+        </a>
+
+
+
+        <!-- LINKEDIN -->
+
+        <a
+          href="https://www.linkedin.com/company/TU_EMPRESA"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn">
+
+          <svg viewBox="0 0 24 24">
+
+            <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7 0h3.8v2.2h.1c.5-1 1.8-2.7 4.6-2.7 4.9 0 5.8 3.2 5.8 7.4V24h-4v-8.1c0-1.9 0-4.4-2.7-4.4s-3.1 2.1-3.1 4.3V24h-4V8z">
+
+            </path>
+
+          </svg>
+
+        </a>
+
+
+
+        <!-- FACEBOOK -->
+
+        <a
+          href="https://www.facebook.com/TU_PAGINA"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook">
+
+          <svg viewBox="0 0 24 24">
+
+            <path d="M24 12a12 12 0 1 0-13.9 11.85v-8.39H7.05V12h3.05V9.36c0-3.01 1.79-4.67 4.53-4.67 1.31 0 2.69.23 2.69.23v2.96H15.8c-1.49 0-1.96.93-1.96 1.88V12h3.33l-.53 3.46h-2.8v8.39A12 12 0 0 0 24 12z">
+
+            </path>
+
+          </svg>
+
+        </a>
+
+
+      </div>
+
 
     </div>
 
+
   </div>
+
 
 
   <div class="footer-bottom">
-    © 2026 GEORTEGA · Todos los derechos reservados.
+
+
+    <span>
+
+      © 2026 GEORTEGA · Todos los derechos reservados.
+
+    </span>
+
+
+    <span>
+
+      Topografía · Geomensura · Tecnología Geoespacial
+
+    </span>
+
+
   </div>
+
 
 </footer>
 
 
-<a class="whatsapp"
-   href="https://wa.me/56973401407"
-   target="_blank"
-   aria-label="WhatsApp">
 
-  WA
+<!-- =====================================================
+     WHATSAPP
+===================================================== -->
+
+<a
+  class="whatsapp"
+  href="https://wa.me/56973401407"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Contactar por WhatsApp">
+
+
+  <svg
+    viewBox="0 0 24 24"
+    aria-hidden="true">
+
+
+    <path
+      d="M20.5 3.5A11.7 11.7 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.9c0 2.1.6 4.2 1.6 6L0 24l6.3-1.7a12 12 0 0 0 5.8 1.5h.1c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.3-6.2-3.6-8.4ZM12.2 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.8 9.8 0 1 1 8.3 4.6Zm5.4-7.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.7.1-1.9-.9-3.2-1.7-4.5-3.9-.3-.5.3-.5.9-1.6.1-.2 0-.5-.1-.7-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.3 3.4 1.5 3.6c.2.2 2.5 3.8 6 5.3 2.2 1 3 .9 4.1.8.7-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z">
+
+    </path>
+
+
+  </svg>
+
 
 </a>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT MENÚ MÓVIL
+===================================================== -->
+
 <script>
 
-const menuToggle = document.getElementById("menuToggle");
-const mainNav = document.getElementById("mainNav");
+
+const menuToggle =
+document.getElementById("menuToggle");
 
 
-menuToggle.addEventListener("click", function(){
+const mainNav =
+document.getElementById("mainNav");
 
-  const abierto = mainNav.classList.toggle("open");
 
-  menuToggle.classList.toggle("active", abierto);
+
+menuToggle.addEventListener(
+"click",
+
+function(){
+
+
+  const abierto =
+  mainNav.classList.toggle(
+    "open"
+  );
+
+
+  menuToggle.classList.toggle(
+    "active",
+    abierto
+  );
+
 
   menuToggle.setAttribute(
     "aria-expanded",
     abierto
   );
 
-});
-
-
-/* CERRAR MENÚ AL PRESIONAR UNA OPCIÓN */
-
-mainNav.querySelectorAll("a").forEach(function(enlace){
-
-  enlace.addEventListener("click", function(){
-
-    mainNav.classList.remove("open");
-
-    menuToggle.classList.remove("active");
-
-    menuToggle.setAttribute(
-      "aria-expanded",
-      "false"
-    );
-
-  });
 
 });
 
 
-/* CERRAR AL TOCAR FUERA DEL MENÚ */
 
-document.addEventListener("click", function(event){
+/* CERRAR AL SELECCIONAR */
+
+mainNav
+.querySelectorAll("a")
+.forEach(function(enlace){
+
+
+  enlace.addEventListener(
+    "click",
+    function(){
+
+
+      mainNav.classList.remove(
+        "open"
+      );
+
+
+      menuToggle.classList.remove(
+        "active"
+      );
+
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+
+    }
+  );
+
+
+});
+
+
+
+/* CERRAR AL TOCAR AFUERA */
+
+document.addEventListener(
+"click",
+
+function(event){
+
 
   if(
     window.innerWidth <= 900 &&
@@ -1155,39 +2564,69 @@ document.addEventListener("click", function(event){
     !menuToggle.contains(event.target)
   ){
 
-    mainNav.classList.remove("open");
 
-    menuToggle.classList.remove("active");
+    mainNav.classList.remove(
+      "open"
+    );
+
+
+    menuToggle.classList.remove(
+      "active"
+    );
+
 
     menuToggle.setAttribute(
       "aria-expanded",
       "false"
     );
 
+
   }
+
 
 });
 
 
-/* RESTAURAR ESTADO AL VOLVER A PC */
 
-window.addEventListener("resize", function(){
+/* RESTAURAR AL CAMBIAR A PC */
 
-  if(window.innerWidth > 900){
+window.addEventListener(
+"resize",
 
-    mainNav.classList.remove("open");
+function(){
 
-    menuToggle.classList.remove("active");
+
+  if(
+    window.innerWidth > 900
+  ){
+
+
+    mainNav.classList.remove(
+      "open"
+    );
+
+
+    menuToggle.classList.remove(
+      "active"
+    );
+
 
     menuToggle.setAttribute(
       "aria-expanded",
       "false"
     );
 
+
   }
 
+
 });
+
 
 </script>
+
+
+
 </body>
+
 </html>
