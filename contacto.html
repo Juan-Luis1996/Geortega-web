@@ -13,28 +13,17 @@
 
 <meta
   name="description"
-  content="Contacta a GEORTEGA para solicitar cotizaciones de topografía, GNSS, drones, fotogrametría, subdivisiones, cubicaciones y soluciones geoespaciales.">
-
+  content="Contacta a GEORTEGA para cotizaciones de topografía, GNSS, drones, fotogrametría y soluciones geoespaciales.">
 
 <style>
 
-
-/* =====================================================
-   VARIABLES
-===================================================== */
-
 :root{
-
   --navy:#102746;
   --navy-dark:#07182d;
-
   --blue:#2856d8;
   --blue-light:#edf2ff;
-
   --text:#17263d;
   --muted:#66758a;
-
-  --light:#f7f9fc;
   --border:#e2e7ee;
 
   --success:#17874c;
@@ -42,13 +31,7 @@
 
   --error:#b3261e;
   --error-bg:#fff0ef;
-
 }
-
-
-/* =====================================================
-   GENERAL
-===================================================== */
 
 *{
   margin:0;
@@ -56,36 +39,24 @@
   box-sizing:border-box;
 }
 
-
 html{
   scroll-behavior:smooth;
 }
 
-
 body{
-
-  font-family:
-  Arial,
-  Helvetica,
-  sans-serif;
-
+  font-family:Arial,Helvetica,sans-serif;
   color:var(--text);
-
-  background:#ffffff;
-
+  background:#fff;
 }
-
 
 a{
   text-decoration:none;
 }
 
-
 img{
-  max-width:100%;
   display:block;
+  max-width:100%;
 }
-
 
 button,
 input,
@@ -95,1315 +66,684 @@ textarea{
 }
 
 
-
-/* =====================================================
-   HEADER
-===================================================== */
+/* HEADER */
 
 header{
-
   height:82px;
-
   padding:0 7%;
 
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
 
-  background:#ffffff;
+  background:white;
 
   position:sticky;
-
   top:0;
-
   z-index:1000;
 
-  border-bottom:
-  1px solid #edf0f4;
-
+  border-bottom:1px solid #edf0f4;
 }
-
 
 .brand img{
-
   height:56px;
   width:auto;
-
 }
-
 
 nav{
-
   display:flex;
-
   align-items:center;
-
   gap:30px;
-
 }
-
 
 nav a{
-
   color:#31415a;
-
   font-size:14px;
-
   font-weight:600;
-
-  transition:.2s;
-
 }
-
 
 nav a:hover{
   color:var(--blue);
 }
 
-
 nav a.active{
-
   color:var(--blue);
-
   position:relative;
-
 }
-
 
 nav a.active::after{
-
   content:"";
-
   position:absolute;
-
   height:2px;
-
   width:100%;
-
   left:0;
-
   bottom:-12px;
-
   background:var(--blue);
-
 }
-
 
 .nav-cta{
-
   background:var(--blue);
-
-  color:white !important;
-
+  color:white!important;
   padding:12px 22px;
-
   border-radius:25px;
-
 }
 
 
-
-/* =====================================================
-   HERO CONTACTO
-===================================================== */
+/* HERO */
 
 .contact-hero{
-
   min-height:280px;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
   text-align:center;
 
   position:relative;
-
   overflow:hidden;
 
   color:white;
 
   background:
-
-  linear-gradient(
-    120deg,
-    #07182d,
-    #102746 55%,
-    #193c5c
-  );
-
+    linear-gradient(
+      120deg,
+      #07182d,
+      #102746 55%,
+      #193c5c
+    );
 }
 
-
 .contact-hero::before{
-
   content:"";
-
   position:absolute;
-
   inset:-80px;
-
   opacity:.30;
 
   background:
-
     repeating-radial-gradient(
       ellipse at 15% 45%,
       transparent 0 26px,
       rgba(87,143,184,.24) 27px 38px,
       transparent 39px 66px
     ),
-
     repeating-radial-gradient(
       ellipse at 70% 30%,
       transparent 0 34px,
       rgba(73,121,164,.22) 35px 47px,
       transparent 48px 78px
-    ),
-
-    repeating-radial-gradient(
-      ellipse at 85% 85%,
-      transparent 0 30px,
-      rgba(59,103,143,.18) 31px 43px,
-      transparent 44px 74px
     );
-
 }
-
 
 .contact-hero-content{
-
   position:relative;
-
   z-index:2;
-
-  padding:
-  40px 20px;
-
+  padding:40px 20px;
 }
-
 
 .contact-kicker{
-
   color:#b8cbe3;
-
   font-size:12px;
-
   font-weight:bold;
-
   letter-spacing:4px;
-
   margin-bottom:12px;
-
 }
-
 
 .contact-hero h1{
-
   font-size:52px;
-
   margin-bottom:12px;
-
 }
-
 
 .contact-hero p{
-
   max-width:690px;
-
   margin:auto;
-
   color:#d5dfec;
-
   font-size:17px;
-
   line-height:1.7;
-
 }
 
 
-
-/* =====================================================
-   CONTACTO PRINCIPAL
-===================================================== */
+/* CONTACTO */
 
 .contact-section{
-
-  padding:
-  75px 7% 90px;
-
-  background:#ffffff;
-
+  padding:75px 7% 90px;
 }
 
-
 .contact-grid{
-
   max-width:1200px;
-
   margin:auto;
 
   display:grid;
-
-  grid-template-columns:
-  .92fr 1.08fr;
+  grid-template-columns:.92fr 1.08fr;
 
   gap:28px;
-
   align-items:start;
-
 }
-
-
-
-/* =====================================================
-   INFORMACIÓN
-===================================================== */
 
 .contact-info{
-
   display:flex;
-
   flex-direction:column;
-
   gap:14px;
-
 }
 
-
 .info-card{
-
-  border:
-  1px solid var(--border);
-
+  border:1px solid var(--border);
   border-radius:15px;
-
-  padding:
-  19px 20px;
+  padding:19px 20px;
 
   display:flex;
-
   align-items:center;
-
   gap:16px;
 
   min-height:82px;
-
-  background:#ffffff;
-
-  transition:
-  border-color .2s,
-  box-shadow .2s,
-  transform .2s;
-
+  background:white;
 }
-
-
-.info-card:hover{
-
-  border-color:#cdd7e5;
-
-  transform:
-  translateY(-2px);
-
-  box-shadow:
-  0 10px 28px
-  rgba(15,37,69,.06);
-
-}
-
 
 .info-icon{
-
   width:44px;
-
   height:44px;
-
   min-width:44px;
 
   border-radius:12px;
 
   background:var(--blue-light);
-
   color:var(--blue);
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
 }
-
 
 .info-icon svg{
-
   width:21px;
-
   height:21px;
-
   fill:none;
-
   stroke:currentColor;
-
   stroke-width:1.8;
-
-  stroke-linecap:round;
-
-  stroke-linejoin:round;
-
 }
-
 
 .info-label{
-
   color:#91a0b4;
-
   font-size:11px;
-
   font-weight:bold;
-
   letter-spacing:.7px;
-
   text-transform:uppercase;
-
   margin-bottom:5px;
-
 }
-
 
 .info-value{
-
   color:#34455d;
-
   font-size:14px;
-
   font-weight:600;
-
   line-height:1.5;
-
 }
-
 
 .info-value a{
   color:#34455d;
 }
 
 
-.info-value a:hover{
-  color:var(--blue);
-}
-
-
-
-/* =====================================================
-   MAPA
-===================================================== */
+/* MAPA */
 
 .map-card{
-
-  margin-top:2px;
-
-  border:
-  1px solid var(--border);
-
+  border:1px solid var(--border);
   border-radius:15px;
-
   overflow:hidden;
-
   background:white;
-
 }
-
 
 .map-card iframe{
-
   width:100%;
-
   height:280px;
-
   border:0;
-
   display:block;
-
 }
 
-
 .map-footer{
-
-  padding:
-  13px 16px;
-
-  border-top:
-  1px solid var(--border);
+  padding:13px 16px;
+  border-top:1px solid var(--border);
 
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
 
   gap:15px;
-
 }
-
 
 .map-footer span{
-
   color:var(--muted);
-
   font-size:13px;
-
 }
-
 
 .map-footer a{
-
   color:var(--blue);
-
   font-size:13px;
-
   font-weight:bold;
-
 }
 
 
-
-/* =====================================================
-   FORMULARIO
-===================================================== */
+/* FORMULARIO */
 
 .form-card{
-
-  border:
-  1px solid var(--border);
-
+  border:1px solid var(--border);
   border-radius:18px;
 
   padding:34px;
 
-  background:#ffffff;
+  background:white;
 
-  box-shadow:
-  0 12px 35px
-  rgba(15,37,69,.035);
-
+  box-shadow:0 12px 35px rgba(15,37,69,.035);
 }
-
 
 .form-eyebrow{
-
   color:var(--blue);
-
   font-size:11px;
-
   font-weight:bold;
-
   letter-spacing:3px;
-
   margin-bottom:10px;
-
 }
-
 
 .form-card h2{
-
   color:var(--navy);
-
   font-size:29px;
-
   margin-bottom:7px;
-
 }
-
 
 .form-intro{
-
   color:var(--muted);
-
   font-size:14px;
-
   line-height:1.6;
-
   margin-bottom:25px;
-
 }
-
 
 .form-row{
-
   display:grid;
-
-  grid-template-columns:
-  1fr 1fr;
-
+  grid-template-columns:1fr 1fr;
   gap:12px;
-
 }
-
 
 .form-group{
   margin-bottom:12px;
 }
 
-
 .form-group label{
-
   display:block;
-
   font-size:12px;
-
   font-weight:bold;
-
   color:#53647b;
-
   margin-bottom:7px;
-
 }
-
 
 .form-control{
-
   width:100%;
-
-  border:
-  1px solid #d8e0ea;
-
+  border:1px solid #d8e0ea;
   background:white;
-
   color:var(--text);
-
   border-radius:11px;
-
-  padding:
-  13px 14px;
-
+  padding:13px 14px;
   outline:none;
-
-  transition:.2s;
-
 }
-
-
-.form-control::placeholder{
-  color:#9aa7b8;
-}
-
 
 .form-control:focus{
-
   border-color:var(--blue);
-
-  box-shadow:
-  0 0 0 3px
-  rgba(40,86,216,.09);
-
+  box-shadow:0 0 0 3px rgba(40,86,216,.09);
 }
-
-
-select.form-control{
-  cursor:pointer;
-}
-
 
 textarea.form-control{
-
   min-height:135px;
-
   resize:vertical;
-
 }
-
-
-
-/* =====================================================
-   BOTÓN FORMULARIO
-===================================================== */
 
 .submit-btn{
-
   width:100%;
-
   border:none;
-
   background:var(--blue);
-
   color:white;
-
   border-radius:11px;
-
-  padding:
-  14px 20px;
-
+  padding:14px 20px;
   font-weight:bold;
-
   cursor:pointer;
-
-  transition:.2s;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  gap:9px;
-
-  margin-top:2px;
-
 }
-
-
-.submit-btn:hover{
-  background:#1946c7;
-}
-
 
 .submit-btn:disabled{
-
-  cursor:not-allowed;
-
-  opacity:.72;
-
+  opacity:.7;
 }
-
-
-
-/* =====================================================
-   ESTADO FORMULARIO
-===================================================== */
 
 .form-status{
-
   display:none;
-
   border-radius:10px;
-
-  padding:
-  13px 15px;
-
+  padding:13px 15px;
   margin-top:14px;
-
   font-size:14px;
-
-  line-height:1.5;
-
 }
-
 
 .form-status.success{
-
   display:block;
-
   background:var(--success-bg);
-
   color:var(--success);
-
-  border:
-  1px solid #ccebd9;
-
 }
-
 
 .form-status.error{
-
   display:block;
-
   background:var(--error-bg);
-
   color:var(--error);
-
-  border:
-  1px solid #f1cbc7;
-
 }
-
-
-
-/* =====================================================
-   CONTACTO DIRECTO
-===================================================== */
 
 .direct-contact{
-
   margin-top:22px;
-
   padding-top:20px;
-
-  border-top:
-  1px solid var(--border);
+  border-top:1px solid var(--border);
 
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
-
   gap:20px;
-
 }
-
 
 .direct-contact p{
-
   color:var(--muted);
-
   font-size:13px;
-
 }
 
-
 .whatsapp-inline{
-
   display:inline-flex;
-
   align-items:center;
-
   gap:8px;
 
   color:#188a43;
 
   font-size:13px;
-
   font-weight:bold;
-
-  white-space:nowrap;
-
 }
-
 
 .whatsapp-inline svg{
-
   width:19px;
-
   height:19px;
-
   fill:#25D366;
-
 }
-
 
 
 /* =====================================================
-   FOOTER
+   FOOTER — EXACTAMENTE IGUAL A INICIO
 ===================================================== */
 
 footer{
-
   background:var(--navy-dark);
-
   color:white;
-
-  padding:
-  62px 7% 26px;
-
+  padding:62px 7% 26px;
 }
 
-
 .footer-grid{
-
   max-width:1200px;
-
   margin:auto;
 
   display:grid;
-
-  grid-template-columns:
-  1.6fr .75fr 1fr;
+  grid-template-columns:1.6fr .75fr 1fr;
 
   gap:70px;
-
 }
-
-
-
-/* =====================================================
-   IDENTIDAD FOOTER
-===================================================== */
 
 .footer-company{
   margin-bottom:25px;
 }
 
-
 .footer-company-name{
-
   color:white;
-
   font-size:26px;
-
   font-weight:800;
-
   letter-spacing:1px;
-
 }
-
 
 .footer-company-subtitle{
-
   margin-top:5px;
-
   color:#8fa4bb;
-
   font-size:13px;
-
 }
-
 
 footer h4{
-
   color:white;
-
   margin-bottom:15px;
-
   font-size:16px;
-
 }
-
 
 footer p,
 footer a{
-
   color:#aebdd0;
-
   font-size:14px;
-
   line-height:1.9;
-
 }
-
-
-footer a{
-  transition:.2s;
-}
-
 
 footer a:hover{
   color:white;
 }
 
 
-
-/* =====================================================
-   MÉTODOS DE PAGO
-===================================================== */
+/* PAGOS */
 
 .payment-methods{
-
   display:grid;
-
   gap:9px;
-
   max-width:350px;
-
   margin-top:15px;
-
 }
 
-
 .payment-item{
-
   min-height:57px;
 
   display:flex;
-
   align-items:center;
-
   gap:12px;
 
-  padding:
-  10px 13px;
+  padding:10px 13px;
 
   background:#0b2038;
 
-  border:
-  1px solid #203750;
-
+  border:1px solid #203750;
   border-radius:11px;
-
 }
 
-
 .payment-icon{
-
   width:37px;
-
   height:37px;
-
   flex:0 0 37px;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   background:#142d49;
-
   border-radius:9px;
-
 }
 
-
 .payment-icon svg{
-
   width:21px;
-
   height:21px;
 
   stroke:white;
-
   fill:none;
-
   stroke-width:1.7;
-
 }
-
 
 .payment-item strong{
-
   display:block;
-
   color:white;
-
   font-size:13px;
-
 }
-
 
 .payment-item small{
-
   display:block;
-
   margin-top:2px;
-
   color:#8497ad;
-
   font-size:11px;
-
 }
 
 
-
-/* =====================================================
-   REDES SOCIALES
-===================================================== */
+/* REDES */
 
 .social-title{
   margin-top:24px;
 }
 
-
 .social-links{
-
   display:flex;
-
   gap:10px;
-
   margin-top:12px;
-
 }
 
-
 .social-links a{
-
   width:41px;
-
   height:41px;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   border-radius:50%;
-
   background:#122a45;
-
-  transition:
-  background .2s,
-  transform .2s;
-
 }
-
 
 .social-links a:hover{
-
   background:var(--blue);
-
-  transform:
-  translateY(-2px);
-
 }
-
 
 .social-links svg{
-
   width:20px;
-
   height:20px;
-
   fill:white;
-
 }
 
-
-
-/* =====================================================
-   FOOTER INFERIOR
-===================================================== */
-
 .footer-bottom{
-
   max-width:1200px;
 
-  margin:
-  40px auto 0;
-
+  margin:40px auto 0;
   padding-top:22px;
 
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
 
   gap:20px;
 
-  border-top:
-  1px solid #21364f;
+  border-top:1px solid #21364f;
 
   color:#8494a8;
-
   font-size:13px;
-
 }
 
 
-
-/* =====================================================
-   WHATSAPP FLOTANTE
-===================================================== */
+/* WHATSAPP */
 
 .whatsapp{
-
   position:fixed;
-
   right:22px;
-
   bottom:22px;
 
   width:60px;
-
   height:60px;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   border-radius:50%;
-
   background:#25D366;
 
   z-index:1500;
 
-  box-shadow:
-  0 10px 30px
-  rgba(0,0,0,.20);
-
-  transition:
-  transform .2s,
-  box-shadow .2s;
-
+  box-shadow:0 10px 30px rgba(0,0,0,.20);
 }
-
-
-.whatsapp:hover{
-
-  transform:
-  translateY(-3px);
-
-  box-shadow:
-  0 14px 34px
-  rgba(0,0,0,.24);
-
-}
-
 
 .whatsapp svg{
-
   width:31px;
-
   height:31px;
-
   fill:white;
-
 }
 
 
-
-/* =====================================================
-   MENÚ MÓVIL
-===================================================== */
+/* MENÚ MÓVIL */
 
 .mobile-controls{
-
   display:none;
-
   align-items:center;
-
   gap:10px;
-
 }
-
 
 .mobile-cta{
-
   display:none;
-
   background:var(--blue);
-
-  color:white !important;
-
-  padding:
-  11px 19px;
-
+  color:white!important;
+  padding:11px 19px;
   border-radius:25px;
-
   font-size:14px;
-
   font-weight:600;
-
 }
 
-
 .menu-toggle{
-
   display:none;
 
   width:44px;
-
   height:44px;
 
   border:none;
-
   background:#f4f6fa;
-
   border-radius:12px;
 
   cursor:pointer;
 
   align-items:center;
-
   justify-content:center;
-
   flex-direction:column;
 
   gap:5px;
-
 }
-
 
 .menu-toggle span{
-
   width:21px;
-
   height:2px;
-
   background:var(--navy);
-
   border-radius:3px;
-
-  transition:.25s;
-
 }
-
 
 .menu-toggle.active span:nth-child(1){
-
-  transform:
-  translateY(7px)
-  rotate(45deg);
-
+  transform:translateY(7px) rotate(45deg);
 }
-
 
 .menu-toggle.active span:nth-child(2){
   opacity:0;
 }
 
-
 .menu-toggle.active span:nth-child(3){
-
-  transform:
-  translateY(-7px)
-  rotate(-45deg);
-
+  transform:translateY(-7px) rotate(-45deg);
 }
 
 
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
+/* RESPONSIVE */
 
 @media(max-width:900px){
 
-
   header{
-
-    height:82px;
-
-    padding:
-    0 5%;
-
+    padding:0 5%;
   }
-
 
   .brand img{
     height:52px;
   }
 
-
   .mobile-controls{
     display:flex;
   }
 
-
   .mobile-cta{
-
     display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
   }
-
 
   .menu-toggle{
     display:flex;
   }
 
-
-
-  /* MENÚ */
-
   nav{
-
     position:absolute;
-
     top:82px;
-
     left:0;
-
     right:0;
 
     width:100%;
@@ -1411,258 +751,134 @@ footer a:hover{
     background:white;
 
     flex-direction:column;
-
     align-items:stretch;
 
     gap:0;
 
-    padding:
-    0 5%;
+    padding:0 5%;
 
     max-height:0;
-
     overflow:hidden;
 
     opacity:0;
-
     visibility:hidden;
-
     pointer-events:none;
 
-    box-shadow:
-    0 14px 30px
-    rgba(15,37,69,.10);
-
-    transition:
-    max-height .3s ease,
-    opacity .25s ease,
-    padding .3s ease;
-
+    box-shadow:0 14px 30px rgba(15,37,69,.10);
   }
-
 
   nav.open{
-
     max-height:420px;
-
     opacity:1;
-
     visibility:visible;
-
     pointer-events:auto;
-
     padding-top:10px;
-
     padding-bottom:18px;
-
   }
-
 
   nav a{
-
     display:block;
-
     width:100%;
-
-    padding:
-    15px 12px;
-
-    font-size:15px;
-
-    border-bottom:
-    1px solid #edf0f4;
-
+    padding:15px 12px;
+    border-bottom:1px solid #edf0f4;
   }
-
 
   nav a.active{
-
     background:var(--blue-light);
-
-    color:var(--blue);
-
     border-radius:10px;
-
   }
-
 
   nav a.active::after{
     display:none;
   }
 
-
   nav .nav-cta{
     display:none;
   }
-
-
-
-  /* CONTACTO */
 
   .contact-grid{
     grid-template-columns:1fr;
   }
 
+  .form-card{
+    order:1;
+  }
 
   .contact-info{
     order:2;
   }
 
-
-  .form-card{
-    order:1;
-  }
-
-
-
-  /* FOOTER */
-
   .footer-grid{
-
     grid-template-columns:1fr;
-
     gap:40px;
-
   }
-
 
   .footer-bottom{
-
     flex-direction:column;
-
     align-items:flex-start;
-
-    gap:10px;
-
   }
 
 }
 
-
-
-/* =====================================================
-   CELULAR
-===================================================== */
-
 @media(max-width:620px){
 
-
   .contact-hero{
-
     min-height:240px;
-
   }
-
 
   .contact-hero h1{
     font-size:40px;
   }
 
-
-  .contact-hero p{
-    font-size:15px;
-  }
-
-
   .contact-section{
-
-    padding:
-    55px 5% 70px;
-
+    padding:55px 5% 70px;
   }
-
 
   .form-card{
-
-    padding:
-    25px 20px;
-
+    padding:25px 20px;
   }
-
 
   .form-row{
-
     grid-template-columns:1fr;
-
-    gap:0;
-
   }
-
 
   .map-card iframe{
     height:240px;
   }
 
-
   .map-footer{
-
     flex-direction:column;
-
     align-items:flex-start;
-
   }
-
 
   .direct-contact{
-
-    align-items:flex-start;
-
     flex-direction:column;
-
+    align-items:flex-start;
   }
-
 
   footer{
-
-    padding:
-    52px 6% 24px;
-
+    padding:52px 6% 24px;
   }
-
 
   .payment-methods{
     max-width:100%;
   }
 
-
   .whatsapp{
-
     width:56px;
-
     height:56px;
-
-    right:18px;
-
-    bottom:18px;
-
-  }
-
-
-  .mobile-cta{
-
-    padding:
-    10px 15px;
-
   }
 
 }
-
 
 </style>
 
 </head>
 
-
 <body>
 
 
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
 <header>
-
 
   <a
     class="brand"
@@ -1675,1063 +891,599 @@ footer a:hover{
   </a>
 
 
-
   <nav id="mainNav">
-
 
     <a href="index.html">
       Inicio
     </a>
 
-
     <a href="nosotros.html">
       Nosotros
     </a>
-
 
     <a href="servicios.html">
       Servicios
     </a>
 
-
     <a
       class="active"
       href="contacto.html">
-
       Contacto
-
     </a>
-
 
     <a
       class="nav-cta"
       href="https://wa.me/56973401407"
-      target="_blank"
-      rel="noopener noreferrer">
-
+      target="_blank">
       Cotizar
-
     </a>
-
 
   </nav>
 
 
-
   <div class="mobile-controls">
-
 
     <a
       class="mobile-cta"
       href="https://wa.me/56973401407"
-      target="_blank"
-      rel="noopener noreferrer">
-
+      target="_blank">
       Cotizar
-
     </a>
-
 
     <button
       id="menuToggle"
       class="menu-toggle"
-      type="button"
-      aria-label="Abrir menú"
-      aria-expanded="false">
+      type="button">
 
       <span></span>
-
       <span></span>
-
       <span></span>
 
     </button>
 
-
   </div>
-
 
 </header>
 
 
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
 <section class="contact-hero">
-
 
   <div class="contact-hero-content">
 
-
     <div class="contact-kicker">
-
       HABLEMOS DE TU PROYECTO
-
     </div>
 
-
     <h1>
-
       Contacto
-
     </h1>
 
-
     <p>
-
       Cuéntanos qué necesitas y te ayudaremos a definir
-      la solución topográfica o geoespacial adecuada para
-      tu proyecto.
-
+      la solución topográfica o geoespacial adecuada para tu proyecto.
     </p>
-
 
   </div>
 
-
 </section>
 
-
-
-<!-- =====================================================
-     CONTACTO
-===================================================== -->
 
 <section class="contact-section">
 
+<div class="contact-grid">
 
-  <div class="contact-grid">
 
+<div class="contact-info">
 
 
-    <!-- =================================================
-         INFORMACIÓN
-    ================================================== -->
+  <div class="info-card">
 
-    <div class="contact-info">
+    <div class="info-icon">
 
+      <svg viewBox="0 0 24 24">
 
+        <path d="M12 21s6-5.1 6-11a6 6 0 1 0-12 0c0 5.9 6 11 6 11Z"></path>
 
-      <!-- DIRECCIÓN -->
+        <circle
+          cx="12"
+          cy="10"
+          r="2">
+        </circle>
 
-      <div class="info-card">
-
-
-        <div class="info-icon">
-
-
-          <svg viewBox="0 0 24 24">
-
-            <path
-              d="M12 21s6-5.1 6-11a6 6 0 1 0-12 0c0 5.9 6 11 6 11Z">
-            </path>
-
-            <circle
-              cx="12"
-              cy="10"
-              r="2">
-            </circle>
-
-          </svg>
-
-
-        </div>
-
-
-        <div>
-
-
-          <div class="info-label">
-
-            Dirección
-
-          </div>
-
-
-          <div class="info-value">
-
-            Avenida Los Libertadores #819<br>
-            El Monte, Chile
-
-          </div>
-
-
-        </div>
-
-
-      </div>
-
-
-
-      <!-- TELÉFONO -->
-
-      <div class="info-card">
-
-
-        <div class="info-icon">
-
-
-          <svg viewBox="0 0 24 24">
-
-            <path
-              d="M5 4h4l2 5-2.5 1.5a15 15 0 0 0 5 5L15 13l5 2v4c0 1.1-.9 2-2 2C9.7 21 3 14.3 3 6a2 2 0 0 1 2-2Z">
-            </path>
-
-          </svg>
-
-
-        </div>
-
-
-        <div>
-
-
-          <div class="info-label">
-
-            Teléfono
-
-          </div>
-
-
-          <div class="info-value">
-
-
-            <a href="tel:+56973401407">
-
-              +56 9 7340 1407
-
-            </a>
-
-
-          </div>
-
-
-        </div>
-
-
-      </div>
-
-
-
-      <!-- EMAIL -->
-
-      <div class="info-card">
-
-
-        <div class="info-icon">
-
-
-          <svg viewBox="0 0 24 24">
-
-            <rect
-              x="3"
-              y="5"
-              width="18"
-              height="14"
-              rx="2">
-            </rect>
-
-            <path
-              d="m4 7 8 6 8-6">
-            </path>
-
-          </svg>
-
-
-        </div>
-
-
-        <div>
-
-
-          <div class="info-label">
-
-            Email
-
-          </div>
-
-
-          <div class="info-value">
-
-
-            <a href="mailto:contacto@geortega.cl">
-
-              contacto@geortega.cl
-
-            </a>
-
-
-          </div>
-
-
-        </div>
-
-
-      </div>
-
-
-
-      <!-- MAPA -->
-
-      <div class="map-card">
-
-
-        <iframe
-
-          src="https://www.google.com/maps?q=Avenida%20Los%20Libertadores%20819%2C%20El%20Monte%2C%20Chile&output=embed"
-
-          loading="lazy"
-
-          allowfullscreen=""
-
-          referrerpolicy="no-referrer-when-downgrade"
-
-          title="Ubicación GEORTEGA">
-
-        </iframe>
-
-
-        <div class="map-footer">
-
-
-          <span>
-
-            Ubicación de atención
-
-          </span>
-
-
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=Avenida+Los+Libertadores+819+El+Monte+Chile"
-            target="_blank"
-            rel="noopener noreferrer">
-
-            Abrir en Google Maps →
-
-          </a>
-
-
-        </div>
-
-
-      </div>
-
+      </svg>
 
     </div>
 
+    <div>
 
-
-    <!-- =================================================
-         FORMULARIO
-    ================================================== -->
-
-    <div class="form-card">
-
-
-      <div class="form-eyebrow">
-
-        CONTACTO GEORTEGA
-
+      <div class="info-label">
+        Dirección
       </div>
 
-
-      <h2>
-
-        Envíanos un mensaje
-
-      </h2>
-
-
-      <p class="form-intro">
-
-        Completa el formulario con los antecedentes básicos
-        de tu proyecto y podremos orientarte de mejor manera
-        sobre el servicio que necesitas.
-
-      </p>
-
-
-
-      <form
-
-        id="contactForm"
-
-        action="https://formspree.io/f/mbgrnkop"
-
-        method="POST">
-
-
-
-        <!-- ASUNTO AUTOMÁTICO -->
-
-        <input
-          type="hidden"
-          name="_subject"
-          value="Nueva consulta desde GEORTEGA.cl">
-
-
-
-        <!-- ANTISPAM -->
-
-        <input
-          type="text"
-          name="_gotcha"
-          style="display:none">
-
-
-
-        <!-- NOMBRE / TELÉFONO -->
-
-        <div class="form-row">
-
-
-          <div class="form-group">
-
-
-            <label for="nombre">
-
-              Nombre *
-
-            </label>
-
-
-            <input
-
-              id="nombre"
-
-              class="form-control"
-
-              type="text"
-
-              name="nombre"
-
-              placeholder="Tu nombre"
-
-              autocomplete="name"
-
-              required>
-
-
-          </div>
-
-
-
-          <div class="form-group">
-
-
-            <label for="telefono">
-
-              Teléfono *
-
-            </label>
-
-
-            <input
-
-              id="telefono"
-
-              class="form-control"
-
-              type="tel"
-
-              name="telefono"
-
-              placeholder="+56 9..."
-
-              autocomplete="tel"
-
-              required>
-
-
-          </div>
-
-
-        </div>
-
-
-
-        <!-- EMAIL -->
-
-        <div class="form-group">
-
-
-          <label for="email">
-
-            Email *
-
-          </label>
-
-
-          <input
-
-            id="email"
-
-            class="form-control"
-
-            type="email"
-
-            name="email"
-
-            placeholder="tu@email.com"
-
-            autocomplete="email"
-
-            required>
-
-
-        </div>
-
-
-
-        <!-- SERVICIO -->
-
-        <div class="form-group">
-
-
-          <label for="servicio">
-
-            ¿Qué servicio necesitas? *
-
-          </label>
-
-
-          <select
-
-            id="servicio"
-
-            class="form-control"
-
-            name="servicio"
-
-            required>
-
-
-            <option
-              value=""
-              selected
-              disabled>
-
-              Selecciona un servicio
-
-            </option>
-
-
-            <option>
-
-              Levantamientos Topográficos y GNSS
-
-            </option>
-
-
-            <option>
-
-              Fotogrametría y Vuelos con Drones
-
-            </option>
-
-
-            <option>
-
-              Curvas de Nivel y Modelos de Terreno
-
-            </option>
-
-
-            <option>
-
-              Cubicación de Volúmenes
-
-            </option>
-
-
-            <option>
-
-              Subdivisiones y Loteos
-
-            </option>
-
-
-            <option>
-
-              Replanteos y Estacados
-
-            </option>
-
-
-            <option>
-
-              Peritajes y Verificación de Deslindes
-
-            </option>
-
-
-            <option>
-
-              Inspección Técnica y Modelación 3D
-
-            </option>
-
-
-            <option>
-
-              Otro requerimiento
-
-            </option>
-
-
-          </select>
-
-
-        </div>
-
-
-
-        <!-- ASUNTO -->
-
-        <div class="form-group">
-
-
-          <label for="asunto">
-
-            Asunto
-
-          </label>
-
-
-          <input
-
-            id="asunto"
-
-            class="form-control"
-
-            type="text"
-
-            name="asunto"
-
-            placeholder="Ej: Levantamiento de terreno de 2 hectáreas">
-
-
-        </div>
-
-
-
-        <!-- MENSAJE -->
-
-        <div class="form-group">
-
-
-          <label for="mensaje">
-
-            Cuéntanos sobre tu proyecto *
-
-          </label>
-
-
-          <textarea
-
-            id="mensaje"
-
-            class="form-control"
-
-            name="mensaje"
-
-            placeholder="Indica ubicación, superficie aproximada, tipo de trabajo o cualquier antecedente que pueda ayudarnos a entender tu requerimiento."
-
-            required></textarea>
-
-
-        </div>
-
-
-
-        <!-- BOTÓN -->
-
-        <button
-
-          id="submitButton"
-
-          class="submit-btn"
-
-          type="submit">
-
-
-          <span>
-
-            Enviar consulta
-
-          </span>
-
-
-        </button>
-
-
-
-        <!-- RESPUESTA -->
-
-        <div
-
-          id="formStatus"
-
-          class="form-status">
-
-        </div>
-
-
-      </form>
-
-
-
-      <!-- CONTACTO DIRECTO -->
-
-      <div class="direct-contact">
-
-
-        <p>
-
-          ¿Necesitas una respuesta más directa?
-
-        </p>
-
-
-        <a
-
-          class="whatsapp-inline"
-
-          href="https://wa.me/56973401407?text=Hola%20GEORTEGA%2C%20quiero%20realizar%20una%20consulta"
-
-          target="_blank"
-
-          rel="noopener noreferrer">
-
-
-          <svg viewBox="0 0 24 24">
-
-            <path
-              d="M20.5 3.5A11.7 11.7 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.9c0 2.1.6 4.2 1.6 6L0 24l6.3-1.7a12 12 0 0 0 5.8 1.5h.1c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.3-6.2-3.6-8.4ZM12.2 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.8 9.8 0 1 1 8.3 4.6Zm5.4-7.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.7.1-1.9-.9-3.2-1.7-4.5-3.9-.3-.5.3-.5.9-1.6.1-.2 0-.5-.1-.7-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.3 3.4 1.5 3.6c.2.2 2.5 3.8 6 5.3 2.2 1 3 .9 4.1.8.7-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z">
-            </path>
-
-          </svg>
-
-
-          Contactar por WhatsApp →
-
-        </a>
-
-
+      <div class="info-value">
+        Avenida Los Libertadores #819<br>
+        El Monte, Chile
       </div>
-
 
     </div>
-
 
   </div>
 
 
+  <div class="info-card">
+
+    <div class="info-icon">
+
+      <svg viewBox="0 0 24 24">
+        <path d="M5 4h4l2 5-2.5 1.5a15 15 0 0 0 5 5L15 13l5 2v4c0 1.1-.9 2-2 2C9.7 21 3 14.3 3 6a2 2 0 0 1 2-2Z"></path>
+      </svg>
+
+    </div>
+
+    <div>
+
+      <div class="info-label">
+        Teléfono
+      </div>
+
+      <div class="info-value">
+
+        <a href="tel:+56973401407">
+          +56 9 7340 1407
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="info-card">
+
+    <div class="info-icon">
+
+      <svg viewBox="0 0 24 24">
+
+        <rect
+          x="3"
+          y="5"
+          width="18"
+          height="14"
+          rx="2">
+        </rect>
+
+        <path d="m4 7 8 6 8-6"></path>
+
+      </svg>
+
+    </div>
+
+    <div>
+
+      <div class="info-label">
+        Email
+      </div>
+
+      <div class="info-value">
+
+        <a href="mailto:contacto@geortega.cl">
+          contacto@geortega.cl
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="map-card">
+
+    <iframe
+      src="https://www.google.com/maps?q=Avenida%20Los%20Libertadores%20819%2C%20El%20Monte%2C%20Chile&output=embed"
+      loading="lazy"
+      allowfullscreen=""
+      title="Ubicación GEORTEGA">
+    </iframe>
+
+    <div class="map-footer">
+
+      <span>
+        Ubicación de atención
+      </span>
+
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=Avenida+Los+Libertadores+819+El+Monte+Chile"
+        target="_blank">
+
+        Abrir en Google Maps →
+
+      </a>
+
+    </div>
+
+  </div>
+
+
+</div>
+
+
+<div class="form-card">
+
+  <div class="form-eyebrow">
+    CONTACTO GEORTEGA
+  </div>
+
+  <h2>
+    Envíanos un mensaje
+  </h2>
+
+  <p class="form-intro">
+    Completa el formulario con los antecedentes básicos
+    de tu proyecto y podremos orientarte sobre el servicio
+    que necesitas.
+  </p>
+
+
+  <form
+    id="contactForm"
+    action="https://formspree.io/f/mbgrnkop"
+    method="POST">
+
+
+    <input
+      type="hidden"
+      name="_subject"
+      value="Nueva consulta desde GEORTEGA.cl">
+
+
+    <input
+      type="text"
+      name="_gotcha"
+      style="display:none">
+
+
+    <div class="form-row">
+
+      <div class="form-group">
+
+        <label for="nombre">
+          Nombre *
+        </label>
+
+        <input
+          id="nombre"
+          class="form-control"
+          type="text"
+          name="nombre"
+          placeholder="Tu nombre"
+          required>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="telefono">
+          Teléfono *
+        </label>
+
+        <input
+          id="telefono"
+          class="form-control"
+          type="tel"
+          name="telefono"
+          placeholder="+56 9..."
+          required>
+
+      </div>
+
+    </div>
+
+
+    <div class="form-group">
+
+      <label for="email">
+        Email *
+      </label>
+
+      <input
+        id="email"
+        class="form-control"
+        type="email"
+        name="email"
+        placeholder="tu@email.com"
+        required>
+
+    </div>
+
+
+    <div class="form-group">
+
+      <label for="servicio">
+        ¿Qué servicio necesitas? *
+      </label>
+
+      <select
+        id="servicio"
+        class="form-control"
+        name="servicio"
+        required>
+
+        <option
+          value=""
+          selected
+          disabled>
+          Selecciona un servicio
+        </option>
+
+        <option>
+          Levantamientos Topográficos y GNSS
+        </option>
+
+        <option>
+          Fotogrametría y Vuelos con Drones
+        </option>
+
+        <option>
+          Curvas de Nivel y Modelos de Terreno
+        </option>
+
+        <option>
+          Cubicación de Volúmenes
+        </option>
+
+        <option>
+          Subdivisiones y Loteos
+        </option>
+
+        <option>
+          Replanteos y Estacados
+        </option>
+
+        <option>
+          Peritajes y Verificación de Deslindes
+        </option>
+
+        <option>
+          Inspección Técnica y Modelación 3D
+        </option>
+
+        <option>
+          Otro requerimiento
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <div class="form-group">
+
+      <label for="asunto">
+        Asunto
+      </label>
+
+      <input
+        id="asunto"
+        class="form-control"
+        type="text"
+        name="asunto"
+        placeholder="Ej: Levantamiento de terreno de 2 hectáreas">
+
+    </div>
+
+
+    <div class="form-group">
+
+      <label for="mensaje">
+        Cuéntanos sobre tu proyecto *
+      </label>
+
+      <textarea
+        id="mensaje"
+        class="form-control"
+        name="mensaje"
+        placeholder="Indica ubicación, superficie aproximada, tipo de trabajo o antecedentes relevantes."
+        required></textarea>
+
+    </div>
+
+
+    <button
+      id="submitButton"
+      class="submit-btn"
+      type="submit">
+
+      Enviar consulta
+
+    </button>
+
+
+    <div
+      id="formStatus"
+      class="form-status">
+    </div>
+
+
+  </form>
+
+
+  <div class="direct-contact">
+
+    <p>
+      ¿Necesitas una respuesta más directa?
+    </p>
+
+    <a
+      class="whatsapp-inline"
+      href="https://wa.me/56973401407?text=Hola%20GEORTEGA%2C%20quiero%20realizar%20una%20consulta"
+      target="_blank">
+
+      <svg viewBox="0 0 24 24">
+
+        <path d="M20.5 3.5A11.7 11.7 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.9c0 2.1.6 4.2 1.6 6L0 24l6.3-1.7a12 12 0 0 0 5.8 1.5h.1c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.3-6.2-3.6-8.4Z"></path>
+
+      </svg>
+
+      Contactar por WhatsApp →
+
+    </a>
+
+  </div>
+
+</div>
+
+
+</div>
+
 </section>
 
 
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- FOOTER -->
 
 <footer>
-
 
   <div class="footer-grid">
 
 
-
-    <!-- PAGOS -->
-
     <div>
-
 
       <div class="footer-company">
 
-
         <div class="footer-company-name">
-
           GEORTEGA
-
         </div>
-
 
         <div class="footer-company-subtitle">
-
           Pagos y contacto comercial
-
         </div>
-
 
       </div>
 
 
-
       <h4>
-
         Métodos de pago
-
       </h4>
-
 
 
       <div class="payment-methods">
 
 
-
-        <!-- CRÉDITO -->
-
         <div class="payment-item">
-
 
           <span class="payment-icon">
 
-
             <svg viewBox="0 0 24 24">
-
-              <rect
-                x="2"
-                y="5"
-                width="20"
-                height="14"
-                rx="2">
-              </rect>
-
+              <rect x="2" y="5" width="20" height="14" rx="2"></rect>
               <path d="M2 10h20"></path>
-
             </svg>
-
 
           </span>
 
-
           <div>
-
-            <strong>
-              Tarjetas de crédito
-            </strong>
-
-            <small>
-              Pago electrónico
-            </small>
-
+            <strong>Tarjetas de crédito</strong>
+            <small>Pago electrónico</small>
           </div>
-
 
         </div>
 
 
-
-        <!-- DÉBITO -->
-
         <div class="payment-item">
-
 
           <span class="payment-icon">
 
-
             <svg viewBox="0 0 24 24">
-
-              <rect
-                x="3"
-                y="3"
-                width="18"
-                height="18"
-                rx="3">
-              </rect>
-
+              <rect x="3" y="3" width="18" height="18" rx="3"></rect>
               <path d="M7 8h10"></path>
-
               <path d="M7 12h6"></path>
-
               <path d="M7 16h4"></path>
-
             </svg>
-
 
           </span>
 
-
           <div>
-
-            <strong>
-              Tarjetas de débito
-            </strong>
-
-            <small>
-              Débito bancario
-            </small>
-
+            <strong>Tarjetas de débito</strong>
+            <small>Débito bancario</small>
           </div>
-
 
         </div>
 
 
-
-        <!-- TRANSFERENCIA -->
-
         <div class="payment-item">
-
 
           <span class="payment-icon">
 
-
             <svg viewBox="0 0 24 24">
-
               <path d="M3 10h18"></path>
-
               <path d="M5 10v8"></path>
-
               <path d="M9 10v8"></path>
-
               <path d="M15 10v8"></path>
-
               <path d="M19 10v8"></path>
-
               <path d="M2 18h20"></path>
-
               <path d="M12 3 3 8h18z"></path>
-
             </svg>
-
 
           </span>
 
-
           <div>
-
-            <strong>
-              Transferencia bancaria
-            </strong>
-
-            <small>
-              Bancos nacionales
-            </small>
-
+            <strong>Transferencia bancaria</strong>
+            <small>Bancos nacionales</small>
           </div>
-
 
         </div>
 
 
       </div>
 
-
     </div>
 
 
-
-    <!-- SECCIONES -->
-
     <div>
 
-
       <h4>
-
         Secciones
-
       </h4>
 
-
-      <p>
-
-        <a href="index.html">
-          Inicio
-        </a>
-
-      </p>
-
-
-      <p>
-
-        <a href="nosotros.html">
-          Nosotros
-        </a>
-
-      </p>
-
-
-      <p>
-
-        <a href="servicios.html">
-          Servicios
-        </a>
-
-      </p>
-
-
-      <p>
-
-        <a href="contacto.html">
-          Contacto
-        </a>
-
-      </p>
-
+      <p><a href="index.html">Inicio</a></p>
+      <p><a href="nosotros.html">Nosotros</a></p>
+      <p><a href="servicios.html">Servicios</a></p>
+      <p><a href="contacto.html">Contacto</a></p>
 
     </div>
 
 
-
-    <!-- CONTACTO / REDES -->
-
     <div>
 
-
       <h4>
-
         Contacto
-
       </h4>
 
-
       <p>
-
         <a href="mailto:contacto@geortega.cl">
-
           contacto@geortega.cl
-
         </a>
-
       </p>
 
-
       <p>
-
         <a href="tel:+56973401407">
-
           +56 9 7340 1407
-
         </a>
-
       </p>
-
 
       <p>
-
         Chile
-
       </p>
-
 
 
       <h4 class="social-title">
-
         Síguenos
-
       </h4>
-
 
 
       <div class="social-links">
 
-
-
-        <!-- INSTAGRAM -->
 
         <a
           href="https://www.instagram.com/juanluis_geortega/"
@@ -2739,21 +1491,12 @@ footer a:hover{
           rel="noopener noreferrer"
           aria-label="Instagram">
 
-
           <svg viewBox="0 0 24 24">
-
-            <path
-              d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6-1.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z">
-            </path>
-
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6-1.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"></path>
           </svg>
-
 
         </a>
 
-
-
-        <!-- LINKEDIN -->
 
         <a
           href="https://www.linkedin.com/company/144509036/"
@@ -2761,21 +1504,12 @@ footer a:hover{
           rel="noopener noreferrer"
           aria-label="LinkedIn">
 
-
           <svg viewBox="0 0 24 24">
-
-            <path
-              d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7 0h3.8v2.2h.1c.5-1 1.8-2.7 4.6-2.7 4.9 0 5.8 3.2 5.8 7.4V24h-4v-8.1c0-1.9 0-4.4-2.7-4.4s-3.1 2.1-3.1 4.3V24h-4V8z">
-            </path>
-
+            <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7 0h3.8v2.2h.1c.5-1 1.8-2.7 4.6-2.7 4.9 0 5.8 3.2 5.8 7.4V24h-4v-8.1c0-1.9 0-4.4-2.7-4.4s-3.1 2.1-3.1 4.3V24h-4V8z"></path>
           </svg>
-
 
         </a>
 
-
-
-        <!-- FACEBOOK -->
 
         <a
           href="https://www.facebook.com/profile.php?id=61592509151371"
@@ -2783,113 +1517,63 @@ footer a:hover{
           rel="noopener noreferrer"
           aria-label="Facebook">
 
-
           <svg viewBox="0 0 24 24">
-
-            <path
-              d="M24 12a12 12 0 1 0-13.9 11.85v-8.39H7.05V12h3.05V9.36c0-3.01 1.79-4.67 4.53-4.67 1.31 0 2.69.23 2.69.23v2.96H15.8c-1.49 0-1.96.93-1.96 1.88V12h3.33l-.53 3.46h-2.8v8.39A12 12 0 0 0 24 12z">
-            </path>
-
+            <path d="M24 12a12 12 0 1 0-13.9 11.85v-8.39H7.05V12h3.05V9.36c0-3.01 1.79-4.67 4.53-4.67 1.31 0 2.69.23 2.69.23v2.96H15.8c-1.49 0-1.96.93-1.96 1.88V12h3.33l-.53 3.46h-2.8v8.39A12 12 0 0 0 24 12z"></path>
           </svg>
-
 
         </a>
 
 
       </div>
 
-
     </div>
-
 
   </div>
 
-
-
-  <!-- FOOTER INFERIOR -->
 
   <div class="footer-bottom">
 
-
     <span>
-
       © 2026 GEORTEGA · Todos los derechos reservados.
-
     </span>
-
 
     <span>
-
       Topografía · Geomensura · Tecnología Geoespacial
-
     </span>
-
 
   </div>
-
 
 </footer>
 
 
-
-<!-- =====================================================
-     WHATSAPP FLOTANTE
-===================================================== -->
+<!-- WHATSAPP -->
 
 <a
-
   class="whatsapp"
-
   href="https://wa.me/56973401407"
-
   target="_blank"
-
   rel="noopener noreferrer"
-
   aria-label="Contactar por WhatsApp">
 
+  <svg viewBox="0 0 24 24">
 
-  <svg
-    viewBox="0 0 24 24"
-    aria-hidden="true">
-
-
-    <path
-      d="M20.5 3.5A11.7 11.7 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.9c0 2.1.6 4.2 1.6 6L0 24l6.3-1.7a12 12 0 0 0 5.8 1.5h.1c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.3-6.2-3.6-8.4ZM12.2 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.8 9.8 0 1 1 8.3 4.6Zm5.4-7.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.7.1-1.9-.9-3.2-1.7-4.5-3.9-.3-.5.3-.5.9-1.6.1-.2 0-.5-.1-.7-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.3 3.4 1.5 3.6c.2.2 2.5 3.8 6 5.3 2.2 1 3 .9 4.1.8.7-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z">
-    </path>
-
+    <path d="M20.5 3.5A11.7 11.7 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.9c0 2.1.6 4.2 1.6 6L0 24l6.3-1.7a12 12 0 0 0 5.8 1.5h.1c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.3-6.2-3.6-8.4ZM12.2 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.8 9.8 0 1 1 8.3 4.6Zm5.4-7.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.7.1-1.9-.9-3.2-1.7-4.5-3.9-.3-.5.3-.5.9-1.6.1-.2 0-.5-.1-.7-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.3 3.4 1.5 3.6c.2.2 2.5 3.8 6 5.3 2.2 1 3 .9 4.1.8.7-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z"></path>
 
   </svg>
-
 
 </a>
 
 
-
-<!-- =====================================================
-     ENVÍO AJAX A FORMSPREE
-===================================================== -->
-
 <script>
 
+const form=
+document.getElementById("contactForm");
 
-const form =
-document.getElementById(
-  "contactForm"
-);
+const statusBox=
+document.getElementById("formStatus");
 
-
-const statusBox =
-document.getElementById(
-  "formStatus"
-);
-
-
-const submitButton =
-document.getElementById(
-  "submitButton"
-);
-
+const submitButton=
+document.getElementById("submitButton");
 
 
 form.addEventListener(
@@ -2897,141 +1581,76 @@ form.addEventListener(
 
 async function(event){
 
-
   event.preventDefault();
 
-
-  statusBox.className =
+  statusBox.className=
   "form-status";
 
+  submitButton.disabled=true;
 
-  statusBox.textContent =
-  "";
+  submitButton.textContent=
+  "Enviando...";
 
-
-  submitButton.disabled =
-  true;
-
-
-  submitButton.innerHTML =
-  "<span>Enviando...</span>";
-
-
-
-  const formData =
+  const formData=
   new FormData(form);
-
-
 
   try{
 
-
-    const response =
+    const response=
     await fetch(
-
       form.action,
-
       {
-
         method:"POST",
-
         body:formData,
-
         headers:{
-
-          "Accept":
-          "application/json"
-
+          "Accept":"application/json"
         }
-
       }
-
     );
-
-
 
     if(response.ok){
 
-
-      statusBox.className =
+      statusBox.className=
       "form-status success";
 
-
-      statusBox.textContent =
-      "Tu consulta fue enviada correctamente. Gracias por contactar a GEORTEGA. Te responderemos a la brevedad.";
-
+      statusBox.textContent=
+      "Tu consulta fue enviada correctamente. Gracias por contactar a GEORTEGA.";
 
       form.reset();
 
+    }else{
 
-    }
-
-
-    else{
-
-
-      statusBox.className =
+      statusBox.className=
       "form-status error";
 
-
-      statusBox.textContent =
-      "No pudimos enviar tu consulta. Por favor intenta nuevamente o contáctanos directamente por WhatsApp.";
-
+      statusBox.textContent=
+      "No pudimos enviar tu consulta. Intenta nuevamente o contáctanos por WhatsApp.";
 
     }
 
+  }catch(error){
 
-  }
-
-
-  catch(error){
-
-
-    statusBox.className =
+    statusBox.className=
     "form-status error";
 
-
-    statusBox.textContent =
-    "Se produjo un problema de conexión. Intenta nuevamente o escríbenos por WhatsApp.";
-
+    statusBox.textContent=
+    "Se produjo un problema de conexión. Intenta nuevamente.";
 
   }
 
+  submitButton.disabled=false;
 
-
-  submitButton.disabled =
-  false;
-
-
-  submitButton.innerHTML =
-  "<span>Enviar consulta</span>";
-
+  submitButton.textContent=
+  "Enviar consulta";
 
 });
 
 
-</script>
+const menuToggle=
+document.getElementById("menuToggle");
 
-
-
-<!-- =====================================================
-     MENÚ MÓVIL
-===================================================== -->
-
-<script>
-
-
-const menuToggle =
-document.getElementById(
-  "menuToggle"
-);
-
-
-const mainNav =
-document.getElementById(
-  "mainNav"
-);
-
+const mainNav=
+document.getElementById("mainNav");
 
 
 menuToggle.addEventListener(
@@ -3039,61 +1658,32 @@ menuToggle.addEventListener(
 
 function(){
 
-
-  const abierto =
-  mainNav.classList.toggle(
-    "open"
-  );
-
+  const abierto=
+  mainNav.classList.toggle("open");
 
   menuToggle.classList.toggle(
     "active",
     abierto
   );
 
-
-  menuToggle.setAttribute(
-    "aria-expanded",
-    abierto
-  );
-
-
 });
 
 
-
-mainNav
-.querySelectorAll("a")
+mainNav.querySelectorAll("a")
 .forEach(function(enlace){
-
 
   enlace.addEventListener(
     "click",
     function(){
 
+      mainNav.classList.remove("open");
 
-      mainNav.classList.remove(
-        "open"
-      );
-
-
-      menuToggle.classList.remove(
-        "active"
-      );
-
-
-      menuToggle.setAttribute(
-        "aria-expanded",
-        "false"
-      );
-
+      menuToggle.classList.remove("active");
 
     }
   );
 
-
 });
-
 
 
 document.addEventListener(
@@ -3101,35 +1691,19 @@ document.addEventListener(
 
 function(event){
 
-
   if(
-    window.innerWidth <= 900 &&
+    window.innerWidth<=900 &&
     !mainNav.contains(event.target) &&
     !menuToggle.contains(event.target)
   ){
 
+    mainNav.classList.remove("open");
 
-    mainNav.classList.remove(
-      "open"
-    );
-
-
-    menuToggle.classList.remove(
-      "active"
-    );
-
-
-    menuToggle.setAttribute(
-      "aria-expanded",
-      "false"
-    );
-
+    menuToggle.classList.remove("active");
 
   }
 
-
 });
-
 
 
 window.addEventListener(
@@ -3137,35 +1711,17 @@ window.addEventListener(
 
 function(){
 
+  if(window.innerWidth>900){
 
-  if(window.innerWidth > 900){
+    mainNav.classList.remove("open");
 
-
-    mainNav.classList.remove(
-      "open"
-    );
-
-
-    menuToggle.classList.remove(
-      "active"
-    );
-
-
-    menuToggle.setAttribute(
-      "aria-expanded",
-      "false"
-    );
-
+    menuToggle.classList.remove("active");
 
   }
 
-
 });
-
 
 </script>
 
-
 </body>
-
 </html>
